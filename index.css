@@ -2,9 +2,44 @@ body {
 	background-image: url("images/banner.jpg");
 }
 
-.Title {
+#Nav {
+	list-style-type: none;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+	max-width: 700px;
+}
+
+.NavItem {
+	float: left;
+}
+
+.NavLink {
+	text-decoration: none;
 	text-align: center;
-	border-bottom: 5px solid gray;
+	color: white;
+	display: block;
+	width: 150px;
+	background-color: gray;
+	padding: 10px;
+}
+
+.NavLink:hover {
+	background-color: #1C1D49;
+	border: 2px solid black;
+}
+
+.TitleContainer {
+	text-align: center;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.Title {
+	display: inline;
+	color: white;
+	font-size: 48pt;
 }
 
 .SubTitle {
