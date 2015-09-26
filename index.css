@@ -1,0 +1,58 @@
+body {
+	background-image: url("images/banner.jpg");
+}
+
+.Title {
+	text-align: center;
+	border-bottom: 5px solid gray;
+}
+
+.SubTitle {
+	border-bottom: 3px solid black;
+}
+
+.MainSection {
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid black;
+	padding: 10px;
+	background-color: white;
+	margin-top: 30px;
+}
+
+.ProfilePic {
+	display: block;
+	margin: 0 auto;
+	max-width: 600px;
+	max-height: 500px;
+	border: 3px solid #3a4731;
+}
+
+.CornerPic {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 0;
+	padding: 10px;
+	max-width: 200px;
+	max-height: 200px;
+}
+
+@media screen and (max-width: 1200px) {
+	.CornerPic {
+		max-width: 100px;
+		max-height: 100px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.ProfilePic {
+		width: 200px
+	}
+	
+	.CornerPic {
+		max-width: 50px;
+		max-height: 50px;
+	}
+}
