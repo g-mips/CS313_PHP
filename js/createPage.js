@@ -4,7 +4,9 @@ function start(page) {
 	// DIV Tag
 	var navBar = document.createElement("div");
 	navBar.id = "NavBar";
-	document.body.appendChild(navBar);
+	
+	var content = document.getElementById("Content");
+	document.body.insertBefore(navBar, content);
 	
 	// UL Tag
 	var list = document.createElement("ul");
