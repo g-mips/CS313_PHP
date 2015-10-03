@@ -1,0 +1,40 @@
+body {
+	background-color: #02434d;
+	font-family: Tahoma, Geneva, sans-serif;
+	color: white;
+	margin: 0px;
+}
+
+h1 {
+	color: black;
+	background-color: gray;
+	width: 100%;
+	height: 70px;
+	text-align: center;
+	text-shadow: 5px 7px 4px #302f2b;
+	box-shadow: 5px 7px 4px #302f2b;
+	margin: 0px;
+}
+
+h3 {
+	border-bottom: 3px solid black;
+	padding: 5px;
+}
+
+div {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 800px;
+	border: 5px solid black;
+	padding: 10px;
+	background-color: #660508;
+}
+
+.button {
+	color: #02434d;
+	font-family: Tahoma, Geneva, sans-serif;
+	border: 1px solid #02434d;
+	background-color: #fed;
+	padding: 10px;
+	margin: 10px;
+}
