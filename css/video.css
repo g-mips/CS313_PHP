@@ -1,0 +1,43 @@
+.VideoImage {
+	display: block;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	width: 480px;
+}
+
+.VideoLink {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 480px;
+	max-height: 360px;
+}
+
+.VideoLink:hover:before {
+	display: inline-block;
+	content: '';
+	background-image: url("../images/play_button.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	width: 480px;
+	height: 360px;
+}
+
+@media screen and (max-width: 500px) {
+	.VideoImage {
+		width: 200px;
+	}
+
+	.VideoLink {
+		max-width: 200px;
+		max-height: 150px;
+	}
+
+	.VideoLink:hover:before {
+		width: 200px;
+		height: 150px;
+	}
+}

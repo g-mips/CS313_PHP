@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>Week 3 Team Activity</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Group 2">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+           
+        <h1>Tell us all about your awesome self!</h1>
+        <form action="lesson3.php" method="post">   
+            Name: <input name="name" type="text"><br>
+            Email: <input name="email" type="text"><br>
+            <p>
+                Select Major:<br>
+                <input type="radio" name="major" value="Computer Science">Computer Science<br>
+                <input type="radio" name="major" value="Web Design and Development">Web Design and Development<br>
+                <input type="radio" name="major" value="Computer information Technology">Computer information Technology<br>
+                <input type="radio" name="major" value="Computer Engineering">Computer Engineering<br>
+            </p>
+            
+            <p>
+                Check all places you have visited:<br>
+                <input type="checkbox" name="travel[]" value="North America">North America<br>
+                <input type="checkbox" name="travel[]" value="South America">South America<br>
+                <input type="checkbox" name="travel[]" value="Europe">Europe<br>
+                <input type="checkbox" name="travel[]" value="Asia">Asia<br>
+                <input type="checkbox" name="travel[]" value="Australia">Australia<br>
+                <input type="checkbox" name="travel[]" value="Africa">Africa<br>
+                <input type="checkbox" name="travel[]" value="Antartica">Antarctica<br>
+            </p>
+            <p>
+                Comments:<br>
+                <textarea name="comments"></textarea>
+            </p>
+            <input type="submit" name="submit"><br>
+        </form>
+    </body>
+</html>
+
+
+<!--
+
+Places you have visited (checkbox) with the following options:
+
+Comments (text area)
+Step 2:
+
+You do not need to style this HTML form, but each input should be labeled and separated from each other.
+
+Step 3:
+
+Create a PHP script to handle this form, so that when the form is submitted, it captures the form data and produces a web page that displays:
+
+the user's name.
+their email address, with a “mailto:” link for the email address.
+their major.
+a list of all the places they have visited.
+their comments
+Step 4:
+
+Again, this data need not be styled, but it should be labeled and separated from each other.
+
+Step 5:
+
+Use the POST method for your form submission.
+
+*******************************************
+
+
+Name (text)
+Email (text)
+Major (radio button) with the following options:
+Computer Science
+Web Development and Design
+Computer information Technology
+Computer Engineering
+
+-->

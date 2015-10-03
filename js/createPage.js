@@ -107,3 +107,7 @@ function start(page) {
 	</ul>
 </div>
 */
+
+function setUpHome() {
+	
+}
