@@ -1,12 +1,5 @@
 <?php
 session_start();
-
-// gamer, gender, live, console, hours
-if($_SERVER['REQUEST_METHOD'] == "POST") {
-	$_SESSION["did_survey"] = true;
-} else {
-	$_SESSION["did_survey"] = false;
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +15,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 			$root = $doc->getElementsByTagName('results')->item(0);
 			
 			// Are we requesting page with POST?
-			if($_SERVER['REQUEST_METHOD'] == "POST") {
+			if($_SERVER['REQUEST_METHOD'] == "POST" && !isset($_SESSION["submitted"])) {
+				$_SESSION["submitted"] = true;
 				// Read POST values and update XML
 				$root->childNodes->item((int)$_POST["gamer"])->nodeValue += 1;
 				$root->childNodes->item((int)$_POST["gender"])->nodeValue += 1;

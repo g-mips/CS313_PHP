@@ -1,12 +1,9 @@
 <?php
 session_start();
 
-if (!ini_set("session.gc_maxlifetime", "24000")) {
-	throw new Exception("Failed to set execution time");
-}
-
-if (isset($_SESSION["did_survey"]) && $_SESSION["did_survey"] == true) {
-	header( 'Location: http://php-gshawm.rhcloud.com/individual-assignments/results.php' );
+if ($_SESSION["submitted"] == true) {
+	header('Location: http://php-gshawm.rhcloud.com/individual-assignments/results.php');
+	exit();
 }
 ?>
 <!DOCTYPE html>
