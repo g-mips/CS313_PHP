@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 				$root->childNodes->item((int)$_POST["live"])->nodeValue += 1;
 				$root->childNodes->item((int)$_POST["hours"])->nodeValue += 1;
 				
-				$consolses = $_POST["console"];
+				$consoles = $_POST["console"];
 				foreach ($consoles as $console) {
 					$root->childNodes->item((int)$console)->nodeValue += 1;
 				}
@@ -56,15 +56,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 					 '	<h3>This survey is currently out of ' . $doc->getElementsByTagName("numPeople")->item(0)->nodeValue . ' person(s).</h3>' .
 					 '	<p>';
 					
-				$textIndex = 0;
-				foreach($root->childNodes as childNode) {
+				/*$textIndex = 0;
+				foreach ($root->childNodes as childNode) {
 					$childNode->nodeValue . $textArray[$textIndex];
+					$textIndex += 1;
 				}
-				
+				*/
 				echo '  </p>' .
-					 '</div>';
+					 '</div>' .
 				
-					/*
+					
 					 $root->childNodes->item(0)->nodeValue . ' are gamers.<br>' .
 					 $root->childNodes->item(1)->nodeValue . ' are not gamers.<br>' .
 					 $root->childNodes->item(2)->nodeValue . ' are male.<br>' .
@@ -99,7 +100,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 					 
 					 '   </p>' .
 					 '</div>';
-					 */
+					 
 			}
 		?>
 	</body>
