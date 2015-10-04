@@ -55,10 +55,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 				
 				/*$textIndex = 0;
 				foreach ($root->childNodes as childNode) {
-					$childNode->nodeValue . $textArray[$textIndex];
+					echo $childNode->nodeValue . $textArray[$textIndex];
 					$textIndex += 1;
 				}
-				*/		
+				*/
+				echo $root->asXML();
 				echo '<div>' .
 					 '	<h3>This survey is currently out of ' . $doc->getElementsByTagName("numPeople")->item(0)->nodeValue . ' person(s).</h3>' .
 					 '	<p>' .
