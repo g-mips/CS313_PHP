@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 			// Read XML
 			$doc = new DOMDocument();
 			$doc->load('results.xml');
-			$root = $doc->documentElement;
+			$root = $doc->getElementsByTagName('results')->item(0);
 			
 			// Are we requesting page with POST?
 			if($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -52,20 +52,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 								   ' own a Nintendo 64.<br>', ' own a Super Nintendo.<br>', ' own a Nintendo Entertainment System.<br>', ' own a different console.<br>',
 								   ' don\'t own a console.<br>', ' play 0 hours a week.<br>', ' play less than 5 hours a week.<br>', ' play 5 - 10 hours a week.<br>',
 								   ' play 10 - 20 hours a week.<br>', ' play 20 - 30 hours a week.<br>', ' say that gaming is their job.<br>');
-				echo '<div>' .
-					 '	<h3>This survey is currently out of ' . $doc->getElementsByTagName("numPeople")->item(0)->nodeValue . ' person(s).</h3>' .
-					 '	<p>';
-					
+				
 				/*$textIndex = 0;
 				foreach ($root->childNodes as childNode) {
 					$childNode->nodeValue . $textArray[$textIndex];
 					$textIndex += 1;
 				}
-				*/
-				echo '  </p>' .
-					 '</div>' .
-				
-					
+				*/		
+				echo '<div>' .
+					 '	<h3>This survey is currently out of ' . $doc->getElementsByTagName("numPeople")->item(0)->nodeValue . ' person(s).</h3>' .
+					 '	<p>' .
 					 $root->childNodes->item(0)->nodeValue . ' are gamers.<br>' .
 					 $root->childNodes->item(1)->nodeValue . ' are not gamers.<br>' .
 					 $root->childNodes->item(2)->nodeValue . ' are male.<br>' .
@@ -97,7 +93,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 					 $root->childNodes->item(28)->nodeValue . ' play 10 - 20 hours a week.<br>' .
 					 $root->childNodes->item(29)->nodeValue . ' play 20 - 30 hours a week.<br>' .
 					 $root->childNodes->item(30)->nodeValue . ' say that gaming is their job.<br>' .
-					 
 					 '   </p>' .
 					 '</div>';
 					 

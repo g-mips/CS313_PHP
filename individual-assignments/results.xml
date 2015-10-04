@@ -1,35 +1,35 @@
 <?xml version="1.0" standalone="yes"?>
 <results>
-	<yes>0</yes>
-	<no>0</no>
-	<male>0</male>
-	<female>0</female>
-	<north>0</north>
-	<south>0</south>
-	<eu>0</eu>
-	<as>0</as>
-	<af>0</af>
-	<au>0</au>
-	<xone>0</xone>
-	<ps4>0</ps4>
-	<wiiu>0</wiiu>
-	<x360>0</x360>
-	<ps3>0</ps3>
-	<wii>0</wii>
-	<xbox>0</xbox>
-	<ps2>0</ps2>
-	<gc>0</gc>
-	<ps>0</ps>
-	<n64>0</n64>
-	<snes>0</snes>
-	<nes>0</nes>
-	<other>0</other>
-	<none>0</none>
-	<zero>0</zero>
-	<Lfive>0</Lfive>
-	<fiveten>0</fiveten>
-	<tentwenty>0</tentwenty>
-	<twentythirty>0</twentythirty>
-	<job>0</job>
-	<numPeople>0</numPeople>
+<yes>0</yes>
+<no>0</no>
+<male>0</male>
+<female>0</female>
+<north>0</north>
+<south>0</south>
+<eu>0</eu>
+<as>0</as>
+<af>0</af>
+<au>0</au>
+<xone>0</xone>
+<ps4>0</ps4>
+<wiiu>0</wiiu>
+<x360>0</x360>
+<ps3>0</ps3>
+<wii>0</wii>
+<xbox>0</xbox>
+<ps2>0</ps2>
+<gc>0</gc>
+<ps>0</ps>
+<n64>0</n64>
+<snes>0</snes>
+<nes>0</nes>
+<other>0</other>
+<none>0</none>
+<zero>0</zero>
+<Lfive>0</Lfive>
+<fiveten>0</fiveten>
+<tentwenty>0</tentwenty>
+<twentythirty>0</twentythirty>
+<job>0</job>
+<numPeople>0</numPeople>
 </results>
