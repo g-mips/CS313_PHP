@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 					 '</div>';
 			} else {
 				echo '<div>' .
-					 '	<h3>This survey is currently out of' . $doc->getElementsByTagName("numPeople")->item(0)->nodeValue . '</h3>' .
+					 '	<h3>This survey is currently out of ' . $doc->getElementsByTagName("numPeople")->item(0)->nodeValue . ' person(s).</h3>' .
 					 '	<p>' .
 					 $root->childNodes->item(0)->nodeValue . ' are gamers.<br>' .
 					 $root->childNodes->item(1)->nodeValue . ' are not gamers.<br>' .
