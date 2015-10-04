@@ -59,7 +59,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 					$textIndex += 1;
 				}
 				*/
-				echo $root->asXML();
 				echo '<div>' .
 					 '	<h3>This survey is currently out of ' . $doc->getElementsByTagName("numPeople")->item(0)->nodeValue . ' person(s).</h3>' .
 					 '	<p>' .
