@@ -1,3 +1,30 @@
+#TwitchVid {
+	padding: 7px;
+}
+
+#TwitchChat {
+	padding: 7px;
+}
+
+#MainVideo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+
+#FeatVideosDiv {
+	text-align: center;
+}
+
+.FeatVideos {
+	display: inline;
+	height: 188px;
+	width: 250px;
+	padding: 10px;
+}
+
+/*
 .VideoImage {
 	display: block;
 	padding: 10px;
@@ -24,20 +51,4 @@
 	position: absolute;
 	width: 480px;
 	height: 360px;
-}
-
-@media screen and (max-width: 500px) {
-	.VideoImage {
-		width: 200px;
-	}
-
-	.VideoLink {
-		max-width: 200px;
-		max-height: 150px;
-	}
-
-	.VideoLink:hover:before {
-		width: 200px;
-		height: 150px;
-	}
-}
+} */

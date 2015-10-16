@@ -1,0 +1,17 @@
+<iframe id="MainVideo" ng-src="{{mainVideo}}" frameborder="0" width="880" height="495"
+                webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<h1 class="Title">{{videoTitle}}</h1>
+
+<div id="FeatVideosDiv">
+    <img class="FeatVideos" ng-repeat="video in videos" ng-src="{{video}}" />
+</div>
+
+<hr />
+
+<h1 class="Title">{{twitchTitle}}</h1>
+
+<iframe id="TwitchVid" src="http://www.twitch.tv/kacologo/embed" frameborder="0"
+        scrolling="no" height="378" width="620"></iframe>
+
+<iframe id="TwitchChat" src="http://www.twitch.tv/kacologo/chat?popout=" frameborder="0"
+        scrolling="no" height="400" width="345"></iframe>
