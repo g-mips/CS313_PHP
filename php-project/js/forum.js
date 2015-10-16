@@ -1,5 +1,5 @@
 (function() {
-    kacologoApp = angular.module('kacologo-forum', ['kacologoApp']);
+    kacologoApp = angular.module('kacologo-forum', []);
     
     /**************************** Videos Page Controller ****************************/
     kacologoApp.controller('ForumCtrl', function() {
