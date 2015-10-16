@@ -9,7 +9,7 @@
     kacologoApp.directive('forumContent', function() {
         return {
             restrict: 'E',
-            templateUrl: 'templates/forumContent.html'
+            templateUrl: 'templates/forumContent.php'
         };
     });
 })();
