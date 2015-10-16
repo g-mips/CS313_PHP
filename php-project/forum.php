@@ -22,6 +22,5 @@
         <navigator></navigator>
         <content></content>
         <footer-links></footer-links>
-        <?php echo "HI"; ?>
 	</body>
 </html>
