@@ -2,6 +2,10 @@
     padding: 10px;
 }
 
+.ForumTitle {
+    font-size: 30px;
+}
+
 .Cat {
     
 }
@@ -30,4 +34,8 @@
 hr.ForumLine {
     width: 100%;
     border-color: dimgray;
+}
+
+.ForumLink:hover {
+    background-color: lightslategray;
 }
