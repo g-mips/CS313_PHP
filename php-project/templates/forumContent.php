@@ -1,3 +1,5 @@
 <section>
-    <?php echo 'hi' ?>
+    <?php require("../database/databaseConnect.php"); ?>
+
+    <?php loadDatabase(); ?>
 </section>
