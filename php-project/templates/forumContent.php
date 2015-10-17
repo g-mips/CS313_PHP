@@ -5,7 +5,7 @@
     <?php
         require "../database/databaseConnect.php";
 
-        function displaySubCats($id) {
+        function displaySubCats($db, $id) {
             var_dump($id);
             $sub_cats = $db->query("SELECT * FROM sub_categories INNER JOIN categories ON sub_categories.sub_cat_cat = categories.cat_id WHERE categories.cat_id = " . $id . " ORDER BY sub_categories.sub_cat_order");
             /*
@@ -37,7 +37,7 @@
                         echo "<section class='Cat'>";
                         echo "<h1 class='CatName'>" . $cat["cat_name"] . "</h1>";
 
-                        displaySubCats($cat["cat_id"]);
+                        displaySubCats($db, $cat["cat_id"]);
 
                         echo "</section>";
                         echo "</a>";
@@ -51,7 +51,7 @@
                         foreach ($cat as $category) {
                             if ($index === 0) {
                                 echo "<h1 class='ForumTitle'>" . $category["cat_name"] . "</h1>";
-                                displaySubCats($category["cat_id"]);
+                                displaySubCats($db, $category["cat_id"]);
                                 $index += 1;
                             }
                         }
