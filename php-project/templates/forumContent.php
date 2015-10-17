@@ -8,7 +8,7 @@
 
             // If it is null, we need to handle it differently!
             if ($db !== null) {
-                if ($_SESSION['page'] == 0 || $_SESSION['page' === null)) {
+                if ($_SESSION['page'] == 0 || $_SESSION['page' === null]) {
                     $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");
                     echo "PAGE: " . $_SESSION['page'];
                     // Categories Loop
