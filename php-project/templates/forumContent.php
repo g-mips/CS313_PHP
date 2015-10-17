@@ -16,6 +16,7 @@
                     foreach ($sub_cats as $sub_cat) {
                         echo "<h2 class='ForumSubCat'>" . $sub_cat["sub_cat_name"] . "</h2>";
                         echo "<p class='SubCatDescription'>" . $sub_cat["sub_cat_description"] . "</p>";
+                        echo "<hr />";
                     }
                 }
             }
