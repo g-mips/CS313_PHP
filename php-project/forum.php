@@ -1,7 +1,7 @@
 <?php
     session_start();
-    $_SESSION['page'] = $_GET['page'];
-    $_SESSION['id'] = $_GET['id'];
+    $_SESSION['page'] = (int)$_GET['page'];
+    $_SESSION['id']   = (int)$_GET['id'];
 ?>
 <!DOCTYPE html>
 <html ng-app="kacologoApp">

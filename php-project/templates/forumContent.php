@@ -42,13 +42,13 @@
                 }
             } else if ($_SESSION['id'] !== null) {
                 if ($_SESSION['page'] == 1) {
-                    $cat = $db->query("SELECT * FROM categories WHERE cat_id = " . (int)$_SESSION['id']);
+                    $cat = $db->query("SELECT * FROM categories WHERE cat_id = " . $_SESSION['id']);
                     echo "<h1 class='ForumTitle'>" . $cat["cat_name"] . "</h1>";
 
                     //displaySubCats($cat);
                 } else if ($_SESSION['page'] == 2) {
 
-                } else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] != null) {
+                } else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] !== null) {
 
                 }
             }
