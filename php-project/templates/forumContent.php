@@ -16,6 +16,7 @@
                     
                     // Categories Loop
                     foreach ($cats as $cat) {
+                        echo "<a class='ForumLink' href=''>";
                         echo "<section class='Cat'>";
                         echo "<h1 class='CatName'>" . $cat["cat_name"] . "</h1>";
 
@@ -31,6 +32,7 @@
                             echo "</a>";
                         }
                         echo "</section>";
+                        echo "</a>";
                     }
                 }
             }
