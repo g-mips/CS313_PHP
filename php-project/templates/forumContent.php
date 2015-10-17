@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <section id="Forum">
     <?php
             require "../database/databaseConnect.php";
@@ -5,9 +8,9 @@
 
             // If it is null, we need to handle it differently!
             if ($db !== null) {
-                if ($page == 0 || page === null)) {
+                if ($_SESSION['page'] == 0 || $_SESSION['page' === null)) {
                     $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");
-                    echo "PAGE: " . $page;
+                    echo "PAGE: " . $_SESSION['page'];
                     // Categories Loop
                     foreach ($cats as $cat) {
                         echo "<section class='Cat'>";

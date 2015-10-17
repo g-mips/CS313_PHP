@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <?php
-    $page = null;
-
-    $page = $_GET['page'];
+    session_start();
+    $_SESSION['page'] = $_GET['page'];
 ?>
+<!DOCTYPE html>
 <html ng-app="kacologoApp">
 	<head>
 		<title>Kacologo</title>
