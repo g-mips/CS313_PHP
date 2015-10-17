@@ -6,7 +6,7 @@
         require "../database/databaseConnect.php";
 
         function displaySubCats($cat) {
-            echo "HI";
+            var_dump($cat);
             /*$sub_cats = $db->query("SELECT * FROM sub_categories INNER JOIN categories ON sub_categories.sub_cat_cat = categories.cat_id WHERE categories.cat_id = " . $cat["cat_id"] . " ORDER BY sub_categories.sub_cat_order");
 
             foreach ($sub_cats as $sub_cat) {
