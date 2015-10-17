@@ -1,6 +1,10 @@
 <section>
     <?php
             require "../database/databaseConnect.php";
-            loadDatabase();
+            $db = loadDatabase();
+
+            if ($db !=== null) {
+                echo $db;
+            }
     ?>
 </section>
