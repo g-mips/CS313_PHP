@@ -19,39 +19,39 @@
             }
         }*/
 
-        $db = loadDatabase();
+        function run() {
+            $db = loadDatabase();
 
-        // If it is null, we need to handle it differently!
-        if ($db !== null) {
+            // If it is null, we need to handle it differently!
+            if ($db !== null) {
 
-            // What page are we trying to access?
-            if ($_SESSION['page'] == 0 || $_SESSION['page' === null]) {
-                $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");
-                echo "<h1 class='ForumTitle'>Forum</h1>";
+                // What page are we trying to access?
+                if ($_SESSION['page'] == 0 || $_SESSION['page' === null]) {
+                    $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");
+                    echo "<h1 class='ForumTitle'>Forum</h1>";
 
-                // Categories Loop
-                foreach ($cats as $cat) {
-                    echo "<a class='ForumLink' href='/php-project/forum.php?page=1&id=" . $cat["cat_id"] . "'>";
-                    echo "<section class='Cat'>";
-                    echo "<h1 class='CatName'>" . $cat["cat_name"] . "</h1>";
+                    // Categories Loop
+                    foreach ($cats as $cat) {
+                        echo "<a class='ForumLink' href='/php-project/forum.php?page=1&id=" . $cat["cat_id"] . "'>";
+                        echo "<section class='Cat'>";
+                        echo "<h1 class='CatName'>" . $cat["cat_name"] . "</h1>";
 
-                    //displaySubCats($cat);
-                    
-                    echo "</section>";
-                    echo "</a>";
-                }
-            } else if ($_SESSION['id'] !== null) {
-                if ($_SESSION['page'] == 1) {
-                    echo "ID: " . $_SESSION['id'] . '\n';
-                    var_dump($_SESSION['id']);
-                    $cat = $db->query("SELECT * FROM categories WHERE cat_id = " . $_SESSION['id']);
-                    //echo "<h1 class='ForumTitle'>" . $cat["cat_name"] . "</h1>";
+                        //displaySubCats($cat);
 
-                    //displaySubCats($cat);
-                } else if ($_SESSION['page'] == 2) {
+                        echo "</section>";
+                        echo "</a>";
+                    }
+                } else if ($_SESSION['id'] !== null) {
+                    if ($_SESSION['page'] == 1) {
+                        $cat = $db->query("SELECT * FROM categories WHERE cat_id = " . $_SESSION['id']);
+                        //echo "<h1 class='ForumTitle'>" . $cat["cat_name"] . "</h1>";
 
-                } else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] !== null) {
+                        //displaySubCats($cat);
+                    } else if ($_SESSION['page'] == 2) {
 
+                    } else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] !== null) {
+
+                    }
                 }
             }
         }
