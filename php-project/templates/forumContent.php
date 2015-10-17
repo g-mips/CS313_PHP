@@ -5,7 +5,7 @@
     <?php
         require "../database/databaseConnect.php";
 
-        /*function displaySubCats($cat) {
+        function displaySubCats($cat) {
             $sub_cats = $db->query("SELECT * FROM sub_categories INNER JOIN categories ON sub_categories.sub_cat_cat = categories.cat_id WHERE categories.cat_id = " . $cat["cat_id"] . " ORDER BY sub_categories.sub_cat_order");
 
             foreach ($sub_cats as $sub_cat) {
@@ -17,7 +17,7 @@
                 echo "</section>";
                 echo "</a>";
             }
-        }*/
+        }
 
         function run() {
             $db = loadDatabase();
@@ -36,7 +36,7 @@
                         echo "<section class='Cat'>";
                         echo "<h1 class='CatName'>" . $cat["cat_name"] . "</h1>";
 
-                        //displaySubCats($cat);
+                        displaySubCats($cat);
 
                         echo "</section>";
                         echo "</a>";
@@ -45,15 +45,15 @@
                     if ($_SESSION['page'] == 1) {
                         $query = "SELECT * FROM categories WHERE cat_id = " . $_SESSION['id'];
                         $cat = $db->query($query);
+                        
                         $index = 0;
                         foreach ($cat as $category) {
                             if ($index === 0) {
                                 echo "<h1 class='ForumTitle'>" . $category["cat_name"] . "</h1>";
+                                displaySubCats($category);
                                 $index += 1;
                             }
                         }
-
-                        //displaySubCats($cat);
                     } else if ($_SESSION['page'] == 2) {
 
                     } else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] !== null) {
