@@ -6,7 +6,7 @@ function loadDatabase() {
     $dbUser = "";
     $dbPassword = ""; 
 
-    $dbName = "testdb"; 
+    $dbName = "forum"; 
 
     try {
         $openShiftVar = getenv('OPENSHIFT_MYSQL_DB_HOST'); 
@@ -15,13 +15,13 @@ function loadDatabase() {
         $dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT'); 
         $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
         $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-        //echo "host:$dbHost:$dbPort dbName:$dbName user:$dbUser password:$dbPassword<br >\n"; 
+        echo "host:$dbHost:$dbPort dbName:$dbName user:$dbUser password:$dbPassword<br >\n"; 
 
         $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);
         
         return $db;
     } catch (PDOException $e) {
-        echo $e->getMessage();
+        echo 'ERROR' . $e->getMessage();
     }
     
     return null;
