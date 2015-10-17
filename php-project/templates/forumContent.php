@@ -3,6 +3,7 @@
             require "../database/databaseConnect.php";
             $db = loadDatabase();
 
+            // If it is null, we need to handle it differently!
             if ($db !== null) {
                 $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");
                 
