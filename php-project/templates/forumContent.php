@@ -5,7 +5,7 @@
     <?php
         require "../database/databaseConnect.php";
 
-        function displaySubCats($cat) {
+        /*function displaySubCats($cat) {
             $sub_cats = $db->query("SELECT * FROM sub_categories INNER JOIN categories ON sub_categories.sub_cat_cat = categories.cat_id WHERE categories.cat_id = " . $cat["cat_id"] . " ORDER BY sub_categories.sub_cat_order");
 
             foreach ($sub_cats as $sub_cat) {
@@ -17,7 +17,7 @@
                 echo "</section>";
                 echo "</a>";
             }
-        }
+        }*/
 
         $db = loadDatabase();
 
@@ -35,7 +35,7 @@
                     echo "<section class='Cat'>";
                     echo "<h1 class='CatName'>" . $cat["cat_name"] . "</h1>";
 
-                    displaySubCats($cat);
+                    //displaySubCats($cat);
                     
                     echo "</section>";
                     echo "</a>";
