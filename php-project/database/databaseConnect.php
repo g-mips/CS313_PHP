@@ -21,7 +21,7 @@ function loadDatabase() {
     return $db;
 } 
 
-fucntion printHi() {
+function printHi() {
     echo "Hi";
 }
 ?> 

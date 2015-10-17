@@ -19,7 +19,6 @@
         <script src="js/contact.js"></script>
 	</head>
 	<body ng-controller="MainCtrl as main" ng-init="main.page = 'FORUM'">
-        <?php require "database/databaseConnect.php"; ?>
         <navigator></navigator>
         <content></content>
         <footer-links></footer-links>
