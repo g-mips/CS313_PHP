@@ -45,7 +45,13 @@
                     if ($_SESSION['page'] == 1) {
                         $query = "SELECT * FROM categories WHERE cat_id = " . $_SESSION['id'];
                         $cat = $db->query($query);
-                        echo "<h1 class='ForumTitle'>" . $cat[0]["cat_name"] . "</h1>";
+                        $index = 0;
+                        foreach ($cat as $category) {
+                            if ($index === 0) {
+                                echo "<h1 class='ForumTitle'>" . $category["cat_name"] . "</h1>";
+                                $index += 1;
+                            }
+                        }
 
                         //displaySubCats($cat);
                     } else if ($_SESSION['page'] == 2) {
