@@ -15,7 +15,7 @@
                     $sub_cats = $db->query("SELECT * FROM sub_categories INNER JOIN categories ON sub_categories.sub_cat_cat = categories.cat_id WHERE categories.cat_id = " . $cat["cat_id"] . " ORDER BY sub_categories.sub_cat_order");
                     
                     foreach ($sub_cats as $sub_cat) {
-                        echo "<section class='SubCat'>"
+                        echo "<section class='SubCat'>";
                         echo "<h2 class='SubCatName'>" . $sub_cat["sub_cat_name"] . "</h2>";
                         echo "<p class='SubCatDescription'>" . $sub_cat["sub_cat_description"] . "</p>";
                         echo "<hr class='ForumLine'/>";
