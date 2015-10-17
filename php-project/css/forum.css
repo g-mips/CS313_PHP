@@ -1,7 +1,16 @@
+#Forum {
+    padding: 10px;
+}
+
 .ForumCat {
-    
+    font-size: 15px;
+    background-color: darkgray;
 }
 
 .ForumSubCat {
-    
+    font-size: 14px;
+}
+
+.SubCatDescription {
+    font-size: 11px;
 }

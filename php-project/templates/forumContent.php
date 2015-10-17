@@ -1,4 +1,4 @@
-<section>
+<section id="Forum">
     <?php
             require "../database/databaseConnect.php";
             $db = loadDatabase();
@@ -15,7 +15,7 @@
                     
                     foreach ($sub_cats as $sub_cat) {
                         echo "<h2 class='ForumSubCat'>" . $sub_cat["sub_cat_name"] . "</h2>";
-                        echo "<h3 class='SubCatDescription'>" . $sub_cat["sub_cat_description"] . "</h3>";
+                        echo "<p class='SubCatDescription'>" . $sub_cat["sub_cat_description"] . "</p>";
                     }
                 }
             }
