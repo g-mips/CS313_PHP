@@ -35,7 +35,7 @@
     kacologoApp.directive('content', function() {
         return {
             restrict: 'E',
-            templateUrl: 'templates/content.html'
+            templateUrl: 'templates/content.php'
         };
     });
 })();
