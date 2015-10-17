@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+    $page = null;
+
+    $page = $_GET['page'];
+?>
 <html ng-app="kacologoApp">
 	<head>
 		<title>Kacologo</title>

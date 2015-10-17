@@ -5,10 +5,9 @@
 
             // If it is null, we need to handle it differently!
             if ($db !== null) {
-                
-                if ($_GET["page"] == 0 || !($_GET["page"])) {
+                if ($page == 0 || page === null)) {
                     $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");
-                    echo "PAGE: " . $_GET["page"];
+                    echo "PAGE: " . $page;
                     // Categories Loop
                     foreach ($cats as $cat) {
                         echo "<section class='Cat'>";
