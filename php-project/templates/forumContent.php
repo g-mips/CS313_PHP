@@ -31,7 +31,7 @@
 
                 // Categories Loop
                 foreach ($cats as $cat) {
-                    echo "<a class='ForumLink' href='/forum.php?page=1&id=" . $cat["cat_id"] . "'>";
+                    echo "<a class='ForumLink' href='/php-project/forum.php?page=1&id=" . $cat["cat_id"] . "'>";
                     echo "<section class='Cat'>";
                     echo "<h1 class='CatName'>" . $cat["cat_name"] . "</h1>";
 
