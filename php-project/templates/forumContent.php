@@ -1,5 +1,8 @@
 <section>
     <?php require("../database/databaseConnect.php"); ?>
 
-    <?php loadDatabase(); ?>
+    <?php
+            $db = loadDatabase();
+            echo $db;
+    ?>
 </section>
