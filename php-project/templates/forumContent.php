@@ -3,6 +3,5 @@
 
     <?php
             $db = loadDatabase();
-            $items = $db->exec("SELECT * FROM categories");
     ?>
 </section>
