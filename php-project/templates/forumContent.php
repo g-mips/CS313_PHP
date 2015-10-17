@@ -4,7 +4,7 @@
             $db = loadDatabase();
 
             if ($db !== null) {
-                echo $db;
+                echo 'hi';
             }
     ?>
 </section>
