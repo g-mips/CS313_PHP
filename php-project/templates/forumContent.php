@@ -7,6 +7,7 @@
             if ($db !== null) {
                 $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");
                 
+                // Categories Loop
                 foreach ($cats as $cat) {
                     echo "<h1 class='ForumCat'>" . $cat["cat_name"] . "</h1>";
                     
