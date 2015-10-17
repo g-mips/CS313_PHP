@@ -5,10 +5,8 @@
     <?php
         require "../database/databaseConnect.php";
 
-        function displaySubCats($cat) {
-            var_dump($cat);
-            echo $cat[1];
-            /*$sub_cats = $db->query("SELECT * FROM sub_categories INNER JOIN categories ON sub_categories.sub_cat_cat = categories.cat_id WHERE categories.cat_id = " . $cat["cat_id"] . " ORDER BY sub_categories.sub_cat_order");
+        function displaySubCats($id) {
+            $sub_cats = $db->query("SELECT * FROM sub_categories INNER JOIN categories ON sub_categories.sub_cat_cat = categories.cat_id WHERE categories.cat_id = " . $cat[$id] . " ORDER BY sub_categories.sub_cat_order");
 
             foreach ($sub_cats as $sub_cat) {
                 echo "<a class='ForumLink' href=''>";
@@ -18,7 +16,7 @@
                 echo "<hr class='ForumLine'/>";
                 echo "</section>";
                 echo "</a>";
-            }*/
+            }
         }
 
         function run() {
@@ -38,7 +36,7 @@
                         echo "<section class='Cat'>";
                         echo "<h1 class='CatName'>" . $cat["cat_name"] . "</h1>";
 
-                        displaySubCats($cat);
+                        displaySubCats($cat["cat_id"]);
 
                         echo "</section>";
                         echo "</a>";
@@ -52,7 +50,7 @@
                         foreach ($cat as $category) {
                             if ($index === 0) {
                                 echo "<h1 class='ForumTitle'>" . $category["cat_name"] . "</h1>";
-                                displaySubCats($category);
+                                displaySubCats($category["cat_id"]);
                                 $index += 1;
                             }
                         }
