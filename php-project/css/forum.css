@@ -21,6 +21,10 @@
     
 }
 
+.SubCat:hover {
+    background-color: lightslategray;
+}
+
 .SubCatName {
     font-size: 14px;
     padding-left: 5px;
@@ -36,6 +40,6 @@ hr.ForumLine {
     border-color: dimgray;
 }
 
-.ForumLink:hover {
-    background-color: lightslategray;
+.ForumLink {
+    text-decoration: none;
 }
