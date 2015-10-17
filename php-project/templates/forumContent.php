@@ -1,3 +1,3 @@
 <section>
-Hi
+    <?php echo 'hi' ?>
 </section>
