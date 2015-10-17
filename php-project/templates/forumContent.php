@@ -2,6 +2,6 @@
     <?php require("../database/databaseConnect.php"); ?>
 
     <?php
-            $db = loadDatabase();
+            $db = 0;
     ?>
 </section>
