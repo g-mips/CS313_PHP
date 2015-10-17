@@ -45,9 +45,7 @@
                     if ($_SESSION['page'] == 1) {
                         $query = "SELECT * FROM categories WHERE cat_id = " . $_SESSION['id'];
                         $cat = $db->query($query);
-                        //echo $query;
-                        echo $cat["cat_name"];
-//                        echo "<h1 class='ForumTitle'>" . $cat["cat_name"] . "</h1>";
+                        echo "<h1 class='ForumTitle'>" . $cat[0]["cat_name"] . "</h1>";
 
                         //displaySubCats($cat);
                     } else if ($_SESSION['page'] == 2) {
