@@ -1,6 +1,6 @@
 <section>
     <?php
             require "../database/databaseConnect.php";
-            printHi();
+            loadDatabase();
     ?>
 </section>
