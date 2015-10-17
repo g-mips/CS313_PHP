@@ -51,6 +51,7 @@
                 } else if ($_SESSION['page'] == 3 && $_SESSION['tpage']) {
 
                 }
-            }            }
+            }
+        }
     ?>
 </section>
