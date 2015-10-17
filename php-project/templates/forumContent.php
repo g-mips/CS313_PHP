@@ -4,7 +4,9 @@
             $db = loadDatabase();
 
             if ($db !== null) {
-                echo 'hi';
+                $items = $db->exec("SELECT * FROM categories");
+                var_dump($db);
+                var_dump($items);
             }
     ?>
 </section>
