@@ -3,7 +3,7 @@
             require "../database/databaseConnect.php";
             $db = loadDatabase();
 
-            if ($db !=== null) {
+            if ($db !== null) {
                 echo $db;
             }
     ?>
