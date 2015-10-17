@@ -6,9 +6,8 @@
         require "../database/databaseConnect.php";
 
         function displaySubCats($db, $id) {
-            var_dump($id);
             $sub_cats = $db->query("SELECT * FROM sub_categories INNER JOIN categories ON sub_categories.sub_cat_cat = categories.cat_id WHERE categories.cat_id = " . $id . " ORDER BY sub_categories.sub_cat_order");
-            /*
+            
             foreach ($sub_cats as $sub_cat) {
                 echo "<a class='ForumLink' href=''>";
                 echo "<section class='SubCat'>";
@@ -17,7 +16,7 @@
                 echo "<hr class='ForumLine'/>";
                 echo "</section>";
                 echo "</a>";
-            }*/
+            }
         }
 
         function run() {
