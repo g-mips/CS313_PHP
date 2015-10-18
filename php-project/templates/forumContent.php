@@ -9,7 +9,7 @@
             $sub_cats = $db->query("SELECT * FROM sub_categories INNER JOIN categories ON sub_categories.sub_cat_cat = categories.cat_id WHERE categories.cat_id = " . $id . " ORDER BY sub_categories.sub_cat_order");
             
             foreach ($sub_cats as $sub_cat) {
-                echo "<a class='ForumLink' href='/php-project/forum.php?page=2&id=" . $sub_cat["sub_cat_id"] . "'>";
+                echo "<a class='ForumLink' href='/php-project/forum.php?page=2&id=" . $sub_cat["sub_cat_id"] . "&tpage=1'>";
                 echo "<section class='SubCat'>";
                 echo "<h2 class='SubCatName'>" . $sub_cat["sub_cat_name"] . "</h2>";
                 echo "<p class='SubCatDescription'>" . $sub_cat["sub_cat_description"] . "</p>";
@@ -54,19 +54,28 @@
                                 $index += 1;
                             }
                         }
-                    } else if ($_SESSION['page'] == 2) {
+                    } else if ($_SESSION['page'] == 2 && $_SESSION['tpage'] !== null) {
+                        // Getting title of page.
                         $query = "SELECT sub_cat_name FROM sub_categories WHERE sub_cat_id = " . $_SESSION['id'];
                         $titles = $db->query($query);
                         $titles->setFetchMode(PDO::FETCH_ASSOC);
                         $title = $titles->fetch();
                         
+                        //
                         $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = sub_categories.sub_cat_id WHERE sub_categories.sub_id = " . $_SESSION['id'] . " AND WHERE topics.topic_pinned = 1 ORDER BY topics.topic_date";
                         $pinnedTopics = $db->query($query);
+                        $pinnedTopics = $pinnedTopics->fetchAll();
+                        var_dump($pinnedTopics);
 
                         $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = sub_categories.sub_cat_id WHERE sub_categories.sub_id = " . $_SESSION['id'] . " AND WHERE topics.topic_pinned = 0 ORDER BY topics.topic_date";
                         $nonPinnedTopics = $db->query($query);
+                        $nonPinnedTopics = $nonPinnedTopics->fetchAll();
                         
                         echo "<h1 class='ForumTitle'>" . $title["sub_cat_name"] . "</h1>";
+                        
+                        $startTopicIndex = (($_SESSION['tpage'] - 1) * 20) + 1;
+                        $endTopicIndex = $_SESSION['tpage'] * 20;
+                        
                     } else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] !== null) {
 
                     }
