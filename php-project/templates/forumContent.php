@@ -55,7 +55,7 @@
                             }
                         }
                     } else if ($_SESSION['page'] == 2) {
-                        $query = "SELECT sub_cat_name FROM sub_categories WHERE sub_id = " . $_SESSION['id'];
+                        $query = "SELECT sub_cat_name FROM sub_categories WHERE sub_cat_id = " . $_SESSION['id'];
                         $titles = $db->query($query);
                         $titles->setFetchMode(PDO::FETCH_ASSOC);
                         $title = $titles->fetch();
