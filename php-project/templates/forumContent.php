@@ -56,8 +56,9 @@
                         }
                     } else if ($_SESSION['page'] == 2) {
                         $query = "SELECT sub_cat_name FROM sub_categories WHERE sub_id = " . $_SESSION['id'];
-                        $title = $db->query($query);
-                        $title->setFetchMode(PDO::FETCH_ASSOC);
+                        $titles = $db->query($query);
+                        $titles->setFetchMode(PDO::FETCH_ASSOC);
+                        $title = $titles->fetch();
                         
                         $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = sub_categories.sub_cat_id WHERE sub_categories.sub_id = " . $_SESSION['id'] . " AND WHERE topics.topic_pinned = 1 ORDER BY topics.topic_date";
                         $pinnedTopics = $db->query($query);
@@ -65,7 +66,7 @@
                         $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = sub_categories.sub_cat_id WHERE sub_categories.sub_id = " . $_SESSION['id'] . " AND WHERE topics.topic_pinned = 0 ORDER BY topics.topic_date";
                         $nonPinnedTopics = $db->query($query);
                         
-                        echo "<h1 class='ForumTitle'>" . ($title->fetch())["sub_cat_name"] . "</h1>";
+                        echo "<h1 class='ForumTitle'>" . $title["sub_cat_name"] . "</h1>";
                     } else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] !== null) {
 
                     }
