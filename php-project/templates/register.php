@@ -8,6 +8,7 @@
                 "<h1>EMAIL: " . $_POST["email"] . "</h1>";
         }
         else {
+            print_r($_POST);
             $result = "<h1>Submission Error</h1>";
         }
         echo $result;
