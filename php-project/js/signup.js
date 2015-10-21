@@ -6,9 +6,9 @@
         $scope.username = "";
         $scope.password = "";
         $scope.email = "";
-        $scope.submissionResult = "";
         
         var register = function() {
+            log.console("INSIDE REGISTER");
             var config = {
                 params: {
                     username: $scope.username,
@@ -19,11 +19,11 @@
             $http.post("register.php", null, config)
                 .success(function (data, status, headers, config)
                 {
-                  $scope.submissionResult = data;
+                  $scope["submissionResult"] = data;
                 })
                 .error(function (data, status, headers, config)
                 {
-                  $scope.submissionResult = "<h1>Server Error!</h1>";
+                  $scope["submissionResult"] = "<h1>Server Error!</h1>";
                 });
             
             $scope.username = "";
