@@ -9,11 +9,9 @@
         
         $scope.register = function() {
             var config = {
-                params: {
-                    username: $scope.username,
-                    password: $scope.password,
-                    email: $scope.email
-                }
+                username: $scope.username,
+                password: $scope.password,
+                email: $scope.email
             };
             
             $http.post("/php-project/templates/register.php", config)
