@@ -1,7 +1,7 @@
 (function() {
     kacologoApp = angular.module('kacologo-forum', []);
     
-    /**************************** Videos Page Controller ****************************/
+    /**************************** Forum Page Controller ****************************/
     kacologoApp.controller('ForumCtrl', function() {
         
     });

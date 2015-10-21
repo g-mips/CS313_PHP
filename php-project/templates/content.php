@@ -19,5 +19,10 @@
     <section ng-if="main.page === 'CONTACT'">
         <contact-content ng-controller="ContactCtrl as contact"></contact-content>
     </section>
+    
+    <section ng-if="main.page === 'SIGNUP'">
+        <signup-content ng-controller="SignupCtrl as signup"></signup-content>
+    </section>
+    
     <hr id="BottomLine"/>
 </section>

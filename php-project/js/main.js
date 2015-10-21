@@ -1,5 +1,6 @@
 (function() {
-    var kacologoApp = angular.module('kacologoApp', ['kacologo-home', 'kacologo-videos', 'kacologo-forum', 'kacologo-contact']);
+    var kacologoApp = angular.module('kacologoApp', ['kacologo-home', 'kacologo-videos', 'kacologo-forum', 'kacologo-contact',
+                                                     'kacologo-signup']);
     
     /**************************** Main Controller ****************************/
     kacologoApp.controller('MainCtrl', function() {
