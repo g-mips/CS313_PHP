@@ -29,25 +29,22 @@
                         if ($exists === false || $exists->rowCount === 1) {
                             $result = "Email is already bound to a Username.";
                         } else {
-                            $statement = $db->prepare("INSERT INTO users (user_date, user_email, user_name, user_pass, user_type) VALUES(?, ?, ?, ?, ?)");
+                            $statement = $db->prepare("INSERT INTO users (user_date, user_email, user_name, user_pass, user_type) VALUES(NOW(), ?, ?, ?, ?)");
                             console.log("STATEMENT PREPARED");
 
                             $pass  = null;
                             $user  = null;
                             $email = null;
-                            $date  = null;
                             $type  = null;
 
-                            $statement->bindParam(1, $date);
-                            $statement->bindParam(2, $email);
-                            $statement->bindParam(3, $user);
-                            $statement->bindParam(4, $pass);
-                            $statement->bindParam(5, $type);
+                            $statement->bindParam(1, $email);
+                            $statement->bindParam(2, $user);
+                            $statement->bindParam(3, $pass);
+                            $statement->bindParam(4, $type);
 
                             $pass  = sha1($_POST["password"]);
                             $user  = $_POST["username"];
                             $email = $_POST["email"];
-                            $date = 'NOW()';
                             $type = 0;
 
                             $statement->exec();
