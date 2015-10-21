@@ -5,10 +5,11 @@
     kacologoApp.controller('SignupCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.username = "";
         $scope.password = "";
+        $scope.cPassword = "";
         $scope.email = "";
         
         $scope.register = function() {
-            var data = "username=" + $scope.username + "&password=" + $scope.password + "&email=" + $scope.email;
+            var data = "username=" + $scope.username + "&password=" + $scope.password + "&cPassword=" + $scope.cPassword + "&email=" + $scope.email;
             
             $http({
                 method: 'POST',
