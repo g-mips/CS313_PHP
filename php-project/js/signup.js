@@ -16,7 +16,7 @@
                 }
             };
             
-            $http.post("/php-project/templates/register.php", null, config)
+            $http.post("/php-project/templates/register.php", config)
                 .success(function (data, status, headers, config)
                 {
                   $scope["submissionResult"] = data;
