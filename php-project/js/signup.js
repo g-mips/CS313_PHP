@@ -7,7 +7,7 @@
         $scope.password = "";
         $scope.email = "";
         
-        var register = function() {
+        $scope.register = function() {
             log.console("INSIDE REGISTER");
             var config = {
                 params: {
