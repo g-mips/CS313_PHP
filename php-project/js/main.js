@@ -19,7 +19,7 @@
     kacologoApp.directive('navigator', function() {
         return {
             restrict: 'E',
-            templateUrl: 'templates/navigator.html'
+            templateUrl: 'templates/navigator.php'
         };
     });
 

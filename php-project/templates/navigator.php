@@ -9,5 +9,13 @@
 		<li ng-class="{CurrentPage:main.isPageSet('VIDEOS')}"><a href="videos.html">VIDEOS</a></li>
 		<li ng-class="{CurrentPage:main.isPageSet('FORUM')}"><a href="forum.php?page=0">FORUM</a></li>
 		<li ng-class="{CurrentPage:main.isPageSet('CONTACT')}"><a href="contact.html">CONTACT</a></li>
-	</ul>
+        <?php
+            if ($_SESSION['logged']) {
+                echo "<li ng-class=\"{CurrentPage:main.isPageSet('PROFILE')}\"><a href=\"profile.php\">PROFILE</a></li>";
+            } else {
+                echo "<li ng-class=\"{CurrentPage:main.isPageSet('SIGNUP')}\"><a href=\"signup.php\">SIGN UP</a></li>";
+                echo "<li ng-class=\"{CurrentPage:main.isPageSet('LOGIN')}\"><a href=\"login.php\">LOG IN</a></li>";
+            }
+        ?>
+    </ul>
 </nav>

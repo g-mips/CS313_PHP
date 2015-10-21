@@ -65,20 +65,26 @@
                         $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = " . $_SESSION['id'] . " AND topics.topic_pinned = 1 ORDER BY topics.topic_date";
                         $pinnedTopics = $db->query($query);
                         $pinnedTopics = $pinnedTopics->fetchAll();
-                        var_dump($pinnedTopics);
 
                         $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = " . $_SESSION['id'] . " AND topics.topic_pinned = 0 ORDER BY topics.topic_date";
                         $nonPinnedTopics = $db->query($query);
                         $nonPinnedTopics = $nonPinnedTopics->fetchAll();
                         
                         echo "<h1 class='ForumTitle'>" . $title["sub_cat_name"] . "</h1>";
-                        
+
                         $startTopicIndex = (($_SESSION['tpage'] - 1) * 20) + 1;
                         $endTopicIndex = $_SESSION['tpage'] * 20;
                         
+                        if (sizeof($pinnedTopics) + sizeof($nonPinnedTopics) < $startTopicIndex) {
+                            // DISPLAY PAGE DOESN'T EXIST
+                        }                        
                     } else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] !== null) {
 
+                    } else {
+                        // DISPLAY PAGE DOESN'T EXIST
                     }
+                } else {
+                    // DISPLAY PAGE DOESN'T EXIST
                 }
             }
         }
