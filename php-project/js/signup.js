@@ -2,13 +2,33 @@
     kacologoApp = angular.module('kacologo-signup', []);
     
     /**************************** Signup Page Controller ****************************/
-    kacologoApp.controller('SignupCtrl', ['$scope', function($scope) {
+    kacologoApp.controller('SignupCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.username = "";
         $scope.password = "";
         $scope.email = "";
+        $scope.submissionResult = "";
         
         var register = function() {
+            var config = {
+                params: {
+                    username: $scope.username,
+                    password: $scope.password,
+                    email: $scope.email
+                }
+            };
+            $http.post("register.php", null, config)
+                .success(function (data, status, headers, config)
+                {
+                  $scope.submissionResult = data;
+                })
+                .error(function (data, status, headers, config)
+                {
+                  $scope.submissionResult = "<h1>Server Error!</h1>";
+                });
             
+            $scope.username = "";
+            $scope.password = "";
+            $scope.email = "";
         };
     }]);
     

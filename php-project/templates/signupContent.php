@@ -4,5 +4,7 @@
     Password: <input ng-model="password" type="password" name="password" required/><br />
     Email: <input ng-model="email" type="email" name="email" required/><br />
 
-    <input type="submit" name="submit" value="Register" />
+    <input type="submit" name="submit" value="Register" ng-disabled="signup.$invalid" />
 </form>
+
+<section>{{submissionResult}}</section>
