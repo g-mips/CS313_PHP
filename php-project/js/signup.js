@@ -15,14 +15,14 @@
                     email: $scope.email
                 }
             };
-            $http.post("register.php", null, config)
+            $http.post("..\templates\register.php", null, config)
                 .success(function (data, status, headers, config)
                 {
                   $scope["submissionResult"] = data;
                 })
                 .error(function (data, status, headers, config)
                 {
-                  $scope["submissionResult"] = "<h1>Server Error!</h1>";
+                  $scope["submissionResult"] = "Server Error!";
                 });
             
             $scope.username = "";
