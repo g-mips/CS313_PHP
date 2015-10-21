@@ -8,14 +8,15 @@
         $scope.email = "";
         
         $scope.register = function() {
-            var config = {
-                username: $scope.username,
-                password: $scope.password,
-                email: $scope.email
+            var data = "username=" . $scope.username . "&password=" . $scope.password . "&email=" . $scope.email;
             };
             
-            $http.post("/php-project/templates/register.php", config)
-                .success(function (data, status, headers, config)
+            $http({
+                method: 'POST',
+                url: '/php-project/templates/register.php',
+                data: data,
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            }).success(function (data, status, headers, config)
                 {
                   $scope["submissionResult"] = data;
                 })
