@@ -9,7 +9,6 @@
         
         $scope.register = function() {
             var data = "username=" . $scope.username . "&password=" . $scope.password . "&email=" . $scope.email;
-            };
             
             $http({
                 method: 'POST',
