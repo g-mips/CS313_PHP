@@ -1,5 +1,5 @@
 (function() {
-    kacologoApp = angular.module('kacologo-videos', ['kacologoApp']);
+    kacologoApp = angular.module('kacologo-videos', []);
     
     /**************************** Videos Page Controller ****************************/
     kacologoApp.controller('VideosCtrl', function() {

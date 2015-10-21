@@ -1,6 +1,7 @@
 <?php
     session_start();
 ?>
+<!DOCTYPE html>
 <html ng-app="kacologoApp">
 	<head>
 		<title>Kacologo</title>
@@ -19,6 +20,7 @@
         <script src="js/videos.js"></script>
         <script src="js/forum.js"></script>
         <script src="js/contact.js"></script>
+        <script src="js/signup.js"></script>
 	</head>
 	<body ng-controller="MainCtrl as main" ng-init="main.page = 'SIGNUP'">
         <navigator></navigator>
