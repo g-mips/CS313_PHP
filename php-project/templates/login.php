@@ -17,13 +17,13 @@
                 $users->setFetchMode(PDO::FETCH_ASSOC);
                 $user = $users->fetch();
                 
-                /*$pass = sha1($_POST["password"]);
+                $pass = sha1($_POST["password"]);
                 if ($pass === $user["user_pass"]) {
                     $_SESSION["logged"] = true;
                     $_SESSION["user"] = $_POST["username"];
-                } else if {
+                } else {
                     $result = "Username or Password is incorrect!";
-                }*/
+                }
             }            
         } else {
             $result = "Submission Error";
