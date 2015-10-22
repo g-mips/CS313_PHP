@@ -4,7 +4,6 @@
         $result = "";
         
         if (isset($_POST["username"]) && isset($_POST["password"])) {
-            $result = "HERE";
             require ('../database/databaseConnect.php');
 
             $db = loadDatabase();
@@ -12,7 +11,7 @@
             
             if ($users === false || $users->rowCount() === 0) {
                 // Yes we know that it's just the username that is incorrect, but we don't want the user to know that.
-                $result = "Username or Password is incorrect!";
+                echo "Username or Password is incorrect!";
             } else {
                 $users->setFetchMode(PDO::FETCH_ASSOC);
                 $user = $users->fetch();
@@ -22,15 +21,13 @@
                     $_SESSION["logged"] = true;
                     $_SESSION["user"] = $_POST["username"];
                     
-                    $result = "SUCCESS";
+                    echo "SUCCESS";
                 } else {
-                    $result = "Username or Password is incorrect!";
+                    echo "Username or Password is incorrect!";
                 }
             }            
         } else {
-            $result = "Submission Error";
+            echo "Submission Error";
         }
-        
-        print $result;
     }
 ?>
