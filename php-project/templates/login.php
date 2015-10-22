@@ -21,6 +21,8 @@
                 if ($pass === $user["user_pass"]) {
                     $_SESSION["logged"] = true;
                     $_SESSION["user"] = $_POST["username"];
+                    
+                    http_redirect("/php-project/php_index.html", null, false, HTTP_REDIRECT_PERM);
                 } else {
                     $result = "Username or Password is incorrect!";
                 }
