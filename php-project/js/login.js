@@ -17,7 +17,8 @@
             }).success(function (data, status, headers, config)
                 {
                     if (data === "SUCCESS") {
-                        window.location = 'http://php-gshawm.rhcloud.com/php-project/php_index.html';
+                        data += " YO";
+                        document.location.href = 'http://php-gshawm.rhcloud.com/php-project/php_index.html';
                     }
                 
                     $scope["submissionResult"] = data;
