@@ -4,7 +4,8 @@
         $result = "";
         
         if (isset($_POST["username"]) && isset($_POST["password"])) {
-            require ('../database/databaseConnect.php');
+            $result = "HERE";
+            /*require ('../database/databaseConnect.php');
 
             $db = loadDatabase();
             $users = $db->query("SELECT * FROM users WHERE user_name = '" . $_POST["username"] . "'");
@@ -23,7 +24,7 @@
                 } else if {
                     $result = "Username or Password is incorrect!";
                 }
-            }            
+            }   */         
         } else {
             $result = "Submission Error";
         }
