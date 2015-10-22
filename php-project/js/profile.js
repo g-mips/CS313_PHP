@@ -2,7 +2,7 @@
     kacologoApp = angular.module('kacologo-profile', []);
     
     /**************************** Profile Page Controller ****************************/
-    kacologoApp.controller('profileCtrl', function() {
+    kacologoApp.controller('ProfileCtrl', function() {
        
     });
     

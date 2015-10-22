@@ -28,5 +28,9 @@
         <login-content ng-controller="LoginCtrl as login"></login-content>
     </section>
     
+    <section ng-if="main.page === 'PROFILE'">
+        <profile-content ng-controller="ProfileCtrl as profile"></profile-content>
+    </section>
+    
     <hr id="BottomLine"/>
 </section>
