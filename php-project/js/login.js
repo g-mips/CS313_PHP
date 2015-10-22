@@ -16,11 +16,11 @@
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function (data, status, headers, config)
                 {
-                    data = data.replaceAll('\r\n ', '');
+                    data = data.replace('\r\n ', '');
                     $log.log("DATA: " + data + " :DATA");
                     if (data == 'SUCCESS') {
                         data += " YO";
-                        document.location.href = 'http://php-gshawm.rhcloud.com/php-project/php_index.html';
+                        window.location = 'http://php-gshawm.rhcloud.com/php-project/php_index.html';
                     }
                 
                     $scope["submissionResult"] = data;
