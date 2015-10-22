@@ -2,7 +2,7 @@
     kacologoApp = angular.module('kacologo-login', []);
     
     /**************************** Login Page Controller ****************************/
-    kacologoApp.controller('LoginCtrl', ['$scope', '$http', '$log' function($scope, $http, $log) {
+    kacologoApp.controller('LoginCtrl', ['$scope', '$http', '$log', function($scope, $http, $log) {
         $scope.username = "";
         $scope.password = "";
         
