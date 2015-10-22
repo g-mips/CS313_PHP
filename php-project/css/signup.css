@@ -21,13 +21,14 @@ label {
 }
 
 input {
-	padding:0.15em;
-	width:10em;
-	border:1px solid #ddd;
-	background:#fafafa;
-	font:bold 0.95em arial, sans-serif;
-	-moz-border-radius:0.4em;
-	-khtml-border-radius:0.4em;
+	padding: 0.15em;
+	width: 100%;/*10em;*/
+    clear: both;
+	border: 1px solid #DDD;
+	background: #FAFAFA;
+	font: bold 0.95em arial, sans-serif;
+	-moz-border-radius: 0.4em;
+	-khtml-border-radius: 0.4em;
 }
 
 input:hover, input:focus {
