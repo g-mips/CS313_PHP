@@ -19,8 +19,8 @@ div {
 
 label {
     display: table-cell;
-    float: left;
-    text-align: right;
+    /*float: left;
+    text-align: right;*/
 }
 
 input {
