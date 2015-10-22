@@ -8,9 +8,9 @@
             require ('../database/databaseConnect.php');
 
             $db = loadDatabase();
-            /*$users = $db->query("SELECT * FROM users WHERE user_name = '" . $_POST["username"] . "'");
+            $users = $db->query("SELECT * FROM users WHERE user_name = '" . $_POST["username"] . "'");
             
-            if ($users === false || $users->rowCount() === 0) {
+            /*if ($users === false || $users->rowCount() === 0) {
                 // Yes we know that it's just the username that is incorrect, but we don't want the user to know that.
                 $result = "Username or Password is incorrect!";
             } else {
