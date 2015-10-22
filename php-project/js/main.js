@@ -36,6 +36,7 @@
     kacologoApp.directive('content', function() {
         return {
             restrict: 'E',
+            replace: true,
             templateUrl: 'templates/content.php'
         };
     });
