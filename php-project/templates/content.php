@@ -4,8 +4,8 @@
 <section id="Content">
     <hr id="TopLine"/>
     
-    <section ng-if="main.page === 'HOME'">
-        <home-content ng-controller="HomeCtrl as home"></home-content>
+    <section ng-if="main.page === 'HOME'" ng-controller="HomeCtrl as home">
+        <home-content></home-content>
     </section>
     
     <section ng-if="main.page === 'VIDEOS'">
