@@ -64,6 +64,7 @@
     kacologoApp.directive('homeContent', function() {
         return {
             restrict: 'E',
+            replace: true,
             templateUrl: 'templates/homeContent.html'
         };
     });
