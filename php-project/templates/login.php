@@ -31,6 +31,6 @@
             $result = "Submission Error";
         }
         
-        echo $result;
+        print $result;
     }
 ?>
