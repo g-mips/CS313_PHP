@@ -1,4 +1,5 @@
-<!--action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>"-->
+<h1 id="Title">Registration</h1>
+
 <form name="signupForm" ng-submit="signupForm.$valid && register()" novalidate>
     <div>
         <label for="UserName">Username </label>

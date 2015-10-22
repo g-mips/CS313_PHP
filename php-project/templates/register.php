@@ -15,16 +15,16 @@
                     $db = loadDatabase();
                     
                     $exists = $db->query("SELECT user_name FROM users WHERE user_name = '" . $_POST["username"] . "' LIMIT 1");
-                    if ($exists === false || $exists->rowCount === 1) {
+                    if ($exists === false || $exists->rowCount() === 1) {
                         $exists = $db->query("SELECT email from users WHERE email = '" . $_POST["email"] . "' LIMIT 1");
-                        if ($exists === false || $exists->num_rows === 1) {
+                        if ($exists === false || $exists->rowCount() === 1) {
                             $result = "Username and Email already exist!";
                         } else {
                             $result = "Username already exists!";
                         }
                     } else {
                         $exists = $db->query("SELECT user_email FROM users WHERE user_email = '" . $_POST["email"] . "' LIMIT 1");
-                        if ($exists === false || $exists->rowCount === 1) {
+                        if ($exists === false || $exists->rowCount() === 1) {
                             $result = "Email is already bound to a Username.";
                         } else {
                             $statement = $db->prepare("INSERT INTO users (user_date, user_email, user_name, user_pass, user_type) VALUES(NOW(), ?, ?, ?, ?)");
