@@ -13,3 +13,7 @@
         <input id="Submit" type="submit" name="submit" value="Login" ng-disabled="loginForm.$invalid" />
     </div>
 </form>
+
+<section>
+    <h1 id="Results">{{submissionResult}}</h1>
+</section>
