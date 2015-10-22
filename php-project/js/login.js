@@ -37,6 +37,7 @@
     kacologoApp.directive('loginContent', function() {
         return {
             restrict: 'E',
+            replace: true,
             templateUrl: 'templates/loginContent.php'
         };
     });

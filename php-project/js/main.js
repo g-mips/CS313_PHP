@@ -5,6 +5,17 @@
     /**************************** Main Controller ****************************/
     kacologoApp.controller('MainCtrl', function() {
         this.page = null;
+        $scope.pageTitle = "";
+        $scope.pageCSS = "";
+        
+        this.setPage = function(pageToSet) {
+            this.page = pageToSet;
+            
+            if (this.page === 'HOME') {
+                $scope.pageTitle = "Kacologo";
+                $scope.pageCSS = "home";
+            } else if (this.page === '
+        };
         
         /**
          * isPageSet
@@ -16,10 +27,20 @@
         };
     });    
     
+    /**************************** Header Directive ****************************/
+    kacologoApp.directive('header', function() {
+        return {
+            restrict: 'E',
+            replace: true,
+            templateUrl: 'templates/header.html'
+        };
+    });
+    
     /**************************** Navigator Directive ****************************/
     kacologoApp.directive('navigator', function() {
         return {
             restrict: 'E',
+            replace: true,
             templateUrl: 'templates/navigator.php'
         };
     });
@@ -28,6 +49,7 @@
     kacologoApp.directive('footerLinks', function() {
         return {
             restrict: 'E',
+            replace: true,
             templateUrl: 'templates/footerLinks.html'
         }; 
     });

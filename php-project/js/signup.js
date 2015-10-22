@@ -34,6 +34,7 @@
     kacologoApp.directive('signupContent', function() {
         return {
             restrict: 'E',
+            replace: true,
             templateUrl: 'templates/signupContent.php'
         };
     });

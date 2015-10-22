@@ -9,6 +9,7 @@
     kacologoApp.directive('videosContent', function() {
         return {
             restrict: 'E',
+            replace: true,
             templateUrl: 'templates/videosContent.html'
         };
     });

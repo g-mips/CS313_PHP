@@ -8,28 +8,28 @@
         <home-content></home-content>
     </section>
     
-    <section ng-if="main.page === 'VIDEOS'">
-        <videos-content ng-controller="VideosCtrl as videos"></videos-content>
+    <section ng-if="main.page === 'VIDEOS'" ng-controller="VideosCtrl as videos">
+        <videos-content></videos-content>
     </section>
     
-    <section ng-if="main.page === 'FORUM'">
-        <forum-content ng-controller="ForumCtrl as forum"></forum-content>
+    <section ng-if="main.page === 'FORUM'" ng-controller="ForumCtrl as forum">
+        <forum-content></forum-content>
     </section>
     
-    <section ng-if="main.page === 'CONTACT'">
-        <contact-content ng-controller="ContactCtrl as contact"></contact-content>
+    <section ng-if="main.page === 'CONTACT'" ng-controller="ContactCtrl as contact">
+        <contact-content></contact-content>
     </section>
     
-    <section ng-if="main.page === 'SIGNUP'">
-        <signup-content ng-controller="SignupCtrl as signup"></signup-content>
+    <section ng-if="main.page === 'SIGNUP'" ng-controller="SignupCtrl as signup">
+        <signup-content></signup-content>
     </section>
     
-    <section ng-if="main.page === 'LOGIN'">
-        <login-content ng-controller="LoginCtrl as login"></login-content>
+    <section ng-if="main.page === 'LOGIN'" ng-controller="LoginCtrl as login">
+        <login-content></login-content>
     </section>
     
-    <section ng-if="main.page === 'PROFILE'">
-        <profile-content ng-controller="ProfileCtrl as profile"></profile-content>
+    <section ng-if="main.page === 'PROFILE'" ng-controller="ProfileCtrl as profile">
+        <profile-content></profile-content>
     </section>
     
     <hr id="BottomLine"/>

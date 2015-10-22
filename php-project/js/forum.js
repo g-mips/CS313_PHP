@@ -9,6 +9,7 @@
     kacologoApp.directive('forumContent', function() {
         return {
             restrict: 'E',
+            replace: true,
             templateUrl: 'templates/forumContent.php'
         };
     });

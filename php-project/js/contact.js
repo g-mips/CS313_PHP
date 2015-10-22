@@ -9,6 +9,7 @@
     kacologoApp.directive('contactContent', function() {
         return {
             restrict: 'E',
+            replace: true,
             templateUrl: 'templates/contactContent.html'
         };
     });

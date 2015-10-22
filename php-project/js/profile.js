@@ -9,6 +9,7 @@
     kacologoApp.directive('profileContent', function() {
         return {
             restrict: 'E',
+            replace: true,
             templateUrl: 'templates/profileContent.php'
         };
     });
