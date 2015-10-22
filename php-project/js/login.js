@@ -16,7 +16,7 @@
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function (data, status, headers, config)
                 {
-                    $log.log("DATA:" + data);
+                    $log.log("DATA:" + typeof(data));
                     if (data == "\nSUCCESS") {
                         data += " YO";
                         document.location.href = 'http://php-gshawm.rhcloud.com/php-project/php_index.html';
