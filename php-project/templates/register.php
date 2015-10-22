@@ -16,7 +16,7 @@
                     
                     $exists = $db->query("SELECT user_name FROM users WHERE user_name = '" . $_POST["username"] . "' LIMIT 1");
                     if ($exists === false || $exists->rowCount() === 1) {
-                        $exists = $db->query("SELECT email from users WHERE email = '" . $_POST["email"] . "' LIMIT 1");
+                        $exists = $db->query("SELECT user_email from users WHERE user_email = '" . $_POST["email"] . "' LIMIT 1");
                         if ($exists === false || $exists->rowCount() === 1) {
                             $result = "Username and Email already exist!";
                         } else {

@@ -1,4 +1,4 @@
-<h1 id="Title">Registration</h1>
+<h1 class="Title">Registration</h1>
 
 <form name="signupForm" ng-submit="signupForm.$valid && register()" novalidate>
     <div>
