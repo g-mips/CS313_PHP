@@ -10,7 +10,7 @@
             } else if ($_POST["password"] !== $_POST["cPassword"]) {
                 $result = "Passwords do not match.";
             } else {
-                require ('/php-project/database/databaseConnect.php');
+                require ('../database/databaseConnect.php');
                 try {
                     console.log("LOADING DB");
                     $db = loadDatabase();
