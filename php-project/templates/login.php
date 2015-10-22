@@ -22,8 +22,7 @@
                     $_SESSION["logged"] = true;
                     $_SESSION["user"] = $_POST["username"];
                     
-                    header('Location: http://php-gshawm.rhcloud.com/php-project/php_index.html');
-                    exit();
+                    $result = "SUCCESS";
                 } else {
                     $result = "Username or Password is incorrect!";
                 }

@@ -16,11 +16,15 @@
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function (data, status, headers, config)
                 {
-                  $scope["submissionResult"] = data;
+                    if (data === "SUCCESS") {
+                        window.location = 'http://php-gshawm.rhcloud.com/php-project/php_index.html';
+                    }
+                
+                    $scope["submissionResult"] = data;
                 })
                 .error(function (data, status, headers, config)
                 {
-                  $scope["submissionResult"] = "Server Error!";
+                    $scope["submissionResult"] = "Server Error!";
                 });
             
             $scope.username = "";
