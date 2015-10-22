@@ -22,7 +22,8 @@
                     $_SESSION["logged"] = true;
                     $_SESSION["user"] = $_POST["username"];
                     
-                    /*http_redirect("/php-project/php_index.html", null, false, HTTP_REDIRECT_PERM);*/
+                    header('Location: http://php-gshawm.rhcloud.com/php-project/php_index.html');
+                    exit();
                 } else {
                     $result = "Username or Password is incorrect!";
                 }
