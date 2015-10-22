@@ -27,9 +27,7 @@ label {
 
 input {
     display: table-cell;
-	padding: 10px;/*0.15em;*/
-	/*width: 100%;*//*10em;*/
-    /*clear: both;*/
+	padding: 10px;
 	border: 1px solid #DDD;
 	background: #FAFAFA;
 	font: bold 0.95em arial, sans-serif;
@@ -38,11 +36,16 @@ input {
 }
 
 input:hover, input:focus {
-	border-color:#c5c5c5;
-	background:#f6f6f6;
+	border-color: #C5C5C5;
+	background: #F6F6F6;
 } 
 
-#Results {
+input#Submit {
+    text-align: center;
+    padding: 10px;
+}
+
+h1#Results {
     color: #5F9EA0;
     padding: 10px;
 }

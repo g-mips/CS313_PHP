@@ -18,7 +18,7 @@
         <input ng-model="email" type="email" name="email" required/><br />
     </div>
     <div>
-        <input type="submit" name="submit" value="Register" ng-disabled="signupForm.$invalid" />
+        <input id="Submit" type="submit" name="submit" value="Register" ng-disabled="signupForm.$invalid" />
     </div>
 </form>
 
