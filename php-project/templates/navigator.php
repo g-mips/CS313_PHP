@@ -12,6 +12,7 @@
         <?php
             if ($_SESSION['logged']) {
                 echo "<li ng-class=\"{CurrentPage:main.isPageSet('PROFILE')}\"><a href=\"profile.php\">PROFILE</a></li>";
+                echo "<li ng-class=\"{CurrentPage:main.isPageSet('SIGNOUT')}\"><a href=\"signout.php\">SIGN OUT</a></li>";
             } else {
                 echo "<li ng-class=\"{CurrentPage:main.isPageSet('SIGNUP')}\"><a href=\"signup.php\">SIGN UP</a></li>";
                 echo "<li ng-class=\"{CurrentPage:main.isPageSet('LOGIN')}\"><a href=\"login.php\">LOG IN</a></li>";

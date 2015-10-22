@@ -24,5 +24,9 @@
         <signup-content ng-controller="SignupCtrl as signup"></signup-content>
     </section>
     
+    <section ng-if="main.page === 'LOGIN'">
+        <login-content ng-controller="LoginCtrl as login"></login-content>
+    </section>
+    
     <hr id="BottomLine"/>
 </section>
