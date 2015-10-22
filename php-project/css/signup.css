@@ -15,17 +15,18 @@ form {
 div {
     display: table-row;
     padding: 10px;
+    text-align: center;
 }
 
 label {
     display: table-cell;
-    /*float: left;
-    text-align: right;*/
+    text-align: right;
+    padding: 10px;
 }
 
 input {
     display: table-cell;
-	padding: 0.15em;
+	padding: 10px;/*0.15em;*/
 	/*width: 100%;*//*10em;*/
     /*clear: both;*/
 	border: 1px solid #DDD;
