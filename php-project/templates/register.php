@@ -39,7 +39,7 @@
                             $statement->bindParam(3, $pass);
                             $statement->bindParam(4, $type);
 
-                            $pass  = password_hash($_POST["password"], PASSWORD_BCRYPT);
+                            $pass  = sha1($_POST["password"]);
                             $user  = $_POST["username"];
                             $email = $_POST["email"];
                             $type = 0;

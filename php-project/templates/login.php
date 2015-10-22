@@ -15,7 +15,8 @@
                 $users->setFetchMode(PDO::FETCH_ASSOC);
                 $user = $users->fetch();
                 
-                if (password_verify($_POST["password"], $user["user_password"])) {
+                $pass = sha1($_POST["password"]);
+                if ($pass === $user["user_password"]) {
                     $_SESSION["logged"] = true;
                     $_SESSION["user"] = $_POST["username"];
                 } else if {
