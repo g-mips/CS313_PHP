@@ -2,7 +2,7 @@
     kacologoApp = angular.module('kacologo-login', []);
     
     /**************************** Login Page Controller ****************************/
-    kacologoApp.controller('LoginCtrl', ['$scope', '$http', function($scope, $http) {
+    kacologoApp.controller('LoginCtrl', ['$scope', '$http', '$log' function($scope, $http, $log) {
         $scope.username = "";
         $scope.password = "";
         
@@ -16,6 +16,7 @@
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function (data, status, headers, config)
                 {
+                    $log.log("DATA:" + data);
                     if (data == "SUCCESS") {
                         data += " YO";
                         document.location.href = 'http://php-gshawm.rhcloud.com/php-project/php_index.html';
