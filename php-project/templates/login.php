@@ -6,7 +6,7 @@
             require ('../database/databaseConnect.php');
 
             $db = loadDatabase();
-            $users = $db->query("SELECT * FROM users WHERE user_name == '" . $_POST["username"] . "'");
+            $users = $db->query("SELECT * FROM users WHERE user_name = '" . $_POST["username"] . "'");
             
             if ($users === false || $users->rowCount() === 0) {
                 // Yes we know that it's just the username that is incorrect, but we don't want the user to know that.
@@ -16,7 +16,7 @@
                 $user = $users->fetch();
                 
                 $pass = sha1($_POST["password"]);
-                if ($pass === $user["user_password"]) {
+                if ($pass === $user["user_pass"]) {
                     $_SESSION["logged"] = true;
                     $_SESSION["user"] = $_POST["username"];
                 } else if {
