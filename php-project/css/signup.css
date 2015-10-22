@@ -1,14 +1,23 @@
-.ng-invalid.ng-dirty {
+input.ng-invalid.ng-dirty {
     border-color: #FA787E;
 }
 
-.ng-valid.ng-dirty {
+input.ng-valid.ng-dirty {
     border-color: #78FA89;
 }
 
 form {
     padding:1em;
 	border:1px solid #eee;
+}
+
+div {
+    padding: 10px;
+}
+
+label {
+    float: left;
+    text-align: right;
 }
 
 input {
