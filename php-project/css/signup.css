@@ -7,23 +7,27 @@ input.ng-valid.ng-dirty {
 }
 
 form {
+    display: table;
     padding:1em;
 	border:1px solid #eee;
 }
 
 div {
+    display: table-row;
     padding: 10px;
 }
 
 label {
+    display: table-cell;
     float: left;
     text-align: right;
 }
 
 input {
+    display: table-cell;
 	padding: 0.15em;
-	width: 100%;/*10em;*/
-    clear: both;
+	/*width: 100%;*//*10em;*/
+    /*clear: both;*/
 	border: 1px solid #DDD;
 	background: #FAFAFA;
 	font: bold 0.95em arial, sans-serif;
