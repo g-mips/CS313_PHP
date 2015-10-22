@@ -47,7 +47,7 @@
                             $email = $_POST["email"];
                             $type = 0;
 
-                            $statement->exec();
+                            $statement->execute();
 
                             $result = "User Registered!";
                         }
