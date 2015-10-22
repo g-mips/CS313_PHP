@@ -30,7 +30,7 @@
     /**************************** Header Directive ****************************/
     kacologoApp.directive('header', function() {
         return {
-            restrict: 'E',
+            restrict: 'A',
             replace: true,
             templateUrl: 'templates/header.html'
         };

@@ -3,7 +3,7 @@
 ?>
 <!DOCTYPE html>
 <html ng-app="kacologoApp" ng-controller="MainCtrl as main" ng-init="setPage('HOME')">
-	<header ng-controller="HomeCtrl as home"></header>
+	<head header></head>
 	<body>
         <navigator></navigator>
         <content></content>
