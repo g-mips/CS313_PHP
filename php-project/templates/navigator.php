@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<?php session_start(); ?>
 <nav id="NavBar">
     <ul>
 		<li>
@@ -6,10 +6,10 @@
 				<img id="HeaderImage" src="images/controller-alone.png" />
 			</a>
 		</li>
-		<li ng-class="{CurrentPage:main.isPageSet('HOME')}"><a href="php_index.html">HOME</a></li>
-		<li ng-class="{CurrentPage:main.isPageSet('VIDEOS')}"><a href="videos.html">VIDEOS</a></li>
+		<li ng-class="{CurrentPage:main.isPageSet('HOME')}"><a href="php_index.php">HOME</a></li>
+		<li ng-class="{CurrentPage:main.isPageSet('VIDEOS')}"><a href="videos.php">VIDEOS</a></li>
 		<li ng-class="{CurrentPage:main.isPageSet('FORUM')}"><a href="forum.php?page=0">FORUM</a></li>
-		<li ng-class="{CurrentPage:main.isPageSet('CONTACT')}"><a href="contact.html">CONTACT</a></li>
+		<li ng-class="{CurrentPage:main.isPageSet('CONTACT')}"><a href="contact.php">CONTACT</a></li>
         <?php
             if ($_SESSION['logged']) {
                 echo "<li ng-class=\"{CurrentPage:main.isPageSet('PROFILE')}\"><a href=\"profile.php\">PROFILE</a></li>";

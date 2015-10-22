@@ -19,7 +19,7 @@
                     data = data.replace('\r', '').replace('\n', '').trim();
                 
                     if (data == 'SUCCESS') {
-                        window.location = 'http://php-gshawm.rhcloud.com/php-project/php_index.html';
+                        window.location = 'http://php-gshawm.rhcloud.com/php-project/php_index.php';
                     } else {
                         $scope["submissionResult"] = data;
                     }

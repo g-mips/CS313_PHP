@@ -22,6 +22,7 @@
         <script src="js/contact.js"></script>
         <script src="js/signup.js"></script>
         <script src="js/login.js"></script>
+        <script src="js/profile.js"></script>
 	</head>
 	<body ng-controller="MainCtrl as main" ng-init="main.page = 'SIGNUP'">
         <navigator></navigator>

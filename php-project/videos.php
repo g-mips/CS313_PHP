@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html ng-app="kacologoApp">
 	<head>
@@ -5,7 +8,7 @@
 		<link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/nav.css" />
         <link rel="stylesheet" href="css/footer.css" />
-        <link rel="stylesheet" href="css/home.css" />
+		<link rel="stylesheet" href="css/videos.css" />
         
 		<link rel="shortcut icon" href="images/controller-small.png">
         
@@ -17,10 +20,10 @@
         <script src="js/videos.js"></script>
         <script src="js/forum.js"></script>
         <script src="js/contact.js"></script>
-        <script src="js/signup.js"></script>
         <script src="js/login.js"></script>
+        <script src="js/profile.js"></script>
 	</head>
-	<body ng-controller="MainCtrl as main" ng-init="main.page = 'HOME'">
+	<body ng-controller="MainCtrl as main" ng-init="main.page = 'VIDEOS'">
         <navigator></navigator>
         <content></content>
         <footer-links></footer-links>
