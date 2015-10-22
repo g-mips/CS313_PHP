@@ -20,6 +20,7 @@
         <script src="js/videos.js"></script>
         <script src="js/forum.js"></script>
         <script src="js/contact.js"></script>
+        <script src="js/signup.js"></script>
         <script src="js/login.js"></script>
         <script src="js/profile.js"></script>
 	</head>

@@ -6,6 +6,6 @@
         $_SESSION["user"] = null;
     }
 
-    header('Location: http://php-gshawm.rhcloud.com/php-project/php_index.html');
+    header('Location: http://php-gshawm.rhcloud.com/php-project/php_index.php');
     exit();
 ?>
