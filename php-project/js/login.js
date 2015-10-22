@@ -16,6 +16,7 @@
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function (data, status, headers, config)
                 {
+                    data = data.replaceAll('\r\n ', '');
                     $log.log("DATA: " + data + " :DATA");
                     if (data == 'SUCCESS') {
                         data += " YO";
