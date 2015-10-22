@@ -39,7 +39,9 @@
                             $statement->bindParam(3, $pass);
                             $statement->bindParam(4, $type);
 
-                            $pass  = sha1($_POST["password"]);
+                            require ('../database/password.php');
+                            
+                            $pass  = password_hash($_POST["password"], PASSWORD_DEFAULT);
                             $user  = $_POST["username"];
                             $email = $_POST["email"];
                             $type = 0;

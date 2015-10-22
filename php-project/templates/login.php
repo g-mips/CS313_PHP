@@ -16,8 +16,9 @@
                 $users->setFetchMode(PDO::FETCH_ASSOC);
                 $user = $users->fetch();
                 
-                $pass = sha1($_POST["password"]);
-                if ($pass === $user["user_pass"]) {
+                require ('../database/password.php');
+                
+                if (password_verify($_POST["password"], $user["user_pass"])) {
                     $_SESSION["logged"] = true;
                     $_SESSION["user"] = $_POST["username"];
                     
