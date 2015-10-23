@@ -4,8 +4,8 @@
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $result = "HEY";
 
-        /*if (isset($_POST["oPassword"]) && isset($_POST["nPassword"]) && isset($_POST["rnPassword"]) && isset($_POST["username"])) {
-            if ($_POST["username"] === $_SESSION["user"]) {
+        if (isset($_POST["oPassword"]) && isset($_POST["nPassword"]) && isset($_POST["rnPassword"]) && isset($_POST["username"])) {
+        /*    if ($_POST["username"] === $_SESSION["user"]) {
                 require ('../database/databaseConnect.php');
                 require ('../database/password.php');
                 $db = loadDatabase();
@@ -37,10 +37,10 @@
                 $result = "Username is different from who is logged in.";
             }
             
-            
+         */   
         } else {
             $result = "Submission Error";
-        }*/
+        }
 
         echo $result;
     }
