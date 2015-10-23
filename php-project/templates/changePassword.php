@@ -5,11 +5,12 @@
         $result = "HEY";
 
         if (isset($_POST["oPassword"]) && isset($_POST["nPassword"]) && isset($_POST["rnPassword"]) && isset($_POST["username"])) {
-        /*    if ($_POST["username"] === $_SESSION["user"]) {
+            if ($_POST["username"] === $_SESSION["user"]) {
                 require ('../database/databaseConnect.php');
                 require ('../database/password.php');
                 $db = loadDatabase();
-                
+                $result = "DB LOADED";
+        /*        
                 $user = $db->query("SELECT * FROM users WHERE user_name = '" . $_SESSION["user"] . "' LIMIT 1");
 
                 if ($user === false || $user->rowCount() === 0) {
@@ -32,12 +33,12 @@
                     } else {
                         $result = "Incorrect password!";
                     }
-                }
+                }*/
             } else {
                 $result = "Username is different from who is logged in.";
             }
             
-         */   
+            
         } else {
             $result = "Submission Error";
         }
