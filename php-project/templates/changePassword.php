@@ -2,7 +2,7 @@
     session_start();
     require ('../database/password.php');
 
-    $pass = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
+    password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $result = "";
 
