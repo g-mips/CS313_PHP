@@ -2,9 +2,9 @@
     session_start();
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $result = "";
+        $result = "HEY";
 
-        if (isset($_POST["oPassword"]) && isset($_POST["nPassword"]) && isset($_POST["rnPassword"]) && isset($_POST["username"])) {
+        /*if (isset($_POST["oPassword"]) && isset($_POST["nPassword"]) && isset($_POST["rnPassword"]) && isset($_POST["username"])) {
             if ($_POST["username"] === $_SESSION["user"]) {
                 require ('../database/databaseConnect.php');
                 require ('../database/password.php');
@@ -40,7 +40,7 @@
             
         } else {
             $result = "Submission Error";
-        }
+        }*/
 
         echo $result;
     }
