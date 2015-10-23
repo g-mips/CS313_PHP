@@ -42,6 +42,11 @@
                             }
                         ?>
                     </p>
+                    <p>Date of account creation:
+                        <?php
+                            echo $user["user_date"];
+                        ?>
+                    </p>
                 </div>
                 <div ng-show="profile.isTabSet(2)">
                     <p>This is the text for tab 2.</p>
