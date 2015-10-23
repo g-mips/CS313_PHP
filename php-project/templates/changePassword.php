@@ -2,7 +2,7 @@
     session_start();
     require ('../database/password.php');
 
-    //echo password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
+    $pass = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $result = "";
 
@@ -33,7 +33,7 @@
                         } else {
                             $result = $_POST["nPassword"];
                             
-                            $password = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
+                            //$password = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
                             //$db->exec("UPDATE users SET user_pass='" . $password . "' WHERE user_id = " . $user["user_id"]);
 
                             $result = "Password changed!"
