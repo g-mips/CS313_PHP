@@ -19,7 +19,7 @@
     margin-left: 6px;
     line-height: 24px;
     padding-left: 10px;
-    /*background: #f6f6f6;*/
+    background: #F6F6F6;
     z-index: 9999;
     border: 1px solid #ccc;
     border-bottom: 0px;
@@ -43,7 +43,7 @@
 #Tabs ul li a.active {
     color: #555;
     cursor: default;
-    background-color: #fff;
+    background-color: #337ab7;
     border: 1px solid #ddd;
     border-bottom-color: transparent;
 }
