@@ -83,6 +83,7 @@
                                 <input id="Submit" type="submit" name="submit" value="Change Password" ng-disabled="changePassword.$invalid" />
                             </div>
                         </form>
+                        <h1 id="Results">{{submissionResults}}</h1>
                     </p>
                 </div>
             </div>

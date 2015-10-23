@@ -19,7 +19,7 @@
             restrict: 'E',
             replace: true,
             templateUrl: 'templates/profileContent.php',
-            controller: function($http) {
+            controller: function($http, $scope) {
                 this.tab = 1;
                 this.nPassword = "";
                 this.oPassword = "";
@@ -43,11 +43,11 @@
                         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                     }).success(function (data, status, headers, config)
                         {
-
+                            $scope["submissionResults"] = data;
                         })
                         .error(function (data, status, headers, config)
                         {
-
+                            $scope["submissionResults"] = data;
                         });
                     
                     this.nPassword = "";
