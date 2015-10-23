@@ -40,7 +40,7 @@
     background-color: #EEE;
 }
 
-#Tabs ul li a.active {
+#Tabs ul li li.active {
     color: #555;
     cursor: default;
     background-color: #337ab7;
