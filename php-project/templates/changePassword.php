@@ -16,9 +16,9 @@
                 if ($user === false || $user->rowCount() === 0) {
                     $result = "User doesn't not exist.";
                 } else {
-        /*            $user->setFetchMode(PDO::FETCH_ASSOC);
+                    $user->setFetchMode(PDO::FETCH_ASSOC);
                     $user = $user->fetch();
-                    
+        /*            
                     if (password_verify($_POST["oPassword"], $user["user_pass"])) {
                         if ($_POST["nPassword"] !== $_POST["rnPassword"]) {
                             $result = "Passwords don't match!";
