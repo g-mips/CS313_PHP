@@ -52,10 +52,12 @@
     overflow:hidden;
     line-height:19px;
     position: relative;
-    top: 20px;
-    border: 2px solid black;
+    margin-left: 6px;
+    margin-right: 6px;
+    /*top: 20px;*/
+    border: 1px solid #CCCCCC;
     /*z-index: 5;*/
-    height: 150px;
+    /*height: 150px;*/
     overflow: hidden;
 }
 
