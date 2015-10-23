@@ -36,7 +36,16 @@
 }
 
 #Tabs ul li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    background-color: #EEE;
+}
+
+#Tabs ul li a.active {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
 }
 
 #Tabs #Content_Area {
