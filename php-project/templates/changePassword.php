@@ -2,14 +2,14 @@
     session_start();
     require ('../database/password.php');
 
-    echo password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
-    /*if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $result = "HEY";
+    //echo password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $result = "";
 
         if (isset($_POST["oPassword"]) && isset($_POST["nPassword"]) && isset($_POST["rnPassword"]) && isset($_POST["username"])) {
             if ($_POST["username"] === $_SESSION["user"]) {
-                require ('../database/password.php');
-                $pass = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
+                //require ('../database/password.php');
+                //$pass = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
 
                 require ('../database/databaseConnect.php');
                 
@@ -33,7 +33,7 @@
                         } else {
                             $result = $_POST["nPassword"];
                             
-                            //$password = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
+                            $password = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
                             //$db->exec("UPDATE users SET user_pass='" . $password . "' WHERE user_id = " . $user["user_id"]);
 
                             $result = "Password changed!"
@@ -49,8 +49,8 @@
             
         } else {
             $result = "Submission Error";
-        }*/
+        }
 
-        //echo $result;
-    //}
+        echo $result;
+    }
 ?>
