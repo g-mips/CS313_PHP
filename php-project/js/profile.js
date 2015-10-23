@@ -22,11 +22,11 @@
             controller: function($scope) {
                 this.tab = 1;
 
-                $scope.isTabSet = function(checkTab) {
+                this.isTabSet = function(checkTab) {
                    return this.tab === checkTab;
                 }
 
-                $scope.setTab = function(tabToSet) {
+                this.setTab = function(tabToSet) {
                     this.tab = tabToSet;
                 }
             },
