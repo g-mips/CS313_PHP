@@ -28,7 +28,7 @@
                             $result = "Old and new passwords cannot be the same.";
                         } else {
                             $password = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
-                            //$db->exec("UPDATE users SET user_pass='" . $password . "' WHERE user_id = " . $user["user_id"]);
+                            $db->exec("UPDATE users SET user_pass='" . $password . "' WHERE user_id = " . $user["user_id"]);
 
                             $result = "Password changed!";
                         }
