@@ -27,11 +27,11 @@
                             $result = "Old and new passwords cannot be the same.";
                         } else {
                             $result = $_POST["nPassword"];
-//                            $pass     = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
+                            $pass = password_hash($_POST["nPassword"], 1);
                             //$password = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
                             //$db->exec("UPDATE users SET user_pass='" . $password . "' WHERE user_id = " . $user["user_id"]);
 
-//                            $result = "Password changed!"
+                            $result = "Password changed!"
                         }
                     } else {
                         $result = "Incorrect password!";
