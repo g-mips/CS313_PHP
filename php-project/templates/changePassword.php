@@ -25,8 +25,8 @@
                     $user = $user->fetch();
                     $result = "USER FETCHED";
                     
-                    /*if (password_verify($_POST["oPassword"], $user["user_pass"])) {
-                        if ($_POST["nPassword"] !== $_POST["rnPassword"]) {
+                    if (password_verify($_POST["oPassword"], $user["user_pass"])) {
+                    /*    if ($_POST["nPassword"] !== $_POST["rnPassword"]) {
                             $result = "Passwords don't match!";
                         } else if ($_POST["nPassword"] === $_POST["oPassword"]) {
                             $result = "Old and new passwords cannot be the same.";
@@ -37,10 +37,10 @@
                             //$db->exec("UPDATE users SET user_pass='" . $password . "' WHERE user_id = " . $user["user_id"]);
 
                             $result = "Password changed!"
-                        }
+                        }*/
                     } else {
                         $result = "Incorrect password!";
-                    }*/
+                    }
                 }
             } else {
                 $result = "Username is different from who is logged in.";
