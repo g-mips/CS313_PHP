@@ -20,7 +20,7 @@
     line-height: 24px;
     padding-left: 10px;
     background: #F6F6F6;
-    z-index: 9999;
+    /*z-index: 9999;*/
     border: 1px solid #ccc;
     border-bottom: 0px;
 
@@ -40,10 +40,10 @@
     background-color: #EEE;
 }
 
-#Tabs ul li.active {
+#Tabs ul li a.active {
     color: #555;
     cursor: default;
-    background-color: #337ab7;
+    background-color: #337AB7;
     border: 1px solid #ddd;
     border-bottom-color: transparent;
 }
@@ -55,7 +55,7 @@
     line-height:19px;
     position: relative;
     top: 20px;
-    z-index: 5;
+    /*z-index: 5;*/
     height: 150px;
     overflow: hidden;
 }

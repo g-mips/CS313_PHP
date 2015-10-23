@@ -25,9 +25,9 @@
         <div></div>
         <div id="Tabs">
             <ul class="nav nav-pills">
-                <li ng-class="{ active:isTabSet(1) }"><a href ng-click="setTab(1)">Info</a></li>
-                <li ng-class="{ active:isTabSet(2) }"><a href ng-click="setTab(2)">Forum</a></li>
-                <li ng-class="{ active:isTabSet(3) }"><a href ng-click="setTab(3)">Change Password</a></li>
+                <li><a ng-class="{ active:isTabSet(1) }" href ng-click="setTab(1)">Info</a></li>
+                <li><a ng-class="{ active:isTabSet(2) }" href ng-click="setTab(2)">Forum</a></li>
+                <li><a ng-class="{ active:isTabSet(3) }" href ng-click="setTab(3)">Change Password</a></li>
             </ul>
             <div id="Content_Area">
                 <div ng-show="isTabSet(1)">
