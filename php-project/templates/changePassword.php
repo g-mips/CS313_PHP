@@ -1,7 +1,9 @@
 <?php
     session_start();
 
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    require ('../database/password.php');
+    echo password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
+    /*if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $result = "HEY";
 
         if (isset($_POST["oPassword"]) && isset($_POST["nPassword"]) && isset($_POST["rnPassword"]) && isset($_POST["username"])) {
@@ -47,8 +49,8 @@
             
         } else {
             $result = "Submission Error";
-        }
+        }*/
 
-        echo $result;
+        //echo $result;
     }
 ?>
