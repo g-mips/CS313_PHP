@@ -23,6 +23,22 @@
     
     <div>
         <div></div>
-        <div></div>
+        <div>
+            <ul class="nav nav-pills">
+                <li ng-class="{ active:isTabSet(1) }"><a href ng-click="setTab(1)">Info</a></li>
+                <li ng-class="{ active:isTabSet(2) }"><a href ng-click="setTab(2)">Forum</a></li>
+                <li ng-class="{ active:isTabSet(3) }"><a href ng-click="setTab(3)">Change Password</a></li>
+            </ul>
+            <div ng-show="isTabSet(1)">
+                <p>This is the text for tab 1</p>
+            </div>
+            <div ng-show="isTabSet(2)">
+                <p>This is the text for tab 2.</p>
+            </div>
+            <div ng-show="isTabSet(3)">
+                <p>This is the text for tab 2.</p>
+            </div>
+
+        </div>
     </div>
 </section>
