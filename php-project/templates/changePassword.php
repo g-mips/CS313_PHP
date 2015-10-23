@@ -6,9 +6,11 @@
 
         if (isset($_POST["oPassword"]) && isset($_POST["nPassword"]) && isset($_POST["rnPassword"]) && isset($_POST["username"])) {
             if ($_POST["username"] === $_SESSION["user"]) {
-                require ('../database/databaseConnect.php');
                 require ('../database/password.php');
                 $pass = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
+
+                require ('../database/databaseConnect.php');
+                
                 $db = loadDatabase();
                 $result = "DB LOADED";
                 
