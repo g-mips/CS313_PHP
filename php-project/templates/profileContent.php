@@ -6,7 +6,7 @@
         $db = loadDatabase();
         $user = $db->query("SELECT * FROM users WHERE user_name = '" . $_SESSION['user'] . "' LIMIT 1");
 
-        if ($user !== false && $user->rowCount === 1) {
+        if ($user !== false && $user->rowCount() === 1) {
             $user->setFetchMode(PDO::FETCH_ASSOC);
             $user = $user->fetch();
         } else {
