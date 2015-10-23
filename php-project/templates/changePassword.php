@@ -25,7 +25,7 @@
                     $user = $user->fetch();
                     $result = "USER FETCHED";
                     
-                    if (password_verify($_POST["oPassword"], $user["user_pass"])) {
+                    /*if (password_verify($_POST["oPassword"], $user["user_pass"])) {
                         if ($_POST["nPassword"] !== $_POST["rnPassword"]) {
                             $result = "Passwords don't match!";
                         } else if ($_POST["nPassword"] === $_POST["oPassword"]) {
@@ -40,7 +40,7 @@
                         }
                     } else {
                         $result = "Incorrect password!";
-                    }
+                    }*/
                 }
             } else {
                 $result = "Username is different from who is logged in.";
