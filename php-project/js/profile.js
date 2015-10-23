@@ -5,12 +5,12 @@
     kacologoApp.controller('ProfileCtrl', ['$scope', function($scope) {
         this.tab = 1;
         
-        $scope.isTabSet = function(tab) {
-           return tab === this.tab;
+        $scope.isTabSet = function(checkTab) {
+           return this.tab === checkTab;
         }
         
-        $scope.setTab = function(tab) {
-            this.tab = tab;
+        $scope.setTab = function(tabToSet) {
+            this.tab = tabToSet;
         }
     }]);
     
@@ -18,7 +18,19 @@
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: 'templates/profileContent.php'
+            templateUrl: 'templates/profileContent.php',
+            controller: function($scope) {
+                this.tab = 1;
+
+                $scope.isTabSet = function(checkTab) {
+                   return this.tab === checkTab;
+                }
+
+                $scope.setTab = function(tabToSet) {
+                    this.tab = tabToSet;
+                }
+            },
+            controllerAs: "profile"
         };
     });
 })();

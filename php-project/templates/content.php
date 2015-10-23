@@ -28,7 +28,7 @@
         <login-content></login-content>
     </section>
     
-    <section ng-if="main.page === 'PROFILE'" ng-controller="ProfileCtrl as profile" ng-init="profile.tab = 1">
+    <section ng-if="main.page === 'PROFILE'">
         <profile-content></profile-content>
     </section>
     
