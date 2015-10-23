@@ -1,8 +1,10 @@
 <?php
-    session_start();
-
-    require ('../database/password.php');
+require ('../database/password.php');    
     echo password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
+//session_start();
+
+    
+
     /*if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $result = "HEY";
 
