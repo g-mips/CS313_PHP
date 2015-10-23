@@ -26,11 +26,12 @@
                         } else if ($_POST["nPassword"] === $_POST["oPassword"]) {
                             $result = "Old and new passwords cannot be the same.";
                         } else {
-                            $pass     = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
+                            $result = $_POST["nPassword"];
+//                            $pass     = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
                             //$password = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
                             //$db->exec("UPDATE users SET user_pass='" . $password . "' WHERE user_id = " . $user["user_id"]);
 
-                            $result = "Password changed!"
+//                            $result = "Password changed!"
                         }
                     } else {
                         $result = "Incorrect password!";
