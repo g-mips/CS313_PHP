@@ -10,13 +10,13 @@
                 require ('../database/password.php');
                 $db = loadDatabase();
                 $result = "DB LOADED";
-        /*        
+                
                 $user = $db->query("SELECT * FROM users WHERE user_name = '" . $_SESSION["user"] . "' LIMIT 1");
 
                 if ($user === false || $user->rowCount() === 0) {
                     $result = "User doesn't not exist.";
                 } else {
-                    $user->setFetchMode(PDO::FETCH_ASSOC);
+        /*            $user->setFetchMode(PDO::FETCH_ASSOC);
                     $user = $user->fetch();
                     
                     if (password_verify($_POST["oPassword"], $user["user_pass"])) {
@@ -32,8 +32,8 @@
                         }
                     } else {
                         $result = "Incorrect password!";
-                    }
-                }*/
+                    }*/
+                }
             } else {
                 $result = "Username is different from who is logged in.";
             }
