@@ -31,7 +31,17 @@
             </ul>
             <div id="Content_Area">
                 <div ng-show="profile.isTabSet(1)">
-                    <p>This is the text for tab 1</p>
+                    <p>Type of user:
+                        <?php
+                            if ($user["user_type"] == 0) {
+                                echo "Standard";
+                            } else if ($user["user_type"] == 1) {
+                                echo "Moderator";
+                            } else {
+                                echo "Administrator";
+                            }
+                        ?>
+                    </p>
                 </div>
                 <div ng-show="profile.isTabSet(2)">
                     <p>This is the text for tab 2.</p>
