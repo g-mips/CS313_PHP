@@ -21,12 +21,13 @@
     padding-left: 10px;
     background: #F6F6F6;
     /*z-index: 9999;*/
+    text-align: center;
     border: 1px solid #ccc;
 
     border-radius: 4px;
     -moz-border-radius: 4px;
 
-    width: 230px;
+    width: 180px;
     color: #000000;
     text-decoration: none;
     font-weight: bold;
