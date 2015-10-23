@@ -49,7 +49,20 @@
                     </p>
                 </div>
                 <div ng-show="profile.isTabSet(2)">
-                    <p>This is the text for tab 2.</p>
+                    <p>Topics:
+                        <?php
+                            $topics = $db->query("SELECT * FROM topics WHERE topic_author = '" . $user["user_id"] . "'");
+                            
+                            echo $topics->rowCount();
+                        ?>
+                    </p>
+                    <p>Posts:
+                        <?php
+                            $posts = $db->query("SELECT * FROM posts WHERE post_author = '" . $user["user_id"] . "'");
+                            
+                            echo $posts->rowCount();
+                        ?>
+                    </p>
                 </div>
                 <div ng-show="profile.isTabSet(3)">
                     <p>This is the text for tab 3.</p>
