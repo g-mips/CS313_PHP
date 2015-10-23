@@ -65,7 +65,25 @@
                     </p>
                 </div>
                 <div ng-show="profile.isTabSet(3)">
-                    <p>This is the text for tab 3.</p>
+                    <p>
+                        <form name="changePassword" ng-submit="changePassword.$valid && profile.changePassword('<?php echo $user["user_name"]; ?>')" novalidate>
+                            <div>
+                                <label for="OldPassword">Current Password </label>
+                                <input id="OldPassword" ng-model="profile.oPassword" type="password" required/><br />
+                            </div>
+                            <div>
+                                <label for="NewPassword">New Password </label>
+                                <input id="NewPassword" ng-model="profile.nPassword" type="password" required/><br />
+                            </div>
+                            <div>
+                                <label for="RetypeNewPassword">Retype New Password </label>
+                                <input id="RetypeNewPassword" ng-model="profile.rnPassword" type="password" required/><br />
+                            </div>
+                            <div>
+                                <input id="Submit" type="submit" name="submit" value="Change Password" ng-disabled="changePassword.$invalid" />
+                            </div>
+                        </form>
+                    </p>
                 </div>
             </div>
         </div>
