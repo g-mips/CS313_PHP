@@ -1,7 +1,8 @@
 <?php
-require ('../database/password.php');    
-    echo password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
-//session_start();
+    require ('../database/password.php');
+    echo function_exists('password_hash');
+    //echo password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
+    session_start();
 
     
 

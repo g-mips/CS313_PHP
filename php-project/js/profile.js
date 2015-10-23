@@ -47,7 +47,7 @@
                         })
                         .error(function (data, status, headers, config)
                         {
-                            $scope["submissionResults"] = data;
+                            $scope["submissionResults"] = "Server Error!";
                         });
                     
                     this.nPassword = "";
