@@ -37,7 +37,7 @@
                     <p>This is the text for tab 2.</p>
                 </div>
                 <div ng-show="isTabSet(3)">
-                    <p>This is the text for tab 2.</p>
+                    <p>This is the text for tab 3.</p>
                 </div>
             </div>
         </div>
