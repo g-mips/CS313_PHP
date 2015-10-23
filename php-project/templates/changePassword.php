@@ -8,6 +8,7 @@
             if ($_POST["username"] === $_SESSION["user"]) {
                 require ('../database/databaseConnect.php');
                 require ('../database/password.php');
+                $pass = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
                 $db = loadDatabase();
                 $result = "DB LOADED";
                 
@@ -27,7 +28,7 @@
                             $result = "Old and new passwords cannot be the same.";
                         } else {
                             $result = $_POST["nPassword"];
-                            $pass = password_hash("homestar", PASSWORD_DEFAULT);
+                            
                             //$password = password_hash($_POST["nPassword"], PASSWORD_DEFAULT);
                             //$db->exec("UPDATE users SET user_pass='" . $password . "' WHERE user_id = " . $user["user_id"]);
 
