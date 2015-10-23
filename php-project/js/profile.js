@@ -2,7 +2,7 @@
     kacologoApp = angular.module('kacologo-profile', []);
     
     /**************************** Profile Page Controller ****************************/
-    kacologoApp.controller('ProfileCtrl', function() {
+    kacologoApp.controller('ProfileCtrl', ['$scope', function($scope) {
         this.tab = 1;
         
         $scope.isTabSet = function(tab) {
@@ -12,7 +12,7 @@
         $scope.setTab = function(tab) {
             this.tab = tab;
         }
-    });
+    }]);
     
     kacologoApp.directive('profileContent', function() {
         return {
