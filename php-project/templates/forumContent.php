@@ -20,7 +20,7 @@
         }
 
         function createNavigationBar($db) {
-            echo "PAGE: " . $_SESSION['page'];
+            var_dump($_SESSION['page']);
             if ($_SESSION['page'] != null && $_SESSION['page'] <= 3 && $_SESSION['page'] >= 0) {
                 if ($_SESSION['page'] > 0 && $_SESSION['id'] == null) {
                     echo "NO";
