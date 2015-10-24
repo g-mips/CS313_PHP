@@ -61,11 +61,11 @@
                         $query = "SELECT * FROM " . $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] . "."
                             . $tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable];
                         
-                        $results = $db->query($query);
+                        /*$results = $db->query($query);
                         $results->setFetchMode(PDO::FETCH_ASSOC);
                         $results = $results->fetch();
                         
-                        $idsTemp[] = $results[$tableIds[$preTable]];
+                        $idsTemp[] = $results[$tableIds[$preTable]];*/
                     }
 
                     // Push on all IDs in between page 0 and current page.
