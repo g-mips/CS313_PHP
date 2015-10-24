@@ -19,12 +19,92 @@
             }
         }
 
+        function createNavigationBar($db) {
+            if ($_SESSION['page'] != null && $_SESSION['page'] <= 3 && $_SESSION['page'] >= 0) {
+                if ($_SESSION['page'] > 0 && $_SESSION['id'] == null) {
+                    header("Location: http://php-gshawm.rhcloud.com/php-project/forum.php?page=0");
+                    exit();
+                } else {
+                    // Set up for possible looping IDs.
+                    $tables = array("", "categories", "sub_categories", "topics");
+                    $tableIds = array("", "cat_id", "sub_cat_id", "topic_id");
+                    $tableNames = array("", "cat_name", "sub_cat_name", "topic_name");
+                    $tableFks = array("", "", "sub_cat_cat", "topic_sub_cat");
+                    
+                    // Holder for current page's ID and title.
+                    $pageId = "";
+                    $pageTitle = "";
+                    
+                    // Holder for all IDs.
+                    $ids = array("");
+                    $idsTemp = array();
+                    
+                    // Holder for titles
+                    $titles = array("Forum");
+                    
+                    // Figure out current page's ID.
+                    if ($_SESSION['page'] > 0) {
+                        $query = "SELECT * FROM " . $tables[$_SESSION['page']] . " WHERE " . $tableIds[$_SESSION['page']] . " = " $_SESSION['id'];
+                        $results = $db->query($query);
+                        $results->setFetchMode(PDO::FETCH_ASSOC);
+                        $results = $results->fetch();
+                        $pageId = $results[$tableIds[$_SESSION['page']]];
+                        $pageTitle = $results[$tableNames[$_SESSION['page']]];
+                    }
+                    
+                    // Figure out all IDs in between page 0 and current page.
+                    for ($index = 0; $index + 1 < $_SESSION['page']; $index++) {
+                        $curTable = $_SESSION['page'] - $index;
+                        $preTable = $_SESSION['page'] - $index - 1;
+                        
+                        $query = "SELECT * FROM " $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] .
+                            "." . tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable];
+                        $results = $db->query($query);
+                        $results->setFetchMode(PDO::FETCH_ASSOC);
+                        $results = $results->fetch();
+                        
+                        array_push($results[$tableIds[$preTable]], $idsTemp);
+                    }
+
+                    // Push on all IDs in between page 0 and current page.
+                    for ($index = count($idsTemp) - 1; $index > 0; $index--) {
+                        array_push($ids, $idsTemp[$index]);
+                    }
+                    
+                    // Push on current page's ID.
+                    array_push($ids, $pageId);
+                    
+                    echo "<nav id='ForumNav'>";
+                    echo "<ul>";
+
+                    for ($navIndex = 0; $navIndex <= $_SESSION['page']; $navIndex++) {
+                        $tpage = "";
+                        
+                        if ($navIndex === 3) {
+                            $tpage = "&tpage=1";
+                        }
+                        
+                        echo "<li><a href='forum.php?page=" . $navIndex . $ids[$navIndex] . $tpage . "'>" .
+                            $titles[$navIndex] . "</a><span>-&gt;<span></li>";
+                    }
+
+                    echo "</ul>";
+                    echo "</nav>";
+                }
+            } else {
+                header("Location: http://php-gshawm.rhcloud.com/php-project/forum.php?page=0");
+                exit();
+            }
+        }
+
         function run() {
             $db = loadDatabase();
 
             // If it is null, we need to handle it differently!
             if ($db !== null) {
-
+                // Navigation bar
+                createNavigationBar($db);
+                
                 // What page are we trying to access?
                 if ($_SESSION['page'] == 0 || $_SESSION['page' === null]) {
                     $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");

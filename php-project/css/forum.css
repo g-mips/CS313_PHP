@@ -6,6 +6,26 @@
     font-size: 30px;
 }
 
+#ForumNav {
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+}
+
+#ForumNav > ul {
+    list-style: none;
+}
+
+#ForumNav > ul > li {
+    float: left;
+    font-size: 0.9rem;
+    list-style: none;
+    max-width: 30%;
+    padding-right: 10px;
+    position: relative;
+}
+
 .Cat {
     
 }
