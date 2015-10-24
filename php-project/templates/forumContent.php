@@ -36,11 +36,11 @@
                     $pageTitle = "";
                     
                     // Holder for all IDs.
-                    $ids = array("");
-                    $idsTemp = array();
+                    $ids = [""];
+                    $idsTemp = [];
                     
                     // Holder for titles
-                    $titles = array("Forum");
+                    $titles = ["Forum"];
                     
                     // Figure out current page's ID.
                     if ($_SESSION['page'] > 0) {
@@ -63,16 +63,16 @@
                         $results->setFetchMode(PDO::FETCH_ASSOC);
                         $results = $results->fetch();
                         
-                        //$idsTemp[] = $results[$tableIds[$preTable]];
+                        $idsTemp[] = $results[$tableIds[$preTable]];
                     }
 
                     // Push on all IDs in between page 0 and current page.
                     for ($index = count($idsTemp) - 1; $index > 0; $index--) {
-                        //$ids[] = $idsTemp[$index];
+                        $ids[] = $idsTemp[$index];
                     }
                     
                     // Push on current page's ID.
-                    //$ids[] = $pageId;
+                    $ids[] = $pageId;
                     
                     echo "<nav id='ForumNav'>";
                     echo "<ul>";
