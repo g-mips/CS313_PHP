@@ -92,8 +92,8 @@
                     echo "</nav>";
                 }*/
             } else {
-                header("Location: http://php-gshawm.rhcloud.com/php-project/forum.php?page=0");
-                exit();
+                //header("Location: http://php-gshawm.rhcloud.com/php-project/forum.php?page=0");
+                //exit();
             }
         }
 
