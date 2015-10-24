@@ -58,13 +58,17 @@
                         $curTable = $_SESSION['page'] - $index;
                         $preTable = $_SESSION['page'] - $index - 1;
                         
-                        $query = "SELECT * FROM " . $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] .
-                            "." . tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable];
-                        $results = $db->query($query);
-                        $results->setFetchMode(PDO::FETCH_ASSOC);
-                        $results = $results->fetch();
+                        echo "DEX: " . $index . "<br />";
+                        echo "CUR: " . $curTable . "<br />";
+                        echo "PRE: " . $preTable . "<br />";
                         
-                        $idsTemp[] = $results[$tableIds[$preTable]];
+                        //$query = "SELECT * FROM " . $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] .
+                        //    "." . tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable];
+                        //$results = $db->query($query);
+                        //$results->setFetchMode(PDO::FETCH_ASSOC);
+                        //$results = $results->fetch();
+                        
+                        //$idsTemp[] = $results[$tableIds[$preTable]];
                     }
 
                     // Push on all IDs in between page 0 and current page.
