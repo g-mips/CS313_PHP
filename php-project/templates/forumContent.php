@@ -62,6 +62,8 @@
                         echo "CUR: " . $curTable . "<br />";
                         echo "PRE: " . $preTable . "<br />";
                         echo "TAB: " . $tables[$preTable] . "<br />";
+                        echo "TAB: " . $tables[$curTable] . "<br />";
+                        echo "FKS: " . $tableFks[$curTable] . "<br />";
                         
                         //$query = "SELECT * FROM " . $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] . "." . tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable];
                         
