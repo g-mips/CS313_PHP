@@ -63,18 +63,18 @@
                         $results->setFetchMode(PDO::FETCH_ASSOC);
                         $results = $results->fetch();
                         
-                        array_push($results[$tableIds[$preTable]], $idsTemp);
+                        $idsTemp[] = $results[$tableIds[$preTable]];
                     }
 
                     // Push on all IDs in between page 0 and current page.
                     for ($index = count($idsTemp) - 1; $index > 0; $index--) {
-                        array_push($ids, $idsTemp[$index]);
+                        $ids[] = $idsTemp[$index];
                     }
                     
                     // Push on current page's ID.
-                    array_push($ids, $pageId);
+                    $ids[] = $pageId;
                     
-                    /*echo "<nav id='ForumNav'>";
+                    echo "<nav id='ForumNav'>";
                     echo "<ul>";
 
                     for ($navIndex = 0; $navIndex <= $_SESSION['page']; $navIndex++) {
@@ -89,7 +89,7 @@
                     }
 
                     echo "</ul>";
-                    echo "</nav>";*/
+                    echo "</nav>";
                 }
             } else {
                 //header("Location: http://php-gshawm.rhcloud.com/php-project/forum.php?page=0");
