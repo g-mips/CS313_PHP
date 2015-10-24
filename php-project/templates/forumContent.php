@@ -26,10 +26,10 @@
                     //exit();
                 } else {
                     // Set up for possible looping IDs.
-                    $tables = array("", "categories", "sub_categories", "topics");
-                    $tableIds = array("", "cat_id", "sub_cat_id", "topic_id");
-                    $tableNames = array("", "cat_name", "sub_cat_name", "topic_name");
-                    $tableFks = array("", "", "sub_cat_cat", "topic_sub_cat");
+                    $tables = ["", "categories", "sub_categories", "topics"];
+                    $tableIds = ["", "cat_id", "sub_cat_id", "topic_id"];
+                    $tableNames = ["", "cat_name", "sub_cat_name", "topic_name"];
+                    $tableFks = ["", "", "sub_cat_cat", "topic_sub_cat"];
                     
                     // Holder for current page's ID and title.
                     $pageId = "";
