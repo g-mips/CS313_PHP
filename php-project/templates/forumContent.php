@@ -51,21 +51,21 @@
                         $results = $results->fetch();
                         $pageId = $results[$tableIds[$_SESSION['page']]];
                         $pageTitle = $results[$tableNames[$_SESSION['page']]];
-                    }
+                    }*/
                     
                     // Figure out all IDs in between page 0 and current page.
                     for ($index = 0; $index + 1 < $_SESSION['page']; $index++) {
                         $curTable = $_SESSION['page'] - $index;
                         $preTable = $_SESSION['page'] - $index - 1;
                         
-                        $query = "SELECT * FROM " $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] .
+                        $query = "SELECT * FROM " . $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] .
                             "." . tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable];
                         $results = $db->query($query);
                         $results->setFetchMode(PDO::FETCH_ASSOC);
                         $results = $results->fetch();
                         
                         $idsTemp[] = $results[$tableIds[$preTable]];
-                    }*/
+                    }
 
                     // Push on all IDs in between page 0 and current page.
                     for ($index = count($idsTemp) - 1; $index > 0; $index--) {
