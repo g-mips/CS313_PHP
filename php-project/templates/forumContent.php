@@ -74,7 +74,7 @@
                     // Push on current page's ID.
                     array_push($ids, $pageId);
                     
-                    echo "<nav id='ForumNav'>";
+                    /*echo "<nav id='ForumNav'>";
                     echo "<ul>";
 
                     for ($navIndex = 0; $navIndex <= $_SESSION['page']; $navIndex++) {
@@ -89,7 +89,7 @@
                     }
 
                     echo "</ul>";
-                    echo "</nav>";
+                    echo "</nav>";*/
                 }
             } else {
                 //header("Location: http://php-gshawm.rhcloud.com/php-project/forum.php?page=0");
