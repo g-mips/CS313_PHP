@@ -20,8 +20,7 @@
         }
 
         function createNavigationBar($db) {
-            var_dump($_SESSION['page']);
-            if (/*$_SESSION['page'] != null && */$_SESSION['page'] <= 3 && $_SESSION['page'] >= 0) {
+            if ($_SESSION['page'] <= 3 && $_SESSION['page'] >= 0) {
                 if ($_SESSION['page'] > 0 && $_SESSION['id'] == null) {
                     echo "NO";
                     //header("Location: http://php-gshawm.rhcloud.com/php-project/forum.php?page=0");
@@ -66,7 +65,7 @@
                         $results = $results->fetch();
                         
                         $idsTemp[] = $results[$tableIds[$preTable]];
-                    }
+                    }*/
 
                     // Push on all IDs in between page 0 and current page.
                     for ($index = count($idsTemp) - 1; $index > 0; $index--) {
@@ -74,7 +73,7 @@
                     }
                     
                     // Push on current page's ID.
-                    $ids[] = $pageId;*/
+                    $ids[] = $pageId;
                     
                     echo "<nav id='ForumNav'>";
                     echo "<ul>";
