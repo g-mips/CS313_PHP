@@ -44,37 +44,28 @@
                     $titles = ["Forum"];
                     
                     // Figure out current page's ID.
-                    /*if ($_SESSION['page'] > 0) {
+                    if ($_SESSION['page'] > 0) {
                         $query = "SELECT * FROM " . $tables[$_SESSION['page']] . " WHERE " . $tableIds[$_SESSION['page']] . " = " $_SESSION['id'];
                         $results = $db->query($query);
                         $results->setFetchMode(PDO::FETCH_ASSOC);
                         $results = $results->fetch();
                         $pageId = $results[$tableIds[$_SESSION['page']]];
                         $pageTitle = $results[$tableNames[$_SESSION['page']]];
-                    }*/
+                    }
                     
                     // Figure out all IDs in between page 0 and current page.
                     for ($index = 0; $index + 1 < $_SESSION['page']; $index++) {
                         $curTable = $_SESSION['page'] - $index;
                         $preTable = $_SESSION['page'] - $index - 1;
                         
-                        echo "DEX: " . $index . "<br />";
-                        echo "CUR: " . $curTable . "<br />";
-                        echo "PRE: " . $preTable . "<br />";
-                        echo "TAB: " . $tables[$preTable] . "<br />";
-                        echo "TAB: " . $tables[$curTable] . "<br />";
-                        echo "FKS: " . $tableFks[$curTable] . "<br />";
-                        echo "IDS: " . $tableIds[$preTable] . "<br />";
-                        
                         $query = "SELECT * FROM " . $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] . "."
                             . $tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable];
                         
-                        echo $query . "<br />";
-                        //$results = $db->query($query);
-                        //$results->setFetchMode(PDO::FETCH_ASSOC);
-                        //$results = $results->fetch();
+                        $results = $db->query($query);
+                        $results->setFetchMode(PDO::FETCH_ASSOC);
+                        $results = $results->fetch();
                         
-                        //$idsTemp[] = $results[$tableIds[$preTable]];
+                        $idsTemp[] = $results[$tableIds[$preTable]];
                     }
 
                     // Push on all IDs in between page 0 and current page.
