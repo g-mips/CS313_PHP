@@ -22,6 +22,7 @@
         function createNavigationBar($db) {
             if ($_SESSION['page'] != null && $_SESSION['page'] <= 3 && $_SESSION['page'] >= 0) {
                 if ($_SESSION['page'] > 0 && $_SESSION['id'] == null) {
+                    echo "NO";
                     //header("Location: http://php-gshawm.rhcloud.com/php-project/forum.php?page=0");
                     //exit();
                 } else {
@@ -92,6 +93,7 @@
                     echo "</nav>";
                 }
             } else {
+                echo "WRONG";
                 //header("Location: http://php-gshawm.rhcloud.com/php-project/forum.php?page=0");
                 //exit();
             }
