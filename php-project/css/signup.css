@@ -13,7 +13,7 @@ form {
     padding:1em;
 }
 
-div {
+form div {
     display: table-row;
     padding: 10px;
     text-align: center;
