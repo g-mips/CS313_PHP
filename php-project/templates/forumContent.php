@@ -43,7 +43,7 @@
                     $titles = ["Forum"];
                     
                     // Figure out current page's ID.
-                    if ($_SESSION['page'] > 0) {
+                    /*if ($_SESSION['page'] > 0) {
                         $query = "SELECT * FROM " . $tables[$_SESSION['page']] . " WHERE " . $tableIds[$_SESSION['page']] . " = " $_SESSION['id'];
                         $results = $db->query($query);
                         $results->setFetchMode(PDO::FETCH_ASSOC);
@@ -72,7 +72,7 @@
                     }
                     
                     // Push on current page's ID.
-                    $ids[] = $pageId;
+                    $ids[] = $pageId;*/
                     
                     echo "<nav id='ForumNav'>";
                     echo "<ul>";
