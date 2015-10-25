@@ -10,7 +10,8 @@
         <label for="Content">Content</label>
         <textarea id="Content" rows="30" cols="70" required></textarea>
     </div>
-    <div>
+    <div class="FormDiv">
+        <label></label>
         <input id="Submit" type="submit" name="submit" value="Add Post" ng-disabled="addPostForm.$invalid" />
     </div>
 </form>
