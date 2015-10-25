@@ -19,7 +19,7 @@
                 data = data.replace('\r', '').replace('\n', '').trim();
                     
                 if (data == 'SUCCESS') {
-                    windows.location = 'http://php-gshawm.rhcloud.com/php-project/forum.php';
+                    window.location = 'http://php-gshawm.rhcloud.com/php-project/forum.php';
                 } else {
                     $scope["submissionResult"] = data;
                 }
