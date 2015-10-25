@@ -185,7 +185,7 @@
                                 
                                 echo "<a class='ForumLink' href='/php-project/forum.php?page=3&id=" . $topic["topic_id"] . "&tpage=1'>";
                                 echo "<section class='SubCat'>";
-                                echo "<h2 class='SubCatName'>" . $topic["topic_name"] . "</h2>";
+                                echo "<h2 class='SubCatName'>" . $topic["topic_subject"] . "</h2>";
                                 echo "<hr class='ForumLine'/>";
                                 echo "</section>";
                                 echo "</a>";
