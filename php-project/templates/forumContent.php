@@ -166,7 +166,6 @@
                         $startTopicIndex = (($_SESSION['tpage'] - 1) * 20);
                         $endTopicIndex = $_SESSION['tpage'] * 20;
                         
-                        echo "PIN: " . sizeof($pinnedTopics) . "<br />NON: " . sizeof($nonPinnedTopics);
                         $size = sizeof($pinnedTopics) + sizeof($nonPinnedTopics);
                         
                         if ($size < $startTopicIndex || $size > $endTopicIndex) {
@@ -177,7 +176,7 @@
                             echo "<hr class='ForumLine'/>";
                             echo "</section>";
                         } else {
-                            for ($index = $startTopicIndex; $index < $endTopicIndex || $index < $size; $index++) {
+                            for ($index = $startTopicIndex; $index < $endTopicIndex && $index < $size; $index++) {
                                 $topic = $pinnedTopics[$index];
                                 
                                 if ($index >= sizeof($pinnedTopics)) {
