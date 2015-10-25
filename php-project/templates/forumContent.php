@@ -59,8 +59,9 @@
                         $curTable = $_SESSION['page'] - $index;
                         $preTable = $_SESSION['page'] - $index - 1;
                         
-                        $query = "SELECT * FROM " . $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$preTable] . "." . 
-                            $tableIds[$preTable] . " = " . $pageId;
+                        $query = "SELECT * FROM " . $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] . "."
+                            . $tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable] . " WHERE " . $tables[$curTable] . "."
+                            . $tableFks[$curTable] . " = " . $pageId;
                         
                         $results = $db->query($query);
                         $results->setFetchMode(PDO::FETCH_ASSOC);
