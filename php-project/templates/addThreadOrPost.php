@@ -19,12 +19,12 @@
             $statement->bindParam(4, $subCat);
             
             $author = $_SESSION['user'];
-            $pinned = false;
+            $pinned = 0;
             $subject = $_POST["subject"];
             $subCat = $_SESSION['id'];
             
             echo "AUTH: " . $author . "<br />PIN: " . $pinned . "<br />SUB: " . $subject . "<br />SUB_CAT: " . $subCat . "<br />";
-            /*$statement->execute();
+            $statement->execute();
             
             $id = $db->lastInsertId();
             
@@ -36,7 +36,7 @@
             
             $statement->execute();
             
-            echo "SUCCESS";*/
+            echo "SUCCESS";
         }
     }
 ?>
