@@ -54,6 +54,8 @@
                         $pageTitle = $results[$tableNames[$_SESSION['page']]];
                     }
                     
+                    $curId = $pageId;
+                    
                     // Figure out all IDs in between page 0 and current page.
                     for ($index = 0; $index + 1 < $_SESSION['page']; $index++) {
                         $curTable = $_SESSION['page'] - $index;
@@ -61,7 +63,7 @@
                         
                         $query = "SELECT * FROM " . $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] . "."
                             . $tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable] . " WHERE " . $tables[$curTable] . "."
-                            . $tableFks[$curTable] . " = " . $pageId;
+                            . $tableFks[$curTable] . " = " . $curId;
                         
                         $results = $db->query($query);
                         $results->setFetchMode(PDO::FETCH_ASSOC);
@@ -69,6 +71,7 @@
                         
                         $idsTemp[] = $results[$tableIds[$preTable]];
                         $titlesTemp[] = $results[$tableNames[$preTable]];
+                        $curId = $results[$tableIds[$preTable]];
                     }
 
                     // Push on all IDs in between page 0 and current page.
