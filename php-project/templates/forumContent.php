@@ -50,7 +50,7 @@
                         $results = $db->query($query);
                         $results->setFetchMode(PDO::FETCH_ASSOC);
                         $results = $results->fetch();
-                        $pageId = $results[$tableIds[$_SESSION['page']]];
+                        $pageId = "&id=" . $results[$tableIds[$_SESSION['page']]];
                         $pageTitle = $results[$tableNames[$_SESSION['page']]];
                     }
                     
@@ -66,7 +66,7 @@
                         $results->setFetchMode(PDO::FETCH_ASSOC);
                         $results = $results->fetch();
                         
-                        $idsTemp[] = $results[$tableIds[$preTable]];
+                        $idsTemp[] = "&id=" . $results[$tableIds[$preTable]];
                         $titlesTemp[] = $results[$tableNames[$preTable]];
                     }
 
@@ -86,7 +86,7 @@
                     for ($navIndex = 0; $navIndex <= $_SESSION['page']; $navIndex++) {
                         $tpage = "";
                         
-                        if ($navIndex === 3) {
+                        if ($navIndex >= 2) {
                             $tpage = "&tpage=1";
                         }
                         
