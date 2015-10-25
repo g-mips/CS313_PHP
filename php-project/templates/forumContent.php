@@ -192,7 +192,7 @@
                             }
                         }
                         
-                        echo "<button onclick='location.href=\"/php-project/addPost.php?type=0\"'>Add Thread</button>";
+                        echo "<button type='button' onclick='location.href=\"/php-project/addPost.php?type=0\"'>Add Thread</button>";
                     } else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] !== null) {
 
                     } else {
