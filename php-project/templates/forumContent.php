@@ -73,6 +73,7 @@
                     // Push on all IDs in between page 0 and current page.
                     for ($index = count($idsTemp) - 1; $index > 0; $index--) {
                         $ids[] = $idsTemp[$index];
+                        $titles[] = $titlesTemp[$index];
                     }
                     
                     // Push on current page's ID.
