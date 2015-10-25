@@ -71,7 +71,7 @@
                     }
 
                     // Push on all IDs in between page 0 and current page.
-                    for ($index = count($idsTemp) - 1; $index > 0; $index--) {
+                    for ($index = count($idsTemp) - 1; $index >= 0; $index--) {
                         $ids[] = $idsTemp[$index];
                         $titles[] = $titlesTemp[$index];
                     }
@@ -91,7 +91,7 @@
                         }
                         
                         echo "<li><a href='forum.php?page=" . $navIndex . $ids[$navIndex] . $tpage . "'>" .
-                            $titles[$navIndex] . "</a><span>-&gt;<span></li>";
+                            $titles[$navIndex] . "</a><span> -&gt;<span></li>";
                     }
 
                     echo "</ul>";
