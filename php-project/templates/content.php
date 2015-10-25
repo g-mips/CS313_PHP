@@ -32,5 +32,9 @@
         <profile-content></profile-content>
     </section>
     
+    <section ng-if="main.page === 'ADDPOST'" ng-controller="AddPostCtrl as addPost">
+        <add-post-content></add-post-content>
+    </section>
+    
     <hr id="BottomLine"/>
 </section>

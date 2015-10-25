@@ -1,5 +1,10 @@
 <?php
     session_start();
+    
+    if (!$_SESSION["logged"]) {
+        header("Location: http://php-gshawm.rhcloud.com/php-project/signup.php");
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html ng-app="kacologoApp">
@@ -22,6 +27,7 @@
         <script src="js/signup.js"></script>
         <script src="js/login.js"></script>
         <script src="js/profile.js"></script>
+        <script src="js/addPost.js"></script>
     </head>
 	<body ng-controller="MainCtrl as main" ng-init="main.page = 'ADDPOST'">
         <navigator></navigator>
