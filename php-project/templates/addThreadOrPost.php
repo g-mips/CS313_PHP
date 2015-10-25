@@ -7,6 +7,10 @@
             
             $db = loadDatabase();
             
+            $user = $db->query("SELECT * FROM users WHERE user_name = '" . $_SESSION['user'] . "' LIMIT 1");
+            $user->setFetchMode(PDO::FETCH_ASSOC);
+            $user = $user->fetch();
+            
             $statement = $db->prepare("INSERT INTO topics (topic_author, topic_date, topic_pinned, topic_subject, topic_sub_cat) VALUES (?, NOW(), ?, ?, ?)");
             $author = null;
             $pinned = null;
@@ -18,12 +22,11 @@
             $statement->bindParam(3, $subject);
             $statement->bindParam(4, $subCat);
             
-            $author = $_SESSION['user'];
+            $author = $user["user_id"];
             $pinned = 0;
             $subject = $_POST["subject"];
             $subCat = $_SESSION['id'];
             
-            echo "AUTH: " . $author . "<br />PIN: " . $pinned . "<br />SUB: " . $subject . "<br />SUB_CAT: " . $subCat . "<br />";
             $statement->execute();
             
             $id = $db->lastInsertId();
