@@ -66,7 +66,7 @@
                         $results->setFetchMode(PDO::FETCH_ASSOC);
                         $results = $results->fetch();
                         
-                        $idsTemp[] = "&id=" . $results[$tableIds[$preTable]];
+                        $idsTemp[] = $results[$tableIds[$preTable]];
                         $titlesTemp[] = $results[$tableNames[$preTable]];
                     }
 
