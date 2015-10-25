@@ -42,6 +42,7 @@
                     
                     // Holder for titles
                     $titles = ["Forum"];
+                    $titlesTemp = [];
                     
                     // Figure out current page's ID.
                     if ($_SESSION['page'] > 0) {
@@ -66,6 +67,7 @@
                         $results = $results->fetch();
                         
                         $idsTemp[] = $results[$tableIds[$preTable]];
+                        $titlesTemp[] = $results[$tableNames[$preTable]];
                     }
 
                     // Push on all IDs in between page 0 and current page.
@@ -75,6 +77,7 @@
                     
                     // Push on current page's ID.
                     $ids[] = $pageId;
+                    $titles[] = $pageTitle;
                     
                     echo "<nav id='ForumNav'>";
                     echo "<ul>";
