@@ -22,11 +22,11 @@
     font-size: 0.7rem;
     list-style: none;
     max-width: 30%;
-    /*padding-right: 10px;*/
     position: relative;
 }
 
 #ForumNav > ul > li > a {
+    padding-right: 10px;
     text-decoration: none;
     color: #6e6859;
 }
