@@ -166,6 +166,7 @@
                         $startTopicIndex = (($_SESSION['tpage'] - 1) * 20);
                         $endTopicIndex = $_SESSION['tpage'] * 20;
                         
+                        echo "PIN: " . sizeof($pinnedTopics) . "<br />NON: " . sizeof($nonPinnedTopics);
                         $size = sizeof($pinnedTopics) + sizeof($nonPinnedTopics);
                         
                         if ($size < $startTopicIndex || $size > $endTopicIndex) {
