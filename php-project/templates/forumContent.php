@@ -35,6 +35,7 @@
                     // Holder for current page's ID and title.
                     $pageId = "";
                     $pageTitle = "";
+                    $curId = "";
                     
                     // Holder for all IDs.
                     $ids = [""];
@@ -52,10 +53,10 @@
                         $results = $results->fetch();
                         $pageId = $results[$tableIds[$_SESSION['page']]];
                         $pageTitle = $results[$tableNames[$_SESSION['page']]];
+                        $curId = $results[$tableFks[$_SESSION['page']]];
                     }
                     
-                    echo $pageId . "<br />";
-                    $curId = $pageId;
+                    echo $curId . "<br />";
                     
                     // Figure out all IDs in between page 0 and current page.
                     for ($index = 0; $index + 1 < $_SESSION['page']; $index++) {
