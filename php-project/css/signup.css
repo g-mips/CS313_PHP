@@ -1,8 +1,8 @@
-input.ng-invalid.ng-dirty {
+input.ng-invalid.ng-dirty, textarea.ng-invalid.ng-dirty {
     border-color: #FA787E;
 }
 
-input.ng-valid.ng-dirty {
+input.ng-valid.ng-dirty, textarea.ng-valid.ng-dirty {
     border-color: #78FA89;
 }
 
@@ -25,7 +25,7 @@ label {
     padding: 10px;
 }
 
-input {
+input, textarea {
     display: table-cell;
 	padding: 10px;
 	border: 1px solid #DDD;
@@ -35,7 +35,7 @@ input {
 	-khtml-border-radius: 0.4em;
 }
 
-input:hover, input:focus {
+input:hover, input:focus, textarea:hover, textarea:focus {
 	border-color: #C5C5C5;
 	background: #F6F6F6;
 } 
