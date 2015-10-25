@@ -14,4 +14,7 @@
         <label></label>
         <input id="Submit" type="submit" name="submit" value="Add Post" ng-disabled="addPostForm.$invalid" />
     </div>
+    <div class="FormDiv">
+        <h1 id="Results">{{submissionResult}}</h1>
+    </div>
 </form>
