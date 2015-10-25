@@ -50,7 +50,7 @@
                         $results = $db->query($query);
                         $results->setFetchMode(PDO::FETCH_ASSOC);
                         $results = $results->fetch();
-                        $pageId = "&id=" . $results[$tableIds[$_SESSION['page']]];
+                        $pageId = $results[$tableIds[$_SESSION['page']]];
                         $pageTitle = $results[$tableNames[$_SESSION['page']]];
                     }
                     
@@ -60,7 +60,7 @@
                         $preTable = $_SESSION['page'] - $index - 1;
                         
                         $query = "SELECT * FROM " . $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] . "."
-                            . $tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable];
+                            . $tableIds[$preTable] . " = " . $pageId;/*$tableFks[$curTable] . " = " . $tables[$preTable] . ;*/
                         
                         $results = $db->query($query);
                         $results->setFetchMode(PDO::FETCH_ASSOC);
@@ -77,7 +77,7 @@
                     }
                     
                     // Push on current page's ID.
-                    $ids[] = $pageId;
+                    $ids[] = "&id=" . $pageId;
                     $titles[] = $pageTitle;
                     
                     echo "<nav id='ForumNav'>";
