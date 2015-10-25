@@ -4,6 +4,8 @@
 
 .ForumTitle {
     font-size: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #ForumNav {
@@ -14,8 +16,9 @@
 }
 
 #ForumNav > ul {
-    margin: 0px;
+    margin-left: 0px;
     list-style: none;
+    padding: 0px;
 }
 
 #ForumNav > ul > li {
