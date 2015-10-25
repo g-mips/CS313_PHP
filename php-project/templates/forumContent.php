@@ -152,11 +152,11 @@
                         $title = $titles->fetch();
                         
                         //
-                        $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = " . $_SESSION['id'] . " AND topics.topic_pinned = 1 ORDER BY topics.topic_date";
+                        $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = sub_categories.sub_cat_id WHERE sub_categories.sub_cat_id = " . $_SESSION['id'] . " AND topics.topic_pinned = 1 ORDER BY topics.topic_date";
                         $pinnedTopics = $db->query($query);
                         $pinnedTopics = $pinnedTopics->fetchAll();
 
-                        $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = " . $_SESSION['id'] . " AND topics.topic_pinned = 0 ORDER BY topics.topic_date";
+                        $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = sub_categories.sub_cat_id WHERE sub_categories.sub_cat_id = " . $_SESSION['id'] . " AND topics.topic_pinned = 0 ORDER BY topics.topic_date";
                         $nonPinnedTopics = $db->query($query);
                         $nonPinnedTopics = $nonPinnedTopics->fetchAll();
                         
