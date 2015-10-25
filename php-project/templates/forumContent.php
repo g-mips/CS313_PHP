@@ -166,11 +166,17 @@
                         $startTopicIndex = (($_SESSION['tpage'] - 1) * 20);
                         $endTopicIndex = $_SESSION['tpage'] * 20;
                         
-                        if (sizeof($pinnedTopics) + sizeof($nonPinnedTopics) < $startTopicIndex ||
-                            sizeof($pinnedTopics) + sizeof($nonPinnedTopics) > $endTopicIndex) {
+                        $size = sizeof($pinnedTopics) + sizeof($nonPinnedTopics);
+                        
+                        if ($size < $startTopicIndex || $size > $endTopicIndex) {
                             // DISPLAY PAGE DOESN'T EXIST
+                        } else if ($size === 0) {
+                            echo "<section class='SubCat'>";
+                            echo "<h2 class='SubCatName'>There are no topics! Please help this place by creating a thread!</h2>";
+                            echo "<hr class='ForumLine'/>";
+                            echo "</section>";
                         } else {
-                            for ($index; $index < $endTopicIndex; $index++) {
+                            for ($index = $startTopicIndex; $index < $endTopicIndex || $index < $size; $index++) {
                                 $topic = $pinnedTopics[$index];
                                 
                                 if ($index >= sizeof($pinnedTopics)) {
