@@ -161,13 +161,31 @@
                         $nonPinnedTopics = $nonPinnedTopics->fetchAll();
                         
                         echo "<h1 class='ForumTitle'>" . $title["sub_cat_name"] . "</h1>";
-
-                        $startTopicIndex = (($_SESSION['tpage'] - 1) * 20) + 1;
+                        echo "<h1 class='CatName'>Threads</h1>";
+                        
+                        $startTopicIndex = (($_SESSION['tpage'] - 1) * 20);
                         $endTopicIndex = $_SESSION['tpage'] * 20;
                         
-                        if (sizeof($pinnedTopics) + sizeof($nonPinnedTopics) < $startTopicIndex) {
+                        if (sizeof($pinnedTopics) + sizeof($nonPinnedTopics) < $startTopicIndex ||
+                            sizeof($pinnedTopics) + sizeof($nonPinnedTopics) > $endTopicIndex) {
                             // DISPLAY PAGE DOESN'T EXIST
-                        }                        
+                        } else {
+                            for ($index; $index < $endTopicIndex; $index++) {
+                                $topic = $pinnedTopics[$index];
+                                
+                                if ($index >= sizeof($pinnedTopics)) {
+                                    $topic = $nonPinnedTopics[$index];
+                                }
+                                
+                                echo "<a class='ForumLink' href='/php-project/forum.php?page=3&id=" . $topic["topic_id"] . "&tpage=1'>";
+                                echo "<section class='SubCat'>";
+                                echo "<h2 class='SubCatName'>" . $topic["topic_name"] . "</h2>";
+                                echo "<hr class='ForumLine'/>";
+                                echo "</section>";
+                                echo "</a>";
+                            }
+                        }
+                        
                     } else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] !== null) {
 
                     } else {
