@@ -54,6 +54,7 @@
                         $pageTitle = $results[$tableNames[$_SESSION['page']]];
                     }
                     
+                    echo $pageId . "<br />";
                     $curId = $pageId;
                     
                     // Figure out all IDs in between page 0 and current page.
@@ -64,7 +65,7 @@
                         $query = "SELECT * FROM " . $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] . "."
                             . $tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable] . " WHERE " . $tables[$curTable] . "."
                             . $tableFks[$curTable] . " = " . $curId;
-                        
+                        echo $query . "<br />";
                         $results = $db->query($query);
                         $results->setFetchMode(PDO::FETCH_ASSOC);
                         $results = $results->fetch();
