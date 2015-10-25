@@ -172,7 +172,7 @@
                             // DISPLAY PAGE DOESN'T EXIST
                         } else if ($size === 0) {
                             echo "<section class='SubCat'>";
-                            echo "<h2 class='SubCatName'>There are no topics! Please help this place by creating a thread!</h2>";
+                            echo "<h2>There are no topics! Please help this place by creating a thread!</h2>";
                             echo "<hr class='ForumLine'/>";
                             echo "</section>";
                         } else {
