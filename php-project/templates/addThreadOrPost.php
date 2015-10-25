@@ -23,7 +23,8 @@
             $subject = $_POST["subject"];
             $subCat = $_SESSION['id'];
             
-            $statement->execute();
+            echo "AUTH: " . $author . "<br />PIN: " . $pinned . "<br />SUB: " . $subject . "<br />SUB_CAT: " . $subCat . "<br />";
+            /*$statement->execute();
             
             $id = $db->lastInsertId();
             
@@ -35,7 +36,7 @@
             
             $statement->execute();
             
-            echo "SUCCESS";
+            echo "SUCCESS";*/
         }
     }
 ?>
