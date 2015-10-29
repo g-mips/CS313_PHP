@@ -73,6 +73,9 @@
             $scope.mainVideo[0] = tempVid;
             console.log("NEW MAN ID: " + $scope.mainVideo[0].id);
             console.log("NEW MAN IN: " + $scope.mainVideo[0].info);
+            var tempId = $scope.mainVideo[0].id;
+            $scope.mainVideo[0].id = $scope.videos[id].id;
+            $scope.videos[id].id = tempId;
         };
     }]);
     
