@@ -82,7 +82,7 @@
                         
                         $idsTemp[] = $results[$tableIds[$preTable]];
                         $titlesTemp[] = $results[$tableNames[$preTable]];
-                        $curId = $results[$tableIds[$preTable]];
+                        $curId = $results[$tableFks[$preTable]];
                         
                         echo "idsTemp[index]: " . $idsTemp[$index] . "<br />";
                         echo "titlesTemp[index]: " . $titlesTemp[$index] . "<br />";
