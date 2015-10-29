@@ -65,7 +65,7 @@
             console.log("VID IN: " + $scope.videos[id].info);
             var tempVid = $scope.videos[id];
             console.log("TEM ID: " + tempVid.id);
-            console.log("VID IN: " + tempVid.info):
+            console.log("VID IN: " + tempVid.info);
             $scope.videos[id] = $scope.mainVideo[0];
             console.log("NEW VID ID: " + $scope.videos[id].id);
             console.log("NEW VID IN: " + $scope.videos[id].info);
