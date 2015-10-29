@@ -36,10 +36,10 @@
 
                         // First video is the only playable one.
                         if (index === 0) {
-                            $scope.mainVideo = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId);
+                            $scope.mainVideo = [$sce.trustAsResourceUrl(videoThumnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)];
                             $scope.videoTitle = item.snippet.title;
                         } else {
-                            $scope.videos.push($sce.trustAsResourceUrl(videoThumbnailUrl));
+                            $scope.videos.push([$sce.trustAsResourceUrl(videoThumbnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]);
                         }
 
                         index += 1;
@@ -58,6 +58,12 @@
         }).error(function(data) {
             console.log("ERROR");
         });
+        
+        $scope.changeMainVid($index) {
+            var tempVid = $scope.videos[$index];
+            $scope.videos[$index] = $scope.mainVideo;
+            $scope.mainVideo = tempVid;
+        }
     }]);
     
     /**************************** Home Content Directive ****************************/
