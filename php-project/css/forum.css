@@ -82,6 +82,7 @@ hr.ForumLine {
     display: flex;
     flex-direction: row;
     border: 2px #5F9EA0 solid;
+    align-items: stretch;
 }
 
 .User {
