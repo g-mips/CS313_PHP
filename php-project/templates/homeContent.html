@@ -4,8 +4,8 @@
     <h1 class="Title">{{videoTitle}}</h1>
 
     <div id="FeatVideosDiv">
-        <a class="VideoLink" ng-repeat="video in videos">
-            <img class="FeatVideos" ng-src="{{video.info[0]}}" ng-click="changeMainVid(video.id)" />
+        <a class="VideoLink" ng-repeat="video in videos" ng-click="changeMainVid(video.id)">
+            <img class="FeatVideos" ng-src="{{video.info[0]}}" />
         </a>
     </div>
 
