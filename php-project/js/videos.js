@@ -2,7 +2,7 @@
     kacologoApp = angular.module('kacologo-videos', []);
     
     /**************************** Videos Page Controller ****************************/
-    kacologoApp.controller('VideosCtrl', ['$scope', function($scope) {
+    kacologoApp.controller('VideosCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.videos = null;
         
         // GET kacologo's youtube channel 
