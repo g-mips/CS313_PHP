@@ -47,35 +47,25 @@
                     
                     // Figure out current page's ID.
                     if ($_SESSION['page'] > 0) {
-                        $query = "SELECT * FROM " . $tables[$_SESSION['page']] . " WHERE " . $tableIds[$_SESSION['page']] . " = " . $_SESSION['id'];
-                        echo "CUR PAGE QUERY: " . $query . " <br />";
+                        $query = "SELECT * FROM " . $tables[$_SESSION['page']] . " WHERE " . $tableIds[$_SESSION['page']] .
+                            " = " . $_SESSION['id'];
                         $results = $db->query($query);
                         $results->setFetchMode(PDO::FETCH_ASSOC);
                         $results = $results->fetch();
                         $pageId = $results[$tableIds[$_SESSION['page']]];
-                        echo "pageId: " . $pageId . "<br />";
                         $pageTitle = $results[$tableNames[$_SESSION['page']]];
-                        echo "pageTitle: " . $pageTitle . "<br />";
                         $curId = $results[$tableFks[$_SESSION['page']]];
-                        echo "curId: " . $curId . "<br />";
                     }
                     
-                    echo "START LOOP<br />";
                     // Figure out all IDs in between page 0 and current page.
                     for ($index = 0; $index + 1 < $_SESSION['page']; $index++) {
-                        echo "INDEX: " . $index . "<br />";
                         $curTable = $_SESSION['page'] - $index;
                         $preTable = $_SESSION['page'] - $index - 1;
                         
-                        echo "CUR TABLE: " . $curTable . "<br />";
-                        echo "PRE TABLE: " . $preTable . "<br />";
-                        
                         $query = "SELECT * FROM " . $tables[$preTable] . " INNER JOIN " . $tables[$curTable] . " ON " . $tables[$curTable] . "."
-                            . $tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable] . " WHERE " . $tables[$curTable] . "."
-                            . $tableFks[$curTable] . " = " . $curId;
+                            . $tableFks[$curTable] . " = " . $tables[$preTable] . "." . $tableIds[$preTable] . " WHERE " .
+                            $tables[$curTable] . "." . $tableFks[$curTable] . " = " . $curId;
                         
-                        echo "QUERY: " . $query . "<br />";
-
                         $results = $db->query($query);
                         $results->setFetchMode(PDO::FETCH_ASSOC);
                         $results = $results->fetch();
@@ -83,33 +73,17 @@
                         $idsTemp[] = $results[$tableIds[$preTable]];
                         $titlesTemp[] = $results[$tableNames[$preTable]];
                         $curId = $results[$tableFks[$preTable]];
-                        
-                        echo "idsTemp[index]: " . $idsTemp[$index] . "<br />";
-                        echo "titlesTemp[index]: " . $titlesTemp[$index] . "<br />";
-                        echo "CUR ID LOOP: " . $curId . "<br />";
                     }
 
-                    echo "END LOOP<br />";
-                    echo "START NEXT LOOP<br />";
                     // Push on all IDs in between page 0 and current page.
                     for ($index = count($idsTemp) - 1; $index >= 0; $index--) {
-                        echo "INDEX: " . $index . "<br />";
                         $ids[] = "&id=" . $idsTemp[$index];
                         $titles[] = $titlesTemp[$index];
-                        
-                        echo "ids[index]: " . $ids[$index] . "<br />";
-                        echo "titles[index]: " . $titles[$index] . "<br />";
                     }
                     
-                    echo "END SECOND LOOP<br />";
                     // Push on current page's ID.
                     $ids[] = "&id=" . $pageId;
                     $titles[] = $pageTitle;
-                    
-                    var_dump($ids);
-                    echo "<br />";
-                    var_dump($titles);
-                    echo "<br />";
                     
                     echo "<nav id='ForumNav'>";
                     echo "<ul>";
