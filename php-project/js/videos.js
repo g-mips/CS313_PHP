@@ -3,7 +3,7 @@
     
     /**************************** Videos Page Controller ****************************/
     kacologoApp.controller('VideosCtrl', ['$scope', '$http', function($scope, $http) {
-        $scope.videos = null;
+        $scope.videos = [];
         
         // GET kacologo's youtube channel 
         $http.get("https://www.googleapis.com/youtube/v3/channels", {
