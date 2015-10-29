@@ -18,6 +18,7 @@
                 $http.get("https://www.googleapis.com/youtube/v3/playlistItems", {
                     params: {
                         part: 'snippet',
+                        maxResults: 30,
                         playlistId: pid,
                         key: 'AIzaSyBl5kaMOcxag58h_TT7VfHcO29NJIDM_EU' }
                     }).success(function(data) {
