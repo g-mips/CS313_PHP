@@ -36,10 +36,10 @@
 
                         // First video is the only playable one.
                         if (index === 0) {
-                            $scope.mainVideo = [$sce.trustAsResourceUrl(videoThumnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)];
+                            $scope.mainVideo = array(["id" => index, "info" => [$sce.trustAsResourceUrl(videoThumnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]]);
                             $scope.videoTitle = item.snippet.title;
                         } else {
-                            $scope.videos.push([$sce.trustAsResourceUrl(videoThumbnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]);
+                            $scope.videos.push(["id" => index, "info" => [$sce.trustAsResourceUrl(videoThumbnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]]);
                         }
 
                         index += 1;
@@ -59,10 +59,10 @@
             console.log("ERROR");
         });
         
-        $scope.changeMainVid = function($index) {
-            console.log("INDEX: " . $index);
-            var tempVid = $scope.videos[$index];
-            $scope.videos[$index] = $scope.mainVideo;
+        $scope.changeMainVid = function(id) {
+            console.log("INDEX: " . id);
+            var tempVid = $scope.videos[id];
+            $scope.videos[id] = $scope.mainVideo;
             $scope.mainVideo = tempVid;
         };
     }]);
