@@ -30,7 +30,7 @@
                         var videoThumbnailUrl = item.snippet.thumbnails.high.url;
                         
                         $scope.videos.push({thumb: $sce.trustAsResourceUrl(videoThumbnailUrl),
-                                            link: $sce.trustAsResourceUrl("https://www.youtube.com/watch?" + videoId)});
+                                            link: $sce.trustAsResourceUrl("https://www.youtube.com/watch?v=" + videoId)});
                         index += 1;
                     });
                 }).error(function(data) {
