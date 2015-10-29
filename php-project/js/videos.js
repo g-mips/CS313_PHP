@@ -29,8 +29,8 @@
                         var videoId = item.snippet.resourceId.videoId;
                         var videoThumbnailUrl = item.snippet.thumbnails.high.url;
                         
-                        videos.push({thumb: $sce.trustAsResourceUrl(videoThumbnailUrl),
-                                     link: $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)});
+                        $scope.videos.push({thumb: $sce.trustAsResourceUrl(videoThumbnailUrl),
+                                            link: $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)});
                         index += 1;
                     });
                 }).error(function(data) {
