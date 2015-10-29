@@ -40,7 +40,7 @@
 	margin-right: auto;
 	max-width: 480px;
 	max-height: 360px;
-}
+}*/
 
 .VideoLink:hover:before {
 	display: inline-block;
@@ -49,6 +49,6 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	position: absolute;
-	width: 480px;
-	height: 360px;
-} */
+	width: 250px;
+	height: 188px;
+}
