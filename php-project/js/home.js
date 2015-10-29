@@ -25,19 +25,17 @@
                         playlistId: pid,
                         key: 'AIzaSyBl5kaMOcxag58h_TT7VfHcO29NJIDM_EU' }
                     }).success(function(data) {
-                    var videoThumnailUrl = null;
                     var index = 0;
 
                     // Cycle through videos
                     $.each(data.items, function(i, item) {
                         console.log(item);
                         var videoId = item.snippet.resourceId.videoId;
-                        videoThumbnailUrl = item.snippet.thumbnails.high.url;
-                        console.log(videoThumnailUrl);
+                        var videoThumbnailUrl = item.snippet.thumbnails.high.url;
                         
                         // First video is the only playable one.
                         if (index === 0) {
-                            $scope.mainVideo[index] = {id: index, info: [$sce.trustAsResourceUrl(videoThumnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]};
+                            $scope.mainVideo[index] = {id: index, info: [$sce.trustAsResourceUrl(videoThumbnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]};
                             $scope.videoTitle = item.snippet.title;
                         } else {
                             $scope.videos.push({id: index - 1, info: [$sce.trustAsResourceUrl(videoThumbnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]});
