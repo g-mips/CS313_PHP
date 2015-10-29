@@ -24,24 +24,6 @@
 	padding: 10px;
 }
 
-/*
-.VideoImage {
-	display: block;
-	padding: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 10px;
-	width: 480px;
-}
-
-.VideoLink {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 480px;
-	max-height: 360px;
-}*/
-
 .VideoLink:hover:before {
 	display: inline-block;
 	content: '';
@@ -52,3 +34,5 @@
 	width: 260px;
 	height: 198px;
 }
+
+/* MEDIA QUERIES */

@@ -14,7 +14,6 @@
                 forUsername: 'kacologo',
                 key: 'AIzaSyBl5kaMOcxag58h_TT7VfHcO29NJIDM_EU' }
             }).success(function(data) {
-                console.log(data.items[0]);
                 var pid = data.items[0].contentDetails.relatedPlaylists.uploads;
 
                 // GET kacologo's youtube uploads
@@ -29,7 +28,6 @@
 
                     // Cycle through videos
                     $.each(data.items, function(i, item) {
-                        console.log(item);
                         var videoId = item.snippet.resourceId.videoId;
                         var videoThumbnailUrl = item.snippet.thumbnails.high.url;
                         
@@ -44,21 +42,27 @@
                         index += 1;
                     });
                 }).error(function(data) {
-                    console.log("ERROR");
+                    console.log("SERVER ERROR");
                 });
             }).error(function(data) {
-                console.log("ERROR");
+                console.log("SERVER ERROR");
             });
 
         // GET kacologo's current Twitch information 
         $http.get("https://api.twitch.tv/kraken/channels/kacologo").success(function(data) {
-            console.log(data);
             $scope.twitchTitle = data.status;
         }).error(function(data) {
-            console.log("ERROR");
+            console.log("SERVER ERROR");
         });
         
+        /**
+         * changeMainVid
+         *  params:
+         *    id: (int) index of the videos to be swapped
+         *  Swaps the video at index id with the mainVideo
+         **/
         $scope.changeMainVid = function(id) {
+            // Swaps the two videos
             var tempVid = $scope.videos[id];
             $scope.videos[id] = $scope.mainVideo[0];
             $scope.mainVideo[0] = tempVid;
