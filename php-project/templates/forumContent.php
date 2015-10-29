@@ -193,7 +193,9 @@
                             }
                         }
                         
-                        echo "<button type='button' onclick='location.href=\"/php-project/addThread.php\"'>Add Thread</button>";
+                        if ($_SESSION['logged']) {
+                            echo "<button type='button' onclick='location.href=\"/php-project/addThread.php\"'>Add Thread</button>";
+                        }
                     } else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] !== null) {
                         $query = "SELECT * FROM topics WHERE topic_id = " . $_SESSION['id'];
                         $topics = $db->query($query);
@@ -227,6 +229,10 @@
                                 echo "<p class='SubCatDescription PostContent'>" . $post["post_content"] . "</p>";
                                 echo "</section>";
                             }
+                        }
+                        
+                        if ($_SESSION['logged']) {
+                            echo "<button type='button' onclick=''>Reply</button>";
                         }
                     } else {
                         // DISPLAY PAGE DOESN'T EXIST
