@@ -59,11 +59,11 @@
             console.log("ERROR");
         });
         
-        $scope.changeMainVid($index) {
+        $scope.changeMainVid = function($index) {
             var tempVid = $scope.videos[$index];
             $scope.videos[$index] = $scope.mainVideo;
             $scope.mainVideo = tempVid;
-        }
+        };
     }]);
     
     /**************************** Home Content Directive ****************************/
