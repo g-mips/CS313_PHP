@@ -62,18 +62,18 @@
         $scope.changeMainVid = function(id) {
             console.log("INDEX: " + id);
             console.log("VID ID: " + $scope.videos[id].id);
-            console.log("VID IN: " + $scope.videos[id].info):
+            console.log("VID IN: " + $scope.videos[id].info);
             var tempVid = $scope.videos[id];
             console.log("TEM ID: " + tempVid.id);
             console.log("VID IN: " + tempVid.info):
             $scope.videos[id] = $scope.mainVideo[0];
             console.log("NEW VID ID: " + $scope.videos[id].id);
-            console.log("NEW VID IN: " + $scope.videos[id].info):
+            console.log("NEW VID IN: " + $scope.videos[id].info);
             console.log("MAN ID: " + $scope.mainVideo[0].id);
-            console.log("MAN IN: " + $scope.mainVideo[0].info):
+            console.log("MAN IN: " + $scope.mainVideo[0].info);
             $scope.mainVideo[0] = tempVid;
             console.log("NEW MAN ID: " + $scope.mainVideo[0].id);
-            console.log("NEW MAN IN: " + $scope.mainVideo[0].info):
+            console.log("NEW MAN IN: " + $scope.mainVideo[0].info);
         };
     }]);
     
