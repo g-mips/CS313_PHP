@@ -81,6 +81,7 @@ hr.ForumLine {
 }
 
 .User {
-    border: 2px black solid;
+    border-right: 2px black solid;
     width: 300px;
+    height: 100%;
 }
