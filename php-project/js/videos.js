@@ -26,6 +26,7 @@
 
                     // Cycle through videos
                     $.each(data.items, function(i, item) {
+                        console.log(item);
                         var videoId = item.snippet.resourceId.videoId;
                         var videoThumbnailUrl = item.snippet.thumbnails.high.url;
                         
