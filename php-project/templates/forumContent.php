@@ -195,7 +195,35 @@
                         
                         echo "<button type='button' onclick='location.href=\"/php-project/addThread.php\"'>Add Thread</button>";
                     } else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] !== null) {
-
+                        $query = "SELECT * FROM topics WHERE topic_id = " . $_SESSION['id'];
+                        $topics = $db->query($query);
+                        $topics->setFetchMode(PDO::FETCH_ASSOC);
+                        $topic = $topics->fetch();
+                        
+                        echo "<h1 class='ForumTitle'>" . $topic["topic_subject"] . "</h1>";
+                        
+                        $query = "SELECT * FROM posts INNER JOIN topics ON posts.post_topic = topics.topic_id WHERE topics.topic_id = " .
+                            $_SESSION['id'] . " ORDER BY posts.post_date";
+                        $posts = $db->query($query);
+                        $posts = $posts->fetchAll();
+                        
+                        $startPostIndex = (($_SESSION['tpage'] - 1) * 20);
+                        $endPostIndex = $_SESSION['tpage'] * 20;
+                        
+                        $size = sizeof($posts);
+                        
+                        if ($size < $startPostIndex || $size > $endPostIndex) {
+                            
+                        } else {
+                            for ($index = $startPostIndex; $index < $endPostIndex && $index < $size; $index++) {
+                                $post = $posts[$index];
+                                
+                                echo "<section class='SubCat'>";
+                                echo "<p class='SubCatDescription'>" . $post["post_content"] . "</p>";
+                                echo "<hr class='ForumLine'/>";
+                                echo "</section>";
+                            }
+                        }
                     } else {
                         // DISPLAY PAGE DOESN'T EXIST
                     }
