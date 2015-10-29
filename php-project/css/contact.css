@@ -1,3 +1,12 @@
+#ContactContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    align-content: center;
+}
+
 #ContactPicture {
     max-width: 200px;
     padding: 20px 40px;
@@ -11,17 +20,17 @@
 }
 
 #PictureContainer {
-    float: right;
+    /*float: right;*/
 }
 
 #Content:after {
-    content: "";
+    /*content: "";
     display: table;
     clear: both;
-}
+*/}
 
 #BottomLine {
-    width: 998px;
+    /*width: 998px;
     margin: 0px;
-    padding: 0px;
+    padding: 0px;*/
 }
