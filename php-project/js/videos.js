@@ -26,12 +26,11 @@
 
                     // Cycle through videos
                     $.each(data.items, function(i, item) {
-                        console.log(item);
                         var videoId = item.snippet.resourceId.videoId;
                         var videoThumbnailUrl = item.snippet.thumbnails.high.url;
                         
                         $scope.videos.push({thumb: $sce.trustAsResourceUrl(videoThumbnailUrl),
-                                            link: $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)});
+                                            link: $sce.trustAsResourceUrl("https://www.youtube.com/watch?" + videoId)});
                         index += 1;
                     });
                 }).error(function(data) {
