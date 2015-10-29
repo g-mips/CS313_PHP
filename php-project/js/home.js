@@ -62,8 +62,8 @@
         $scope.changeMainVid = function(id) {
             console.log("INDEX: " . id);
             var tempVid = $scope.videos[id];
-            $scope.videos[id] = $scope.mainVideo;
-            $scope.mainVideo = tempVid;
+            $scope.videos[id] = $scope.mainVideo[0];
+            $scope.mainVideo[0] = tempVid;
         };
     }]);
     
