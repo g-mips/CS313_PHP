@@ -64,6 +64,10 @@
     padding-left: 5px;
 }
 
+.PostContent {
+    padding: 10px;
+}
+
 hr.ForumLine {
     width: 100%;
     border-color: dimgray;
@@ -83,7 +87,9 @@ hr.ForumLine {
 .User {
     font-size: 24px;
     padding: 5px;
+    text-align: center;
     border-right: 2px black solid;
     width: 300px;
     height: 100%;
+    margin: 0px;
 }

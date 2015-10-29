@@ -224,7 +224,7 @@
                                 
                                 echo "<section class='ContentContainer'>";
                                 echo "<h1 class='User'>" . $user['user_name'] . "</h1>";
-                                echo "<p class='SubCatDescription'>" . $post["post_content"] . "</p>";
+                                echo "<p class='SubCatDescription PostContent'>" . $post["post_content"] . "</p>";
                                 echo "</section>";
                             }
                         }
