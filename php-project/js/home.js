@@ -3,7 +3,7 @@
     
     /**************************** Home Page Controller ****************************/
     kacologoApp.controller('HomeCtrl', ['$http', '$sce', '$scope', function($http, $sce, $scope) {
-        $scope.mainVideo = null;
+        $scope.mainVideo = [];
         $scope.videoTitle = null;
         $scope.videos = [];
 
