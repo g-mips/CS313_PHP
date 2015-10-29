@@ -5,7 +5,7 @@
     kacologoApp.controller('HomeCtrl', ['$http', '$sce', '$scope', function($http, $sce, $scope) {
         $scope.mainVideo = [];
         $scope.videoTitle = null;
-        $scope.videos = [];
+        $scope.videos = [""];
 
         // GET kacologo's youtube channel 
         $http.get("https://www.googleapis.com/youtube/v3/channels", {
@@ -36,10 +36,10 @@
 
                         // First video is the only playable one.
                         if (index === 0) {
-                            $scope.mainVideo[index] = ["id" => index, "info" => [$sce.trustAsResourceUrl(videoThumnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]];
+                            $scope.mainVideo[index] = {"id": index, "info": [$sce.trustAsResourceUrl(videoThumnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]};
                             $scope.videoTitle = item.snippet.title;
                         } else {
-                            $scope.videos.push(["id" => index, "info" => [$sce.trustAsResourceUrl(videoThumbnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]]);
+                            $scope.videos.push({"id": index, "info": [$sce.trustAsResourceUrl(videoThumbnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]});
                         }
 
                         index += 1;
