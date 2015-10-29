@@ -33,7 +33,8 @@
                         console.log(item);
                         var videoId = item.snippet.resourceId.videoId;
                         videoThumbnailUrl = item.snippet.thumbnails.high.url;
-
+                        console.log(videoThumnailUrl);
+                        
                         // First video is the only playable one.
                         if (index === 0) {
                             $scope.mainVideo[index] = {id: index, info: [$sce.trustAsResourceUrl(videoThumnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]};
