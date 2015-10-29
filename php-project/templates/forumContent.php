@@ -218,14 +218,13 @@
                             for ($index = $startPostIndex; $index < $endPostIndex && $index < $size; $index++) {
                                 $post = $posts[$index];
                                 
-                                $user = $db->query("SELECT * FROM users INNER JOIN posts ON users.user_id = posts.post_id WHERE posts.post_id = " . $post["post_id"]);
+                                $user = $db->query("SELECT * FROM users INNER JOIN posts ON users.user_id = posts.post_author WHERE posts.post_author = " . $post["post_author"]);
                                 $user->setFetchMode(PDO::FETCH_ASSOC);
                                 $user = $user->fetch();
                                 
                                 echo "<section class='ContentContainer'>";
                                 echo "<h1 class='User'>" . $user['user_name'] . "</h1>";
                                 echo "<p class='SubCatDescription'>" . $post["post_content"] . "</p>";
-                                echo "<hr class='ForumLine'/>";
                                 echo "</section>";
                             }
                         }
