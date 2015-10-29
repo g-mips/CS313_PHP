@@ -73,3 +73,14 @@ hr.ForumLine {
     text-decoration: none;
     color: #000000;
 }
+
+.ContentContainer {
+    display: flex;
+    flex-direction: row;
+    border: 2px black solid;
+}
+
+.User {
+    border: 2px black solid;
+    width: 300px;
+}
