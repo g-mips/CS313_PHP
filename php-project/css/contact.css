@@ -3,19 +3,19 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: baseline;
+    align-items: flex-start;
     align-content: center;
 }
 
 #ContactPicture {
-    max-width: 200px;
+    width: 200px;
     padding: 20px 40px;
 }
 
 #ContactInfo {
     text-align: justify;
     padding: 50px;
-    max-width: 600px;
+    width: 600px;
     text-indent: 50px;
 }
 
