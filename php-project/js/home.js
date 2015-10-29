@@ -60,7 +60,8 @@
         });
         
         $scope.changeMainVid = function(id) {
-            console.log("INDEX: " . id);
+            console.log("INDEX: " + id);
+            console.log("VID: " + $scope.videos[id]);
             var tempVid = $scope.videos[id];
             $scope.videos[id] = $scope.mainVideo[0];
             $scope.mainVideo[0] = tempVid;

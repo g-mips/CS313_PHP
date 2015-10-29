@@ -4,7 +4,7 @@
     <h1 class="Title">{{videoTitle}}</h1>
 
     <div id="FeatVideosDiv">
-        <img class="FeatVideos" ng-repeat="video in videos" ng-src="{{video.info[0]}}" ng-click="changeMainVid(video.id)" />
+        <img class="FeatVideos" ng-repeat="video in videos track by video.id" ng-src="{{video.info[0]}}" ng-click="changeMainVid(video.id)" />
     </div>
 
     <hr />
