@@ -29,7 +29,7 @@
                     // Set up for possible looping IDs.
                     $tables = ["", "categories", "sub_categories", "topics"];
                     $tableIds = ["", "cat_id", "sub_cat_id", "topic_id"];
-                    $tableNames = ["", "cat_name", "sub_cat_name", "topic_name"];
+                    $tableNames = ["", "cat_name", "sub_cat_name", "topic_subject"];
                     $tableFks = ["", "", "sub_cat_cat", "topic_sub_cat"];
                     
                     // Holder for current page's ID and title.

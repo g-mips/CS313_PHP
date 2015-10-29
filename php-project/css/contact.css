@@ -18,19 +18,3 @@
     width: 600px;
     text-indent: 50px;
 }
-
-#PictureContainer {
-    /*float: right;*/
-}
-
-#Content:after {
-    /*content: "";
-    display: table;
-    clear: both;
-*/}
-
-#BottomLine {
-    /*width: 998px;
-    margin: 0px;
-    padding: 0px;*/
-}
