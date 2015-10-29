@@ -81,14 +81,14 @@ hr.ForumLine {
 .ContentContainer {
     display: flex;
     flex-direction: row;
-    border: 2px black solid;
+    border: 2px #5F9EA0 solid;
 }
 
 .User {
     font-size: 24px;
     padding: 5px;
     text-align: center;
-    border-right: 2px black solid;
+    border-right: 2px #5F9EA0 solid;
     width: 300px;
     height: 100%;
     margin: 0px;
