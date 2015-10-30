@@ -250,17 +250,17 @@
             ?>
 
             <section ng-if="<?php echo $_SESSION['logged'] ? 'true' : 'false'; ?>">
-                <button type='button' ng-click='setReply(true)' ng-hide='isReplying'>Reply</button>
+                <button type="button" ng-click="setReply(true)" ng-hide="isReplying">Reply</button>
 
-                <section ng-show='isReplying'>
+                <section ng-show="isReplying">
                     <h1 class="Title">Reply</h1>
-                    <form name='replyForm' ng-submit='replyForm.$valid && sendPost()' novalidate>
-                        <div class='FormDiv'>
-                            <textarea id='Content' name='content' ng-model='content' rows='30' cols='70' required></textarea><br />
+                    <form name="replyForm" ng-submit="replyForm.$valid && sendPost()" novalidate>
+                        <div class="FormDiv">
+                            <textarea id="Content" name="content" ng-model="content" rows="30" cols="70" required></textarea><br />
                         </div>
-                        <div class='FormDiv'>
-                            <input id='Submit' type='submit' name='submit' value='Add Reply' ng-disable='replyForm.$invalid' />
-                            <input id='Cancel' type='button' name='cancel' value='Cancel' ng-click='setReply(false)' />
+                        <div class="FormDiv">
+                            <input id="Submit" type="submit" name="submit" value="Add Reply" ng-disable="replyForm.$invalid" />
+                            <input id="Cancel" type="button" name="cancel" value="Cancel" ng-click="setReply(false)" />
                         </div>
                     </form>
                     <h1 class="Title">{{submissionResult}}</h1>

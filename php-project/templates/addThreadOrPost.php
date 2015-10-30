@@ -69,7 +69,7 @@
             
             $statement->execute();
             
-            echo "SUCCESS";
+            echo $_POST["content"];
         }
     }
 ?>
