@@ -86,11 +86,11 @@ hr.ForumLine {
 }
 
 .User {
-    font-size: 24px;
+    font-size: 18px;
     padding: 5px;
     text-align: center;
     border-right: 2px #5F9EA0 solid;
-    max-width: 300px;
+    max-width: 450px;
     height: inherit;
     margin: 0px;
 }
