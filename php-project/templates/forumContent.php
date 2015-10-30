@@ -235,14 +235,14 @@
                             echo "<button type='button' ng-click='setReply(true)' ng-hide='{{isReplying}}'>Reply</button>";
                             
                             echo "<section ng-show='{{isReplying}}'>";
-                            echo "<form name='replyForm' ng-submit='replyForm.$valid && ' novalidate>";
+                            echo "<form name='replyForm' ng-submit='replyForm.\$valid' novalidate>";
                             echo "<div class='FormDiv'>";
                             echo "<label for='Content'>Content</label>";
                             echo "<textarea id='Content' name='content' ng-model='content' rows='30' cols='70' required></textarea><br />";
                             echo "</div>";
                             echo "<div class='FormDiv'>";
                             echo "<label></label>";
-                            echo "<input id='Submit' type='submit' name='submit' value='Add Reply' ng-disable='replyForm.$invalid' />";
+                            echo "<input id='Submit' type='submit' name='submit' value='Add Reply' ng-disable='replyForm.\$invalid' />";
                             echo "<input id='Cancel' type='button' name='cancel' value='Cancel' ng-click='setReply(false)' />";
                             echo "</div>";
                             echo "</form>";
