@@ -67,6 +67,8 @@
             $topicId = $topic["topic_id"];
             $author = $user["user_id"];
             
+            $statement->execute();
+            
             echo "SUCCESS";
         }
     }
