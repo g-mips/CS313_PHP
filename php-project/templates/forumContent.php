@@ -141,9 +141,9 @@
             ?>
         </section>
     
-        <section ng-if="<?php echo ($_SESSION['page'] == 1) ? 'true' : 'false'; ?> && <? echo ($_SESSION['id'] !== null) ? 'true' : 'false'; ?>">
+        <!--<section ng-if="<?php /*echo ($_SESSION['page'] == 1) ? 'true' : 'false';*/ ?> && <? /*echo ($_SESSION['id'] !== null) ? 'true' : 'false';*/ ?>">
             <?php
-                $query = "SELECT * FROM categories WHERE cat_id = " . $_SESSION['id'];
+                /*$query = "SELECT * FROM categories WHERE cat_id = " . $_SESSION['id'];
                 $cat = $db->query($query);
 
                 $index = 0;
@@ -153,37 +153,36 @@
                         displaySubCats($db, $category["cat_id"]);
                         $index += 1;
                     }
-                }
+                }*/
             ?>
-        </section>
+        </section>-->
         
         <section ng-if="<?php echo ($_SESSION['page'] == 2) ? 'true' : 'false'; ?> && <? echo ($_SESSION['id'] !== null) ? 'true' : 'false'; ?>
                         && <?php echo ($_SESSION['tpage'] !== null) ? 'true' : 'false'; ?>">
             <?php
-                $query = "SELECT sub_cat_name FROM sub_categories WHERE sub_cat_id = " . $_SESSION['id'];
+                /*$query = "SELECT sub_cat_name FROM sub_categories WHERE sub_cat_id = " . $_SESSION['id'];
                 $titles = $db->query($query);
                 $titles->setFetchMode(PDO::FETCH_ASSOC);
                 $title = $titles->fetch();
 
-                //
                 $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = sub_categories.sub_cat_id WHERE sub_categories.sub_cat_id = " . $_SESSION['id'] . " AND topics.topic_pinned = 1 ORDER BY topics.topic_date";
                 $pinnedTopics = $db->query($query);
                 $pinnedTopics = $pinnedTopics->fetchAll();
 
                 $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = sub_categories.sub_cat_id WHERE sub_categories.sub_cat_id = " . $_SESSION['id'] . " AND topics.topic_pinned = 0 ORDER BY topics.topic_date";
                 $nonPinnedTopics = $db->query($query);
-                $nonPinnedTopics = $nonPinnedTopics->fetchAll();
+                $nonPinnedTopics = $nonPinnedTopics->fetchAll();*/
 
             ?>
             
-            <h1 class="ForumTitle"><?php echo $title["sub_cat_name"]; ?></h1>
+            <h1 class="ForumTitle"><?php /*echo $title["sub_cat_name"];*/ ?></h1>
             <h1 class="CatName">Threads</h1>
 
                 <!--echo "<h1 class='ForumTitle'>" . $title["sub_cat_name"] . "</h1>";
                 echo "<h1 class='CatName'>Threads</h1>";-->
 
             <?php
-                $startTopicIndex = (($_SESSION['tpage'] - 1) * 20);
+                /*$startTopicIndex = (($_SESSION['tpage'] - 1) * 20);
                 $endTopicIndex = $_SESSION['tpage'] * 20;
 
                 $size = sizeof($pinnedTopics) + sizeof($nonPinnedTopics);
@@ -210,7 +209,7 @@
                         echo "</section>";
                         echo "</a>";
                     }
-                }
+                }*/
             ?>
             
                 <button ng-if="<?php echo $_SESSION['logged'] ? 'true' : 'false'; ?>" type="button" onclick="location.href='php-project/addThread.php'">Add Thread</button>
@@ -223,12 +222,10 @@
         <section ng-if="<?php echo ($_SESSION['page'] == 3) ? 'true' : 'false'; ?> && <? echo ($_SESSION['id'] !== null) ? 'true' : 'false'; ?>
                         && <?php echo ($_SESSION['tpage'] !== null) ? 'true' : 'false'; ?>">
             <?php
-                $query = "SELECT * FROM topics WHERE topic_id = " . $_SESSION['id'];
+                /*$query = "SELECT * FROM topics WHERE topic_id = " . $_SESSION['id'];
                 $topics = $db->query($query);
                 $topics->setFetchMode(PDO::FETCH_ASSOC);
                 $topic = $topics->fetch();
-
-                /*echo "<h1 class='ForumTitle'>" . $topic["topic_subject"] . "</h1>";*/
 
                 $query = "SELECT * FROM posts INNER JOIN topics ON posts.post_topic = topics.topic_id WHERE topics.topic_id = " .
                     $_SESSION['id'] . " ORDER BY posts.post_date";
@@ -238,13 +235,13 @@
                 $startPostIndex = (($_SESSION['tpage'] - 1) * 20);
                 $endPostIndex = $_SESSION['tpage'] * 20;
 
-                $size = sizeof($posts);
+                $size = sizeof($posts);*/
             ?>
             
-            <h1 class="ForumTitle"><?php echo $topic["topic_subject"]; ?></h1>
+            <h1 class="ForumTitle"><?php /*echo $topic["topic_subject"];*/ ?></h1>
             
             <?php
-                if ($size < $startPostIndex || $size > $endPostIndex) {
+/*                if ($size < $startPostIndex || $size > $endPostIndex) {
 
                 } else {
                     for ($index = $startPostIndex; $index < $endPostIndex && $index < $size; $index++) {
@@ -259,21 +256,21 @@
                         echo "<p class='SubCatDescription PostContent'>" . $post["post_content"] . "</p>";
                         echo "</section>";
                     }
-                }
+                }*/
             ?>
 
             <section ng-if="<?php echo $_SESSION['logged'] ? 'true' : 'false'; ?>">
                 <button type='button' ng-click='setReply(true)' ng-hide='{{isReplying}}'>Reply</button>
 
                 <section ng-show='{{isReplying}}'>
-                    <form name='replyForm' ng-submit='replyForm.\$valid' novalidate>
+                    <form name='replyForm' ng-submit='replyForm.$valid' novalidate>
                         <div class='FormDiv'>
                             <label for='Content'>Content</label>
                             <textarea id='Content' name='content' ng-model='content' rows='30' cols='70' required></textarea><br />
                         </div>
                         <div class='FormDiv'>
                             <label></label>
-                            <input id='Submit' type='submit' name='submit' value='Add Reply' ng-disable='replyForm.\$invalid' />
+                            <input id='Submit' type='submit' name='submit' value='Add Reply' ng-disable='replyForm.$invalid' />
                             <input id='Cancel' type='button' name='cancel' value='Cancel' ng-click='setReply(false)' />
                         </div>
                     </form>
