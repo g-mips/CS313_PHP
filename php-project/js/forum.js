@@ -5,8 +5,8 @@
     kacologoApp.controller('ForumCtrl', ['$scope', function($scope) {
         $scope.isReplying = false;
         
-        $scope.setReply = function() {
-            $scope.isReplying = true;
+        $scope.setReply = function(value) {
+            $scope.isReplying = value;
         }
     }]);
     
