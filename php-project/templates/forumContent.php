@@ -219,7 +219,7 @@
         <section ng-if="<?php echo ($_SESSION['page'] == 3) ? 'true' : 'false'; ?> && <? echo ($_SESSION['id'] !== null) ? 'true' : 'false'; ?>
                         && <?php echo ($_SESSION['tpage'] !== null) ? 'true' : 'false'; ?>">
             <?php
-                /*$query = "SELECT * FROM topics WHERE topic_id = " . $_SESSION['id'];
+                $query = "SELECT * FROM topics WHERE topic_id = " . $_SESSION['id'];
                 $topics = $db->query($query);
                 $topics->setFetchMode(PDO::FETCH_ASSOC);
                 $topic = $topics->fetch();
@@ -235,10 +235,10 @@
                 $size = sizeof($posts);
             ?>
             
-            <h1 class="ForumTitle"><?php /*echo $topic["topic_subject"];*/ ?></h1>
+            <h1 class="ForumTitle"><?php echo $topic["topic_subject"]; ?></h1>
             
             <?php
-/*                if ($size < $startPostIndex || $size > $endPostIndex) {
+                if ($size < $startPostIndex || $size > $endPostIndex) {
 
                 } else {
                     for ($index = $startPostIndex; $index < $endPostIndex && $index < $size; $index++) {
@@ -253,7 +253,7 @@
                         echo "<p class='SubCatDescription PostContent'>" . $post["post_content"] . "</p>";
                         echo "</section>";
                     }
-                }*/
+                }
             ?>
 
             <section ng-if="<?php echo $_SESSION['logged'] ? 'true' : 'false'; ?>">
@@ -297,7 +297,7 @@
 
                     echo "</section>";
                     echo "</a>";
-                }*/
+                }
             /*} else if ($_SESSION['id'] !== null) {
                 if ($_SESSION['page'] == 1) {
                     $query = "SELECT * FROM categories WHERE cat_id = " . $_SESSION['id'];
