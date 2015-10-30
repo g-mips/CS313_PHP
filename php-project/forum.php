@@ -1,8 +1,23 @@
 <?php
     session_start();
-    $_SESSION['page'] = (int)$_GET['page'];
-    $_SESSION['id']   = (int)$_GET['id'];
-    $_SESSION['tpage'] = (int)$_GET['tpage'];
+
+    if (isset($_GET['page'])) {
+        $_SESSION['page'] = (int)$_GET['page'];
+    } else {
+        $_SESSION['page'] = 0;
+    }
+    
+    if (isset($_GET['id'])) {
+        $_SESSION['id']   = (int)$_GET['id'];
+    } else {
+        $_SESSION['id'] = 0;
+    }
+    
+    if (isset($_GET['tpage'])) {
+        $_SESSION['tpage'] = (int)$_GET['tpage'];
+    } else {
+        $_SESSION['tpage'] = 1;
+    }
 ?>
 <!DOCTYPE html>
 <html ng-app="kacologoApp">

@@ -157,8 +157,7 @@
             ?>
         </section>
         
-        <section ng-if="<?php echo ($_SESSION['page'] == 2) ? 'true' : 'false'; ?> && <?php echo isset($_SESSION['id']) ? 'true' : 'false'; ?>
-                        && <?php echo ($_SESSION['tpage'] !== null) ? 'true' : 'false'; ?>">
+        <section ng-if="<?php echo ($_SESSION['page'] == 2) ? 'true' : 'false'; ?> && <?php echo isset($_SESSION['id']) ? 'true' : 'false'; ?> && <?php echo ($_SESSION['tpage'] !== null) ? 'true' : 'false'; ?>">
             <?php
                 $query = "SELECT sub_cat_name FROM sub_categories WHERE sub_cat_id = " . $_SESSION['id'];
                 $titles = $db->query($query);
@@ -210,14 +209,9 @@
             ?>
             
                 <button ng-if="<?php echo $_SESSION['logged'] ? 'true' : 'false'; ?>" type="button" onclick="location.href='php-project/addThread.php'">Add Thread</button>
-
-<!--                if ($_SESSION['logged']) {
-                    echo "<button type='button' onclick='location.href=\"/php-project/addThread.php\"'>Add Thread</button>";
-                }-->
         </section>
         
-        <section ng-if="<?php echo ($_SESSION['page'] == 3) ? 'true' : 'false'; ?> && <?php echo isset($_SESSION['id']) ? 'true' : 'false'; ?>
-                        && <?php echo isset($_SESSION['tpage']) ? 'true' : 'false'; ?>">
+        <section ng-if="<?php echo ($_SESSION['page'] == 3) ? 'true' : 'false'; ?> && <?php echo isset($_SESSION['id']) ? 'true' : 'false'; ?> && <?php echo isset($_SESSION['tpage']) ? 'true' : 'false'; ?>">
             <?php
                 $query = "SELECT * FROM topics WHERE topic_id = " . $_SESSION['id'];
                 $topics = $db->query($query);
@@ -275,7 +269,8 @@
         </section>
     </section>
     
-<?php
+<!--
+
         // If it is null, we need to handle it differently!
         /*if ($db !== null) {
             // Navigation bar
@@ -421,4 +416,5 @@
             }
         }*/
     ?>
+-->
 </section>
