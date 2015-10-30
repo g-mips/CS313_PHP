@@ -7,7 +7,7 @@
         
         $scope.setReply = function() {
             $scope.isReplying = true;
-        };
+        }
     }]);
     
     kacologoApp.directive('forumContent', function() {

@@ -232,7 +232,7 @@
                         }
                         
                         if ($_SESSION['logged']) {
-                            echo "<button type='button' onclick='setReply()' ng-hide='{{isReplying}}'>Reply</button>";
+                            echo "<button type='button' ng-click='{{setReply()}}' ng-hide='{{isReplying}}'>Reply</button>";
                             
                             echo "<section ng-show='{{isReplying}}'>";
                             echo "<form name='replyForm' ng-submit='replyForm.$valid && ' novalidate>";
