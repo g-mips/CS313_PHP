@@ -141,9 +141,9 @@
             ?>
         </section>
     
-        <!--<section ng-if="<?php /*echo ($_SESSION['page'] == 1) ? 'true' : 'false';*/ ?> && <? /*echo ($_SESSION['id'] !== null) ? 'true' : 'false';*/ ?>">
+        <section ng-if="<?php echo ($_SESSION['page'] == 1) ? 'true' : 'false'; ?> && <? echo ($_SESSION['id'] !== null) ? 'true' : 'false'; ?>">
             <?php
-                /*$query = "SELECT * FROM categories WHERE cat_id = " . $_SESSION['id'];
+                $query = "SELECT * FROM categories WHERE cat_id = " . $_SESSION['id'];
                 $cat = $db->query($query);
 
                 $index = 0;
@@ -153,9 +153,9 @@
                         displaySubCats($db, $category["cat_id"]);
                         $index += 1;
                     }
-                }*/
+                }
             ?>
-        </section>-->
+        </section>
         
         <section ng-if="<?php echo ($_SESSION['page'] == 2) ? 'true' : 'false'; ?> && <? echo ($_SESSION['id'] !== null) ? 'true' : 'false'; ?>
                         && <?php echo ($_SESSION['tpage'] !== null) ? 'true' : 'false'; ?>">
