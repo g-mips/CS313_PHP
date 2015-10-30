@@ -141,7 +141,7 @@
             ?>
         </section>
     
-        <section ng-if="<?php echo ($_SESSION['page'] == 1) ? 'true' : 'false'; ?> && <? echo isset($_SESSION['id']) ? 'true' : 'false'; ?>">
+        <section ng-if="<?php echo ($_SESSION['page'] == 1) ? 'true' : 'false'; ?> && <?php echo isset($_SESSION['id']) ? 'true' : 'false'; ?>">
             <?php
                 $query = "SELECT * FROM categories WHERE cat_id = " . $_SESSION['id'];
                 $cat = $db->query($query);
@@ -157,7 +157,7 @@
             ?>
         </section>
         
-        <section ng-if="<?php echo ($_SESSION['page'] == 2) ? 'true' : 'false'; ?> && <? echo isset($_SESSION['id']) ? 'true' : 'false'; ?>
+        <section ng-if="<?php echo ($_SESSION['page'] == 2) ? 'true' : 'false'; ?> && <?php echo isset($_SESSION['id']) ? 'true' : 'false'; ?>
                         && <?php echo ($_SESSION['tpage'] !== null) ? 'true' : 'false'; ?>">
             <?php
                 $query = "SELECT sub_cat_name FROM sub_categories WHERE sub_cat_id = " . $_SESSION['id'];
@@ -216,7 +216,7 @@
                 }-->
         </section>
         
-        <section ng-if="<?php echo ($_SESSION['page'] == 3) ? 'true' : 'false'; ?> && <? echo isset($_SESSION['id']) ? 'true' : 'false'; ?>
+        <section ng-if="<?php echo ($_SESSION['page'] == 3) ? 'true' : 'false'; ?> && <?php echo isset($_SESSION['id']) ? 'true' : 'false'; ?>
                         && <?php echo isset($_SESSION['tpage']) ? 'true' : 'false'; ?>">
             <?php
                 $query = "SELECT * FROM topics WHERE topic_id = " . $_SESSION['id'];
