@@ -257,9 +257,9 @@
             ?>
 
             <section ng-if="<?php echo $_SESSION['logged'] ? 'true' : 'false'; ?>">
-                <button type='button' ng-click='setReply(true)' ng-hide='{{isReplying}}'>Reply</button>
+                <button type='button' ng-click='setReply(true)' ng-hide='isReplying'>Reply</button>
 
-                <section ng-show='{{isReplying}}'>
+                <section ng-show='isReplying'>
                     <form name='replyForm' ng-submit='replyForm.$valid' novalidate>
                         <div class='FormDiv'>
                             <label for='Content'>Content</label>
