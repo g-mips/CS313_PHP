@@ -125,7 +125,7 @@
             <h1 class="ForumTitle">Forum</h1>
             
             <?php
-                $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");
+/*                $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");
 
                 // Categories Loop
                 foreach ($cats as $cat) {
@@ -137,7 +137,7 @@
 
                     echo "</section>";
                     echo "</a>";
-                }
+                }*/
             ?>
         </section>
     
