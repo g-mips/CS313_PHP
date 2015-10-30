@@ -160,7 +160,7 @@
         <section ng-if="<?php echo ($_SESSION['page'] == 2) ? 'true' : 'false'; ?> && <? echo ($_SESSION['id'] !== null) ? 'true' : 'false'; ?>
                         && <?php echo ($_SESSION['tpage'] !== null) ? 'true' : 'false'; ?>">
             <?php
-                /*$query = "SELECT sub_cat_name FROM sub_categories WHERE sub_cat_id = " . $_SESSION['id'];
+                $query = "SELECT sub_cat_name FROM sub_categories WHERE sub_cat_id = " . $_SESSION['id'];
                 $titles = $db->query($query);
                 $titles->setFetchMode(PDO::FETCH_ASSOC);
                 $title = $titles->fetch();
@@ -171,18 +171,18 @@
 
                 $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = sub_categories.sub_cat_id WHERE sub_categories.sub_cat_id = " . $_SESSION['id'] . " AND topics.topic_pinned = 0 ORDER BY topics.topic_date";
                 $nonPinnedTopics = $db->query($query);
-                $nonPinnedTopics = $nonPinnedTopics->fetchAll();*/
+                $nonPinnedTopics = $nonPinnedTopics->fetchAll();
 
             ?>
             
-            <h1 class="ForumTitle"><?php /*echo $title["sub_cat_name"];*/ ?></h1>
+            <h1 class="ForumTitle"><?php echo $title["sub_cat_name"]; ?></h1>
             <h1 class="CatName">Threads</h1>
 
-                <!--echo "<h1 class='ForumTitle'>" . $title["sub_cat_name"] . "</h1>";
-                echo "<h1 class='CatName'>Threads</h1>";-->
+                echo "<h1 class='ForumTitle'>" . $title["sub_cat_name"] . "</h1>";
+                echo "<h1 class='CatName'>Threads</h1>";
 
             <?php
-                /*$startTopicIndex = (($_SESSION['tpage'] - 1) * 20);
+                $startTopicIndex = (($_SESSION['tpage'] - 1) * 20);
                 $endTopicIndex = $_SESSION['tpage'] * 20;
 
                 $size = sizeof($pinnedTopics) + sizeof($nonPinnedTopics);
@@ -209,7 +209,7 @@
                         echo "</section>";
                         echo "</a>";
                     }
-                }*/
+                }
             ?>
             
                 <button ng-if="<?php echo $_SESSION['logged'] ? 'true' : 'false'; ?>" type="button" onclick="location.href='php-project/addThread.php'">Add Thread</button>
@@ -235,7 +235,7 @@
                 $startPostIndex = (($_SESSION['tpage'] - 1) * 20);
                 $endPostIndex = $_SESSION['tpage'] * 20;
 
-                $size = sizeof($posts);*/
+                $size = sizeof($posts);
             ?>
             
             <h1 class="ForumTitle"><?php /*echo $topic["topic_subject"];*/ ?></h1>
