@@ -13,7 +13,8 @@
         $scope.sendPost = function() {
             var data = "content=" + $scope.content;
             
-            $log.log($scope.content);
+            $log.log("CONTENT: " + $scope.content);
+            $log.log("DATA: " + data);
             
             $http({
                 method: 'POST',

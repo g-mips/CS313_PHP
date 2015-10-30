@@ -69,7 +69,7 @@
             
             $statement->execute();
             
-            echo $_POST["content"];
+            echo "CONTENT: " . $_POST["content"];
         }
     }
 ?>
