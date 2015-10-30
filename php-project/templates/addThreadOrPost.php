@@ -66,6 +66,8 @@
             $content = $_POST["content"];
             $topicId = $topic["topic_id"];
             $author = $user["user_id"];
+            
+            echo "SUCCESS";
         }
     }
 ?>

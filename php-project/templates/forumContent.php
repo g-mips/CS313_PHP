@@ -263,6 +263,7 @@
                             <input id='Cancel' type='button' name='cancel' value='Cancel' ng-click='setReply(false)' />
                         </div>
                     </form>
+                    <h1 class="Title">{{submissionResult}}</h1>
                 </section>
             </section>
         </section>

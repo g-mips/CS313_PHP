@@ -2,7 +2,7 @@
     kacologoApp = angular.module('kacologo-forum', []);
     
     /**************************** Forum Page Controller ****************************/
-    kacologoApp.controller('ForumCtrl', ['$scope', '$http', function($scope, $http) {
+    kacologoApp.controller('ForumCtrl', ['$scope', '$http', function($scope, $http, $log) {
         $scope.isReplying = false;
         $scope.content = "";
         
