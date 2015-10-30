@@ -243,7 +243,7 @@
                             echo "<div class='FormDiv'>";
                             echo "<label></label>";
                             echo "<input id='Submit' type='submit' name='submit' value='Add Reply' ng-disable='replyForm.$invalid' />";
-                            echo "<input id='Cancel' type='button' name='cancel' value='Cancel' ng-click='setReply(false)'
+                            echo "<input id='Cancel' type='button' name='cancel' value='Cancel' ng-click='setReply(false)' />";
                             echo "</div>";
                             echo "</form>";
                             echo "</section>";
