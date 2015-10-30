@@ -260,13 +260,12 @@
                 <button type='button' ng-click='setReply(true)' ng-hide='isReplying'>Reply</button>
 
                 <section ng-show='isReplying'>
+                    <h1 class="Title">Reply</h1>
                     <form name='replyForm' ng-submit='replyForm.$valid' novalidate>
                         <div class='FormDiv'>
-                            <label for='Content'>Content</label>
                             <textarea id='Content' name='content' ng-model='content' rows='30' cols='70' required></textarea><br />
                         </div>
                         <div class='FormDiv'>
-                            <label></label>
                             <input id='Submit' type='submit' name='submit' value='Add Reply' ng-disable='replyForm.$invalid' />
                             <input id='Cancel' type='button' name='cancel' value='Cancel' ng-click='setReply(false)' />
                         </div>
