@@ -256,7 +256,7 @@
                     <h1 class="Title">Reply</h1>
                     <form name="replyForm" ng-submit="replyForm.$valid && sendPost()" novalidate>
                         <div class="FormDiv">
-                            <textarea id="Content" name="content" ng-model="content" rows="30" cols="70" required></textarea><br />
+                            <textarea id="Content" ng-model="forum.content" name="content" rows="30" cols="70" required></textarea><br />
                         </div>
                         <div class="FormDiv">
                             <input id="Submit" type="submit" name="submit" value="Add Reply" ng-disable="replyForm.$invalid" />

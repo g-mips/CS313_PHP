@@ -4,16 +4,16 @@
     /**************************** Forum Page Controller ****************************/
     kacologoApp.controller('ForumCtrl', ['$scope', '$http', '$log', function($scope, $http, $log) {
         $scope.isReplying = false;
-        $scope.content = "";
+        this.content = "";
         
         $scope.setReply = function(value) {
             $scope.isReplying = value;
         }
         
         $scope.sendPost = function() {
-            var data = "content=" + $scope.content;
+            var data = "content=" + this.content;
             
-            $log.log("CONTENT: " + $scope.content);
+            $log.log("CONTENT: " + this.content);
             $log.log("DATA: " + data);
             
             $http({
