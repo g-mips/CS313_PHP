@@ -3,7 +3,11 @@
     
     /**************************** Forum Page Controller ****************************/
     kacologoApp.controller('ForumCtrl', function() {
+        $scope.isReplying = false;
         
+        $scope.setReply = function() {
+            $scope.isReplying = true;
+        }
     });
     
     kacologoApp.directive('forumContent', function() {

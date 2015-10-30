@@ -232,7 +232,20 @@
                         }
                         
                         if ($_SESSION['logged']) {
-                            echo "<button type='button' onclick=''>Reply</button>";
+                            echo "<button type='button' onclick='setReply()' ng-hide='{{isReplying}}'>Reply</button>";
+                            
+                            echo "<section ng-show='{{isReplying}}'>";
+                            echo "<form name='replyForm' ng-submit='replyForm.$valid && ' novalidate>";
+                            echo "<div class='FormDiv'>";
+                            echo "<label for='Content'>Content</label>";
+                            echo "<textarea id='Content' name='content' ng-model='content' rows='30' cols='70' required></textarea><br />";
+                            echo "</div>";
+                            echo "<div class='FormDiv'>";
+                            echo "<label></label>";
+                            echo "<input id='Submit' type='submit' name='submit' value='Add Reply' ng-disable='replyForm.$invalid' />";
+                            echo "</div>";
+                            echo "</form>";
+                            echo "</section>";
                         }
                     } else {
                         // DISPLAY PAGE DOESN'T EXIST
