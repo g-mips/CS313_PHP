@@ -40,6 +40,32 @@
             $statement->execute();
             
             echo "SUCCESS";
+        } else if (isset($_POST["content"]) && isset($_SESSION['id']) && $_SESSION['logged']) {
+            require ('../database/databaseConnect.php');
+            
+            $db = loadDatabase();
+            
+            $user = $db->query("SELECT * FROM users WHERE user_name = '" . $_SESSION['user'] . "' LIMIT 1");
+            $user->setFetchMode(PDO::FETCH_ASSOC);
+            $user = $user->fetch();
+            
+            $topic = $db->query("SELECT * FROM topics WHERE topic_id = " . $_SESSION['id'] . " LIMIT 1");
+            $topic->setFetchMode(PDO::FETCH_ASSOC);
+            $topic = $topic->fetch();
+            
+            $statement = $db->prepare("INSERT INTO posts (post_content, post_date, post_topic, post_author) VALUES (?, NOW(), ?, ?)");
+            
+            $content = null;
+            $topicId = null;
+            $author = null;
+            
+            $statement->bindParam(1, $content);
+            $statement->bindParam(2, $topicId);
+            $statement->bindParam(3, $author);
+            
+            $content = $_POST["content"];
+            $topicId = $topic["topic_id"];
+            $author = $user["user_id"];
         }
     }
 ?>

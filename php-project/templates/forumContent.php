@@ -171,7 +171,6 @@
                 $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = sub_categories.sub_cat_id WHERE sub_categories.sub_cat_id = " . $_SESSION['id'] . " AND topics.topic_pinned = 0 ORDER BY topics.topic_date";
                 $nonPinnedTopics = $db->query($query);
                 $nonPinnedTopics = $nonPinnedTopics->fetchAll();
-
             ?>
             
             <h1 class="ForumTitle"><?php echo $title["sub_cat_name"]; ?></h1>
@@ -255,7 +254,7 @@
 
                 <section ng-show='isReplying'>
                     <h1 class="Title">Reply</h1>
-                    <form name='replyForm' ng-submit='replyForm.$valid' novalidate>
+                    <form name='replyForm' ng-submit='replyForm.$valid && sendPost()' novalidate>
                         <div class='FormDiv'>
                             <textarea id='Content' name='content' ng-model='content' rows='30' cols='70' required></textarea><br />
                         </div>
@@ -268,153 +267,4 @@
             </section>
         </section>
     </section>
-    
-<!--
-
-        // If it is null, we need to handle it differently!
-        /*if ($db !== null) {
-            // Navigation bar
-            createNavigationBar($db);
-
-            // What page are we trying to access?
-            if ($_SESSION['page'] == 0 || $_SESSION['page'] === null) {
-                $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");
-                echo "<h1 class='ForumTitle'>Forum</h1>";
-
-                // Categories Loop
-                foreach ($cats as $cat) {
-                    echo "<a class='ForumLink' href='/php-project/forum.php?page=1&id=" . $cat["cat_id"] . "'>";
-                    echo "<section class='Cat'>";
-                    echo "<h1 class='CatName'>" . $cat["cat_name"] . "</h1>";
-
-                    displaySubCats($db, $cat["cat_id"]);
-
-                    echo "</section>";
-                    echo "</a>";
-                }
-            /*} else if ($_SESSION['id'] !== null) {
-                if ($_SESSION['page'] == 1) {
-                    $query = "SELECT * FROM categories WHERE cat_id = " . $_SESSION['id'];
-                    $cat = $db->query($query);
-
-                    $index = 0;
-                    foreach ($cat as $category) {
-                        if ($index === 0) {
-                            echo "<h1 class='ForumTitle'>" . $category["cat_name"] . "</h1>";
-                            displaySubCats($db, $category["cat_id"]);
-                            $index += 1;
-                        }
-                    }*/
-                /*} else if ($_SESSION['page'] == 2 && $_SESSION['tpage'] !== null) {
-                    // Getting title of page.
-                    $query = "SELECT sub_cat_name FROM sub_categories WHERE sub_cat_id = " . $_SESSION['id'];
-                    $titles = $db->query($query);
-                    $titles->setFetchMode(PDO::FETCH_ASSOC);
-                    $title = $titles->fetch();
-
-                    //
-                    $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = sub_categories.sub_cat_id WHERE sub_categories.sub_cat_id = " . $_SESSION['id'] . " AND topics.topic_pinned = 1 ORDER BY topics.topic_date";
-                    $pinnedTopics = $db->query($query);
-                    $pinnedTopics = $pinnedTopics->fetchAll();
-
-                    $query = "SELECT * FROM topics INNER JOIN sub_categories ON topics.topic_sub_cat = sub_categories.sub_cat_id WHERE sub_categories.sub_cat_id = " . $_SESSION['id'] . " AND topics.topic_pinned = 0 ORDER BY topics.topic_date";
-                    $nonPinnedTopics = $db->query($query);
-                    $nonPinnedTopics = $nonPinnedTopics->fetchAll();
-
-                    echo "<h1 class='ForumTitle'>" . $title["sub_cat_name"] . "</h1>";
-                    echo "<h1 class='CatName'>Threads</h1>";
-
-                    $startTopicIndex = (($_SESSION['tpage'] - 1) * 20);
-                    $endTopicIndex = $_SESSION['tpage'] * 20;
-
-                    $size = sizeof($pinnedTopics) + sizeof($nonPinnedTopics);
-
-                    if ($size < $startTopicIndex || $size > $endTopicIndex) {
-                        // DISPLAY PAGE DOESN'T EXIST
-                    } else if ($size === 0) {
-                        echo "<section>";
-                        echo "<h2 class='SubCatName'>There are no topics! Please help this place by creating a thread!</h2>";
-                        echo "<hr class='ForumLine'/>";
-                        echo "</section>";
-                    } else {
-                        for ($index = $startTopicIndex; $index < $endTopicIndex && $index < $size; $index++) {
-                            $topic = $pinnedTopics[$index];
-
-                            if ($index >= sizeof($pinnedTopics)) {
-                                $topic = $nonPinnedTopics[$index];
-                            }
-
-                            echo "<a class='ForumLink' href='/php-project/forum.php?page=3&id=" . $topic["topic_id"] . "&tpage=1'>";
-                            echo "<section class='SubCat'>";
-                            echo "<h2 class='SubCatName'>" . $topic["topic_subject"] . "</h2>";
-                            echo "<hr class='ForumLine'/>";
-                            echo "</section>";
-                            echo "</a>";
-                        }
-                    }
-
-                    if ($_SESSION['logged']) {
-                        echo "<button type='button' onclick='location.href=\"/php-project/addThread.php\"'>Add Thread</button>";
-                    }
-                }*/ /*else if ($_SESSION['page'] == 3 && $_SESSION['tpage'] !== null) {
-                    $query = "SELECT * FROM topics WHERE topic_id = " . $_SESSION['id'];
-                    $topics = $db->query($query);
-                    $topics->setFetchMode(PDO::FETCH_ASSOC);
-                    $topic = $topics->fetch();
-
-                    echo "<h1 class='ForumTitle'>" . $topic["topic_subject"] . "</h1>";
-
-                    $query = "SELECT * FROM posts INNER JOIN topics ON posts.post_topic = topics.topic_id WHERE topics.topic_id = " .
-                        $_SESSION['id'] . " ORDER BY posts.post_date";
-                    $posts = $db->query($query);
-                    $posts = $posts->fetchAll();
-
-                    $startPostIndex = (($_SESSION['tpage'] - 1) * 20);
-                    $endPostIndex = $_SESSION['tpage'] * 20;
-
-                    $size = sizeof($posts);
-
-                    if ($size < $startPostIndex || $size > $endPostIndex) {
-
-                    } else {
-                        for ($index = $startPostIndex; $index < $endPostIndex && $index < $size; $index++) {
-                            $post = $posts[$index];
-
-                            $user = $db->query("SELECT * FROM users INNER JOIN posts ON users.user_id = posts.post_author WHERE posts.post_author = " . $post["post_author"]);
-                            $user->setFetchMode(PDO::FETCH_ASSOC);
-                            $user = $user->fetch();
-
-                            echo "<section class='ContentContainer'>";
-                            echo "<h1 class='User'>" . $user['user_name'] . "</h1>";
-                            echo "<p class='SubCatDescription PostContent'>" . $post["post_content"] . "</p>";
-                            echo "</section>";
-                        }
-                    }
-
-                    if ($_SESSION['logged']) {
-                        echo "<button type='button' ng-click='setReply(true)' ng-hide='{{isReplying}}'>Reply</button>";
-
-                        echo "<section ng-show='{{isReplying}}'>";
-                        echo "<form name='replyForm' ng-submit='replyForm.\$valid' novalidate>";
-                        echo "<div class='FormDiv'>";
-                        echo "<label for='Content'>Content</label>";
-                        echo "<textarea id='Content' name='content' ng-model='content' rows='30' cols='70' required></textarea><br />";
-                        echo "</div>";
-                        echo "<div class='FormDiv'>";
-                        echo "<label></label>";
-                        echo "<input id='Submit' type='submit' name='submit' value='Add Reply' ng-disable='replyForm.\$invalid' />";
-                        echo "<input id='Cancel' type='button' name='cancel' value='Cancel' ng-click='setReply(false)' />";
-                        echo "</div>";
-                        echo "</form>";
-                        echo "</section>";
-                    }
-                } else {
-                    // DISPLAY PAGE DOESN'T EXIST
-                }
-            } else {
-                // DISPLAY PAGE DOESN'T EXIST
-            }
-        }*/
-    ?>
--->
 </section>
