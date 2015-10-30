@@ -2,7 +2,7 @@
     kacologoApp = angular.module('kacologo-forum', []);
     
     /**************************** Forum Page Controller ****************************/
-    kacologoApp.controller('ForumCtrl', ['$scope', '$http', function($scope, $http, $log) {
+    kacologoApp.controller('ForumCtrl', ['$scope', '$http', '$log', function($scope, $http, $log) {
         $scope.isReplying = false;
         $scope.content = "";
         
@@ -12,6 +12,8 @@
         
         $scope.sendPost = function() {
             var data = "content=" + $scope.content;
+            
+            $log.log($scope.content);
             
             $http({
                 method: 'POST',
