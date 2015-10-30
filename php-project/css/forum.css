@@ -91,6 +91,7 @@ hr.ForumLine {
     text-align: center;
     border-right: 2px #5F9EA0 solid;
     max-width: 450px;
+    width: 300px;
     height: inherit;
     margin: 0px;
 }
