@@ -2,13 +2,13 @@
     kacologoApp = angular.module('kacologo-forum', []);
     
     /**************************** Forum Page Controller ****************************/
-    kacologoApp.controller('ForumCtrl', function() {
+    kacologoApp.controller('ForumCtrl', ['$scope', function($scope) {
         $scope.isReplying = false;
         
         $scope.setReply = function() {
             $scope.isReplying = true;
         }
-    });
+    }]);
     
     kacologoApp.directive('forumContent', function() {
         return {
