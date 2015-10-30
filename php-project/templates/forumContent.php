@@ -178,9 +178,6 @@
             <h1 class="ForumTitle"><?php echo $title["sub_cat_name"]; ?></h1>
             <h1 class="CatName">Threads</h1>
 
-                echo "<h1 class='ForumTitle'>" . $title["sub_cat_name"] . "</h1>";
-                echo "<h1 class='CatName'>Threads</h1>";
-
             <?php
                 $startTopicIndex = (($_SESSION['tpage'] - 1) * 20);
                 $endTopicIndex = $_SESSION['tpage'] * 20;
