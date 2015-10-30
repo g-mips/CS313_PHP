@@ -121,11 +121,11 @@
     
     <section ng-if="<?php echo $dbIsGood ? 'true' : 'false'; ?>">
     
-        <section ng-if="<?php echo ($_SESSION['page'] == 0) ? 'true' : 'false'; ?> || <?php echo !isset($_SESSION['page']) ? 'true' : 'false'; ?>">
+        <section ng-if="<?php echo ($_SESSION['page'] == 0) ? 'true' : 'false'; ?>">
             <h1 class="ForumTitle">Forum</h1>
             
             <?php
-/*                $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");
+                $cats = $db->query("SELECT * FROM categories ORDER BY cat_order");
 
                 // Categories Loop
                 foreach ($cats as $cat) {
@@ -137,7 +137,7 @@
 
                     echo "</section>";
                     echo "</a>";
-                }*/
+                }
             ?>
         </section>
     
