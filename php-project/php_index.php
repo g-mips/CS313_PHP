@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/nav.css" />
         <link rel="stylesheet" href="css/footer.css" />
         <link rel="stylesheet" href="css/home.css" />
+        <link rel="stylesheet" href="css/videos.css" />
 
         <link rel="shortcut icon" href="images/controller-small.png">
 

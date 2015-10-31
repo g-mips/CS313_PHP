@@ -4,7 +4,6 @@
     /**************************** Home Page Controller ****************************/
     kacologoApp.controller('HomeCtrl', ['$http', '$sce', '$scope', function($http, $sce, $scope) {
         $scope.mainVideo = [];
-        $scope.videoTitle = null;
         $scope.videos = [];
 
         // GET kacologo's youtube channel 
@@ -34,12 +33,11 @@
                         // First video is the only playable one.
                         if (index === 0) {
                             $scope.mainVideo[index] = {
-                                id: index, info: [$sce.trustAsResourceUrl(videoThumbnailUrl), 
+                                id: index, title: item.snippet.title, info: [$sce.trustAsResourceUrl(videoThumbnailUrl), 
                                                   $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]};
-                            $scope.videoTitle = item.snippet.title;
                         } else {
                             $scope.videos.push({
-                                id: index - 1, info: [$sce.trustAsResourceUrl(videoThumbnailUrl),
+                                id: index - 1, title: item.snippet.title, info: [$sce.trustAsResourceUrl(videoThumbnailUrl),
                                                       $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]});
                         }
 

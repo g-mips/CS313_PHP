@@ -1,12 +1,11 @@
 <section>
     <iframe id="MainVideo" ng-src="{{mainVideo[0].info[1]}}" frameborder="0" 
                     webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <!--width="880" height="495"-->
-    <h1 class="Title">{{videoTitle}}</h1>
+    <h1 class="Title">{{mainVideo[0].title}}</h1>
 
-    <div id="FeatVideosDiv">
+    <div id="VideosList">
         <a class="VideoLink" ng-repeat="video in videos" ng-click="changeMainVid(video.id)">
-            <img class="FeatVideos" ng-src="{{video.info[0]}}" />
+            <img class="Video" ng-src="{{video.info[0]}}" />
         </a>
     </div>
 
