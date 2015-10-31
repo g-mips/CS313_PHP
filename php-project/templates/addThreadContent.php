@@ -11,7 +11,6 @@
             <textarea id="Content" ng-model="content" name="content" rows="30" cols="70" placeholder="Content" required></textarea>
         </div>
         <div class="FormDiv">
-            <label></label>
             <input id="Submit" type="submit" name="submit" value="Add Post" ng-disabled="addPostForm.$invalid" />
         </div>
         <div class="FormDiv">
