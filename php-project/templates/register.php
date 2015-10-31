@@ -1,8 +1,12 @@
 <?php
+    // Are we accessing here the right way?
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $result = "";
         
+        // Are all the right variables set?
         if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"]) && isset($_POST["cPassword"])) {
+            
+            // Requirements for username and password check against confirmation password
             if (!ctype_alnum($_POST["username"])) {
                 $result = "Username can only contain numbers and/or letters.";
             } else if (strlen($_POST["username"]) > 30) {
@@ -15,6 +19,8 @@
                     $db = loadDatabase();
                     
                     $exists = $db->query("SELECT user_name FROM users WHERE user_name = '" . $_POST["username"] . "' LIMIT 1");
+                    
+                    // Does the username and/or email exist?
                     if ($exists === false || $exists->rowCount() === 1) {
                         $exists = $db->query("SELECT user_email from users WHERE user_email = '" . $_POST["email"] . "' LIMIT 1");
                         if ($exists === false || $exists->rowCount() === 1) {

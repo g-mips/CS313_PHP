@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/nav.css" />
         <link rel="stylesheet" href="css/footer.css" />
-        <link rel="stylesheet" href="css/signup.css" />
+        <link rel="stylesheet" href="css/form.css" />
 
         <link rel="shortcut icon" href="images/controller-small.png">
 

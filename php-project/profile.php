@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="css/footer.css" />
         <link rel="stylesheet" href="css/home.css" />
         <link rel="stylesheet" href="css/profile.css" />
-        <link rel="stylesheet" href="css/signup.css" />
+        <link rel="stylesheet" href="css/form.css" />
         
 		<link rel="shortcut icon" href="images/controller-small.png">
         
