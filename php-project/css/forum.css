@@ -96,11 +96,6 @@ hr.ForumLine {
     margin: 0px;
 }
 
-.PostInfoContainer {
-    display: flex;
-    flex-direction: column;
-}
-
 .PostInfo {
     display: flex;
     flex-direction: row;
