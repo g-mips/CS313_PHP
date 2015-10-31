@@ -108,4 +108,8 @@ hr.ForumLine {
         min-width: 150px;
         font-size: 12px;
     }
+    
+    textarea {
+        width: 25em;
+    }
 }
