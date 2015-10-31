@@ -9,7 +9,6 @@
             <input id="Subject" ng-model="subject" type="text" name="subject" requred/><br />
         </div>
         <div class="FormDiv">
-            <label for="Content"></label>
             <textarea id="Content" ng-model="content" name="content" rows="30" cols="70" required></textarea>
         </div>
         <div class="FormDiv">
