@@ -45,6 +45,7 @@
 
 @media screen and (max-width: 770px) {
     #NavBar {
+        font-size: 14px;
         height: 130px;
     }
     

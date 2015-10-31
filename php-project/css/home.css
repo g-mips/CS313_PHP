@@ -17,33 +17,6 @@
     height: 495px;
 }
 
-/*#FeatVideosDiv {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-    align-content: center;    
-}
-
-.FeatVideos {
-    height: 188px;
-	width: 250px;
-	padding: 10px;
-    margin: auto;
-}
-
-.VideoLink:hover:before {
-	display: inline-block;
-	content: '';
-	background-image: url("../images/play_button.png");
-	background-repeat: no-repeat;
-	background-position: center center;
-	position: absolute;
-	width: 260px;
-	height: 198px;
-}*/
-
 /* MEDIA QUERIES */
 @media screen and (max-width: 920px) {
     #MainVideo {
