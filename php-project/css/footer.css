@@ -6,20 +6,16 @@
 }
 
 #Footer ul {
-	/* Formatting */
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 	padding: 0px;
 	margin: 0px;
 	height: 65px;
-	
-	/* Styling */
 	list-style-type: none;	
 }
 
 #Footer li {
-	/* Formatting */
 	align-self: center;
 	padding: 20px;
 }

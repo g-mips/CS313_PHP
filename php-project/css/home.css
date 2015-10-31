@@ -11,6 +11,8 @@
 	margin-left: auto;
 	margin-right: auto;
 	padding: 10px;
+    width: 880;
+    height: 495;
 }
 
 #FeatVideosDiv {
@@ -36,3 +38,9 @@
 }
 
 /* MEDIA QUERIES */
+@media screen and (max-width: 770px) {
+    #MainVideo {
+        width: 550px;
+        height: 309px;
+    }
+}

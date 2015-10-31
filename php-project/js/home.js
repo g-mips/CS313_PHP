@@ -33,10 +33,14 @@
                         
                         // First video is the only playable one.
                         if (index === 0) {
-                            $scope.mainVideo[index] = {id: index, info: [$sce.trustAsResourceUrl(videoThumbnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]};
+                            $scope.mainVideo[index] = {
+                                id: index, info: [$sce.trustAsResourceUrl(videoThumbnailUrl), 
+                                                  $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]};
                             $scope.videoTitle = item.snippet.title;
                         } else {
-                            $scope.videos.push({id: index - 1, info: [$sce.trustAsResourceUrl(videoThumbnailUrl), $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]});
+                            $scope.videos.push({
+                                id: index - 1, info: [$sce.trustAsResourceUrl(videoThumbnailUrl),
+                                                      $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId)]});
                         }
 
                         index += 1;
