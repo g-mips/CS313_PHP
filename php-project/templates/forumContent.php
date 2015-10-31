@@ -243,7 +243,10 @@
 
                         echo "<section class='ContentContainer'>";
                         echo "<h1 class='User'>" . $user['user_name'] . "</h1>";
+                        echo "<div class='PostInfo'>";
+                        echo "<p class='SubCatDescription PostContent'>" . $post["post_date"] . "</p>";
                         echo "<p class='SubCatDescription PostContent'>" . $post["post_content"] . "</p>";
+                        echo "</div>";
                         echo "</section>";
                     }
                 }
