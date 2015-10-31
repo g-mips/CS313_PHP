@@ -1,4 +1,6 @@
 #TwitchVid {
+    height: 378px;
+    width: 620px;
 	padding: 7px;
 }
 
@@ -11,20 +13,36 @@
 	margin-left: auto;
 	margin-right: auto;
 	padding: 10px;
-    width: 880;
-    height: 495;
+    width: 880px;
+    height: 495px;
 }
 
 #FeatVideosDiv {
-	text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    align-content: center;    
 }
 
 .FeatVideos {
+    height: 188px;
+	width: 250px;
+	padding: 10px;
+    margin: auto;
+}
+
+/*#FeatVideosDiv {
+	text-align: center;
+}*/
+
+/*.FeatVideos {
 	display: inline;
 	height: 188px;
 	width: 250px;
 	padding: 10px;
-}
+}*/
 
 .VideoLink:hover:before {
 	display: inline-block;
@@ -42,5 +60,17 @@
     #MainVideo {
         width: 550px;
         height: 309px;
+    }
+    
+    #TwitchVid {
+        width: 300px;
+        height: 183px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #MainVideo {
+        width: 300px;
+        height: 169px;
     }
 }
