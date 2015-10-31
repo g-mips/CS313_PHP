@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html ng-app="kacologoApp">
 	<head>
-		<title>Kacologo</title>
+		<title>Kacologo - Login</title>
 		<link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/nav.css" />
         <link rel="stylesheet" href="css/footer.css" />
