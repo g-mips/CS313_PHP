@@ -6,6 +6,10 @@
         $scope.subject = "";
         $scope.content = "";
         
+        /**
+         * addThread
+         *    Calls addThreadOrPost.php with a POST and if was successful, goes back to forum.
+         **/
         $scope.addThread = function() {
             var data = "subject=" + $scope.subject + "&content=" + $scope.content;
             

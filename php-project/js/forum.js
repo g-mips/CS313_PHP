@@ -10,6 +10,10 @@
             $scope.isReplying = value;
         }
         
+        /**
+         * sendPost:
+         *   This will call addThreadOrPost.php and go to forum on a success.
+         **/
         $scope.sendPost = function() {
             var data = "content=" + $scope.forum.content;
             

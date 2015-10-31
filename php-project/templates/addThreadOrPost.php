@@ -1,7 +1,9 @@
 <?php
     session_start();
 
+    // Did we call it correctly?
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        // Is this a thread/topic or a post/reply?
         if (isset($_POST["subject"]) && isset($_POST["content"]) && isset($_SESSION['id']) && $_SESSION['logged']) {
             require ('../database/databaseConnect.php');
             
