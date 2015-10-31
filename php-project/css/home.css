@@ -55,6 +55,11 @@
         margin-left: auto;
         margin-right: auto;
     }
+    
+    #TwitchChat {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media screen and (max-width: 630px) {
@@ -66,6 +71,11 @@
     #TwitchVid {
         width: 450px;
         height: 274px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #TwitchChat {
         margin-left: auto;
         margin-right: auto;
     }
