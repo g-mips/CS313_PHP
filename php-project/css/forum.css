@@ -66,7 +66,6 @@
 
 .PostContent {
     padding: 10px;
-    flex-wrap: wrap;
 }
 
 hr.ForumLine {
@@ -97,9 +96,14 @@ hr.ForumLine {
     margin: 0px;
 }
 
-.PostInfo {
+.PostInfoContainer {
     display: flex;
     flex-direction: column;
+}
+
+.PostInfo {
+    display: flex;
+    flex-direction: row;
 }
 
 @media screen and (max-width: 600px) {
